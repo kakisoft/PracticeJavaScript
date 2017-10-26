@@ -3,8 +3,31 @@
 <head>
     <meta charset="utf-8">
     <title>PracticeJavaScript</title>
+    <style>
+        .mystyle{
+            font-weight: bold;
+            border: 1px solid gray;
+        }
+    </style>
 </head>
 <body>
+    <div>
+        score<input type="text" id="score" value="99">
+        <button id="score_judgment">Judge</button><p id="score_eval_message"></p>
+    </div>
+
+    <div>
+        <button id="screen_transition">screen_transition</button>
+    </div>
+
+    <div>
+        <button id="show_dialog">show_dialog</button>
+    </div>
+
+    <div>
+        <p id="msg">message</p>
+    </div>
+    <button id="add">add</button>
 
     <!-- scriptタグは、body閉じタグの直前に書くのが一般的 -->
     <script src="assets/myscript01.js"></script>
@@ -12,14 +35,9 @@
         //デバッグ画面のコンソールに出力
         console.log("Hello World");
 
-        /*  */
-        var msg;
-        msg = "hi"
-        console.log(msg);
-
-        x = 10, y=20;
-        console.log(y);
-    </script>
+        //
+        Built_in_function();
+</script>
 </body>
 </html>
 
