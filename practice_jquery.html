@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="utf-8">
+    <title>PracticeJQuery</title>
+</head>
+<body>
+    <p>jQueryの練習</p>
+    <ul id="main">
+        <li>0</li>
+        <li class="item">1</li>
+        <li class="item">2</li>
+        <li>
+            3
+            <ul id="sub">
+                <li>3-0</li>
+                <li>3-1</li>
+                <li class="item">3-2</li>
+                <li class="item">3-3</li>
+                <li>3-4</li>
+            </ul>
+        </li>
+    </ul>
+
+    <div>
+        <h1>h1</h1>
+        <h2>h2</h2>
+        <h3>h3</h3>
+        <h4>h4</h4>
+        <h5>h5</h5>
+        <h5>h5</h5>
+        <ul id="main2">
+            <li id="id0">0</li>
+            <li class="item">1</li>
+            <li class="item">2</li>
+            <li>
+                3
+                <ul id="sub2">
+                    <li>3-0</li>
+                    <li>3-1</li>
+                    <li class="item2">3-2</li>
+                    <li class="item2">3-3</li>
+                    <li>3-4</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <!--<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>--><!-- こっちでもOK -->
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <!-- スクリプトはjQueryを読み込んだ後に記述する -->
+    <script>
+        //読み込まれた時の処理
+        $(document).ready(function(){
+            $("p").css("color","red");
+        });
+        //読み込まれた時の処理（省略記述）
+        $(function(){
+            //メソッドを繋げて記述できる。（メソッドチェーン。↓ではhideがそれにあたる。）
+            $("p").css("font-size","20px").hide("slow");
+        });
+
+        //id指定
+        $("#sub").css("color","blue");
+        //クラス指定
+        $(".item").css("color","brown");
+
+        //直下の要素を指定
+        $("div > #main > .item").css("font-size","25px");
+        //複数の要素を指定
+        $("h3,h4,#id0").css("color","violet");
+        $("div > h1,h2").css("color","red");
+        //隣接する要素
+        $("h5 + h5").css("color","red");
+
+        //===================
+        //     フィルタ
+        //===================
+        //eq(2)・・・indexが2の要素が選択される  equql
+        $("#sub > li:eq(2)").css("font-weight","bold");
+        //gt(1)・・・indexが1より大きい  greater than
+        $("#sub > li:gt(1)").css("font-size","30px");
+        //lt(3)・・・indexが3より小さい  less then
+        $("#sub > li:lt(3)").css("font-style","italic");
+        //even ・・・偶数。odd・・・奇数
+        $("#sub > li:even").css("font-style","oblique");  
+        //contains('x')・・・xが含まれているか
+        $("#sub > li:contains('4')").css("font-size","45px");
+        //他には、
+        //　first  last
+        //　even   odd
+        //なんてのも。
+
+        //===============================
+        //  メソッドを使ったDOM要素の指定
+        //===============================
+        //親要素を指定（子にも適用）
+        $("#sub2").parent().css("font-style","oblique");
+        //子要素を指定
+        $("#sub2").children().css("font-size","30px");
+        //次の要素
+        $("#sub2 > li:eq(2)").next().css("color","red"); //インデックス 3が対象
+        //前の要素
+        $("#sub2 > li:eq(1)").prev().css("color","blue"); //インデックス 0が対象
+        //兄弟要素（同列の要素）
+        $("#sub2 > li:eq(1)").siblings().css("","")
+
+</script>
+</body>
+</html>
+
