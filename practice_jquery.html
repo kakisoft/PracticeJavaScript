@@ -46,6 +46,12 @@
         </ul>
     </div>
 
+    <div>
+        <a href="http://google.co.jp">google</a>
+        <a href="http://yahoo.co.jp">yahoo</a>
+        <a href="http://bing.co.jp">bing</a>
+    </div>
+
     <!--<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>--><!-- こっちでもOK -->
     <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
     <!-- スクリプトはjQueryを読み込んだ後に記述する -->
@@ -103,7 +109,22 @@
         //前の要素
         $("#sub2 > li:eq(1)").prev().css("color","blue"); //インデックス 0が対象
         //兄弟要素（同列の要素）
-        $("#sub2 > li:eq(1)").siblings().css("","")
+        $("#sub2 > li:eq(1)").siblings().css("text-decoration","overline");
+
+        //===============================
+        //      セレクタ・メソッド
+        //===============================
+        // =
+        $("a[href='http://google.co.jp']").css("background","red"); //属性セレクタは[]で指定する。
+        // !=
+        $("a[href!='http://google.co.jp']").css("background","pink");
+        // like
+        $("a[href*='oo']").css("font-size","25px");
+        //先頭
+        $("a[href^='http']").css("text-decoration","overline");
+        // 末尾
+        $("a[href$='e.co.jp']").css("font-style","oblique");
+
 
 </script>
 </body>
