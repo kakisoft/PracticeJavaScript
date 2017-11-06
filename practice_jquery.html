@@ -3,6 +3,12 @@
 <head>
     <meta charset="utf-8">
     <title>PracticeJQuery</title>
+    <style>
+        .myStyle {
+            border:5px solid green;
+            font-size:48px;
+        }
+    </style>
 </head>
 <body>
     <p>jQueryの練習</p>
@@ -50,6 +56,12 @@
         <a href="http://google.co.jp">google</a>
         <a href="http://yahoo.co.jp">yahoo</a>
         <a href="http://bing.co.jp">bing</a>
+    </div>
+
+    <div id="ctg01">
+        <h4 class="sub01">ctg01 sub01</h4>
+        <h4 class="sub02">ctg01 sub02</h4>
+        <h4 class="sub03 myStyle">ctg01 sub03</h4>
     </div>
 
     <!--<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>--><!-- こっちでもOK -->
@@ -125,6 +137,16 @@
         // 末尾
         $("a[href$='e.co.jp']").css("font-style","oblique");
 
+        //===============================
+        //      
+        //===============================
+        // .css 設定 取得
+        $('#ctg01  .sub01').css('color', 'red').css('background', 'blue');
+        console.log($('#ctg01  .sub01').css('color'));
+        // addClass
+        $('#ctg01  .sub02').addClass('myStyle');
+        // removeClass
+        $('#ctg01  .sub03').removeClass('myStyle');
 
 </script>
 </body>
