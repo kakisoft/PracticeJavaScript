@@ -11,7 +11,7 @@
     </style>
 </head>
 <body>
-    <p>jQueryの練習</p>
+    <h1>jQueryの練習</h1>
     <ul id="main">
         <li>0</li>
         <li class="item">1</li>
@@ -64,6 +64,21 @@
         <h4 class="sub03 myStyle">ctg01 sub03</h4>
     </div>
 
+    <div id="ctg02">
+        <a class="sub1" href="http://google.com" data-sitename="google">google</a>
+        <a class="sub2" href="http://yahoo.co.jp" data-sitename="yahoo">yahoo</a>
+    </div>
+
+    <div id="ctg03">
+        <h4>nn</h4>
+        <p class="sub1">sub1</p>
+        <p class="sub2">sub2</p>
+        <p class="sub3">sub3</p>
+        <input class="sub4" type="test" value="hello">
+        <p class="sub5">sub5</p>
+        <p class="sub6">sub6</p>
+    </div>
+
     <!--<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>--><!-- こっちでもOK -->
     <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
     <!-- スクリプトはjQueryを読み込んだ後に記述する -->
@@ -75,7 +90,7 @@
         //読み込まれた時の処理（省略記述）
         $(function(){
             //メソッドを繋げて記述できる。（メソッドチェーン。↓ではhideがそれにあたる。）
-            $("p").css("font-size","20px").hide("slow");
+            $("h1").css("font-size","20px").hide("slow");
         });
 
         //id指定
@@ -147,6 +162,23 @@
         $('#ctg01  .sub02').addClass('myStyle');
         // removeClass
         $('#ctg01  .sub03').removeClass('myStyle');
+        // attr
+        console.log($('#ctg02 a').attr('href'));
+        $('#ctg02 a.sub1').attr('href', 'http://google.co.jp');
+        // data
+        console.log($('#ctg02 a.sub2').data('sitename'));
+        // text
+        console.log($('#ctg03 p.sub1').text());
+        $('#ctg03  p.sub2').text('just changed');
+        // html
+        $('#ctg03  p.sub3').html('<a href="">click me!</a>');
+        // val0
+        console.log($('#ctg03 input.sub4').val());
+        $('#ctg03 input.sub4').val('hello, again!');
+        // remove
+        $('#ctg03 p.sub5').remove();
+        // empty
+        $('#ctg03 p.sub6').empty();
 
 </script>
 </body>
