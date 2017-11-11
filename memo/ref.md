@@ -3,7 +3,8 @@ https://developer.mozilla.org/ja/docs/Web/JavaScript
 (例：Stringを検索)  
 ビルトインオブジェクト→String  
   
-（日本語版）  
+　  
+日本語版リファレンス  
 http://semooh.jp/jquery/　  
 　  
   
