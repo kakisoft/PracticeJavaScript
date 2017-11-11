@@ -1,3 +1,6 @@
+//===================
+//     初期
+//===================
 //読み込まれた時の処理
 $(document).ready(function(){
     $("p").css("color","red");
@@ -8,6 +11,36 @@ $(function(){
     $("h1").css("font-size","20px").hide("slow");
 });
 
+//===================
+//     イベント
+//===================
+//$(function() {
+
+//イベント処理（ボタンをクリックすると、p要素が追加される）
+$('button#ctg05-button01').click(function() {
+    var p = $('<p>').text('vanish!').addClass('vanish');
+    $(this).before(p);
+});
+
+//イベントによって追加された要素へ、イベントを追加
+$('body').on('click', '.vanish', function() {
+    $(this).remove();
+});
+
+//※このやり方では、イベントが動作しない。
+//clickイベントは、ドキュメントが読まれた時点で設定する。
+//ドキュメントが読まれた時点では、vanishクラスを保持した p要素は存在しない。
+//読み込まれた時に存在していない要素に対してイベントをつけるには on を使用する
+//
+// $('.vanish').click(function() {
+//     $(this).remove();
+// });
+
+//}
+
+//===================
+//     要素指定
+//===================
 //id指定
 $("#sub").css("color","blue");
 //クラス指定
@@ -122,4 +155,44 @@ li5.prependTo($('#ctg04 ul'));
 // appendTo
 var li6 = $('<li>').text('appendTo');
 li6.appendTo($('#ctg04 ul'));
+
+//===================
+//    エフェクト
+//===================
+// hide
+$('button#ctg06-button01').click(function() {
+    $('#ctg06-box01').hide();
+});
+$('button#ctg06-button02').click(function() {
+    $('#ctg06-box01').hide('slow');
+});
+$('button#ctg06-button03').click(function() {
+    $('#ctg06-box01').hide(800); //ミリ秒指定（左記 は0.8秒）
+});
+
+// show
+$('button#ctg06-button04').click(function() {
+    $('#ctg06-box01').show(800); //ミリ秒指定（左記 は0.8秒）
+});
+
+// fadeOut（消える）
+$('button#ctg06-button05').click(function() {
+    $('#ctg06-box01').fadeOut(800); //ミリ秒指定（左記 は0.8秒）
+});
+
+// fadeIn（現れる）
+$('button#ctg06-button06').click(function() {
+    $('#ctg06-box01').fadeIn(800); //ミリ秒指定（左記 は0.8秒）
+});
+
+// toggle（表示/非表示）
+$('button#ctg06-button07').click(function() {
+    $('#ctg06-box01').toggle(800);
+});
+
+$('button#ctg06-button08').click(function() {
+    $('#ctg06-box01').toggle(800,function() {
+        $("#ctg06").append("<p>Occurred toggle event.</p>");        
+    });
+});
 
