@@ -12,7 +12,7 @@ $(function(){
 });
 
 //===================
-//     イベント
+//  イベントの追加
 //===================
 //$(function() {
 
@@ -37,6 +37,42 @@ $('body').on('click', '.vanish', function() {
 // });
 
 //}
+
+//===================
+//     イベント
+//===================
+$('#ctg07-box01 ').click(function() {
+    alert("hi!");
+});
+$('#ctg07-box01')   
+    .mouseover(function() {
+        $(this).css('background', 'green');
+    })            
+    .mouseout(function() {
+        $(this).css('background', 'red');
+    })
+    .mousemove(function(e) {
+        $(this).text(e.pageX);
+        //eはイベントオブジェクト。
+        //取得できる値は、APIドキュメントを参照。
+        //jQueryリファレンス→API Documentation→Event Object
+        //http://api.jquery.com/category/events/event-object/
+    });
+
+//======================
+// イベント(フォーム部品)
+//======================
+
+$('#ctg08-name')
+    .focus(function() {
+        $(this).css('background', 'red');
+    })
+    .blur(function() { //フォーカスが外れた時
+        $(this).css('background', 'white');
+    });
+$('#ctg08-members').change(function() {
+    alert('changed!');
+});
 
 //===================
 //     要素指定
@@ -194,5 +230,38 @@ $('button#ctg06-button08').click(function() {
     $('#ctg06-box01').toggle(800,function() {
         $("#ctg06").append("<p>Occurred toggle event.</p>");        
     });
+});
+
+//===================
+//    Ajax(Asynchronous JavaScript + XML)
+//===================
+//JavaScript を使ってサーバーと通信しつつページを書き換える手法
+//  サーバの通信 + ページの書き換え
+//
+//jQueryリファレンス→API Documentation→Ajax
+//http://api.jquery.com/category/events/event-object/
+
+// load
+$('#ctg09-button01').click(function() {
+    $('#ctg09-result').load('assets/parts01.html');
+    //Chromeの場合、ローカルのファイルを読み込ませると、エラーとなる。
+    //（ただし、サーバ経由だと問題なし。）
+    //オプション付けて起動したらうまく行くらしいが、上手く行かなかった。
+});
+
+// 非同期制御
+$('#ctg10-button01').click(function() {
+    $('#ctg10-result01').load('assets/parts01.html', function() {
+        $('#ctg10-result01').css('color', 'red');
+    });
+    // ↑第二引数に関数を渡している。（コールバック関数という）
+    // loadが完了した後に、functionを実行する、という意味になる。
+});
+
+// 「このやり方だとうまく行かない」とチュートリアルに書いてあったが、
+// EdgeとFFでうまく行った。モダンブラウザではパーサが進化したおかげ？
+$('#ctg10-button02').click(function() {
+    $('#ctg10-result02').load('assets/parts01.html'); // loadは非同期。処理の終了を待たずに（結果が返ってくる前に）、次の処理に移行する。
+    $('#ctg10-result02').css('color', 'red');         // ↑の理由により、外部ファイルが読み終わる前に、これが実行される。そのため、意図通りの動きにならない。
 });
 
