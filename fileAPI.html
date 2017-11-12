@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="utf-8">
+    <title>File API check</title>
+</head>
+<body>
+    <h1>File APIが使用可能か調べる</h1>
+    <div id="result">File APIは使用できません</div>
+    <script>
+        if (window.File){
+            document.getElementById("result").innerHTML = "File APIは使用できます";
+        }
+    </script>
+</body>
