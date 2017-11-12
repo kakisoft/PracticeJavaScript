@@ -270,20 +270,21 @@ $('#ctg11-button01').click(function() {
         
     // 第１引数：サーバ側のファイル名
     // 第２引数：パラメータ
-    // 第３引数：読み込みが終わった後の処理
+    // 第３引数：読み込みが終わった後の処理（コールバック関数）
     $.get('assets/greet01.php', {
         name: $('#ctg11-text01').val()
-    }, function(data) {
+    }, function(data) { // 第１引数の結果を、コールバック関数の引数に渡すことができる。
         $('#ctg11-result01').html(data);
     });
 });
 
-// get
+// post
 $('#ctg11-button02').click(function() {
 
     $.post('assets/greet02.php', {
         name: $('#ctg11-text01').val()
     }, function(data) {
+        // サーバから複数の値を返す場合
         $('#ctg11-result02').html(data.message + '(' + data.length + ')');
     });
 });
