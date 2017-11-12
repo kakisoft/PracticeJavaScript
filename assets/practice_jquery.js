@@ -265,3 +265,26 @@ $('#ctg10-button02').click(function() {
     $('#ctg10-result02').css('color', 'red');         // ↑の理由により、外部ファイルが読み終わる前に、これが実行される。そのため、意図通りの動きにならない。
 });
 
+// get
+$('#ctg11-button01').click(function() {
+        
+    // 第１引数：サーバ側のファイル名
+    // 第２引数：パラメータ
+    // 第３引数：読み込みが終わった後の処理
+    $.get('assets/greet01.php', {
+        name: $('#ctg11-text01').val()
+    }, function(data) {
+        $('#ctg11-result01').html(data);
+    });
+});
+
+// get
+$('#ctg11-button02').click(function() {
+
+    $.post('assets/greet02.php', {
+        name: $('#ctg11-text01').val()
+    }, function(data) {
+        $('#ctg11-result02').html(data.message + '(' + data.length + ')');
+    });
+});
+
