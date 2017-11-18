@@ -5,7 +5,12 @@
     <title>Practice Vue.js</title>
 </head>
 <body>
-    <div id="mycounter">
+    <div id="mycounter"> <!-- interface(View) -->
+        <!-- 
+            v-から始まる命令を「ディレクティブ」と呼ぶ。
+            htmlの特殊属性として書いておき、objectの dataや振る舞いに応じた
+            interfaceを作る。
+        -->
         <div v-text="count"></div>
         <button v-on="click: countUp">Up</button>
     </div>
@@ -16,9 +21,10 @@
         // 【 Model View ViewModel - MVVM 】
         // object(ViewModel) - data/methods(Model) <--> interface(View)
 
+        //「data/methods」に、どのインターフェースを結び付けるかを指定する。（以下では elが相当する）
 
         var vm = new Vue({
-            el: '#mycounter',
+            el: '#mycounter', //elは、「element」かな。
             data: {
                 count: 0
             },
