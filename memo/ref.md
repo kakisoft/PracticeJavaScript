@@ -1,19 +1,25 @@
-リファレンス  
+## リファレンス  
 https://developer.mozilla.org/ja/docs/Web/JavaScript  
 (例：Stringを検索)  
 ビルトインオブジェクト→String  
   
   
   
-日本語版リファレンス  
+## 日本語版リファレンス  
 http://semooh.jp/jquery/  
   
   
   
-jQuery 開発者向けメモ  
+## jQuery 開発者向けメモ  
 http://www.mikage.to/jquery/  
   
   
   
-jQuery.com  
+## jQuery.com  
 http://jquery.com/  
+  
+  
+  
+## vuejs.org 
+https://jp.vuejs.org/
+
