@@ -22,4 +22,7 @@ http://jquery.com/
   
 ## vuejs.org 
 https://jp.vuejs.org/
+（API）
+https://jp.vuejs.org/v2/api/#グローバル-API
+https://vuejs.org/v2/api/#Global-API
 

@@ -11,8 +11,12 @@
             htmlの特殊属性として書いておき、objectの dataや振る舞いに応じた
             interfaceを作る。
         -->
-        <div v-text="count"></div>
-        <button v-on="click: countUp">Up</button>
+        <div v-text="count"></div> <!-- v-xx には、medhod名やdata名を記述する-->
+        <div v-text="count * 10"></div>
+        <div v-text="'(' + count + ')'"></div>
+        <div v-text="count ? count : '--'"></div>
+        <button v-on="click: countUp">Up1</button> <!-- メソッドをコール -->
+        <button v-on="click: count++">Up2</button> <!-- 直接式を書くこともできる -->
     </div>
 
     <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/0.11.4/vue.min.js"></script>
