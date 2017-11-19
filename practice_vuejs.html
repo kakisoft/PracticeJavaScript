@@ -3,6 +3,10 @@
 <head>
     <meta charset="utf-8">
     <title>Practice Vue.js</title>
+    <style>
+        .red { color:red }
+        .bold { font-weight: bold }
+    </style>
 </head>
 <body>
     <div id="myapp01"> <!-- interface(View) -->
@@ -33,14 +37,46 @@
 
     <div id="myapp04">
         <button v-on="click: visibleSwitch">VisibleSwitch</button>
+        <!-- 非表示 -->
         <div v-show="showContent">
             {{content}}
         </div>
+        <!-- 要素そのものを削除 -->
         <div v-if="showContent">
-                {{content}}
+            {{content}}
         </div>
     </div>
 
+    <div id="myapp05">
+        <div v-class="myStyle05"> <!--  -->
+            {{content5}}
+        </div>
+    </div>
+
+    <div id="myapp06">
+        <button v-on="click: fontColorSwitch">fontColorSwitch</button>
+        <button v-on="click: boldSwitch">boldSwitch</button>
+        <div v-class="red: isRed, bold: isBold">
+            {{content6}}
+        </div>
+    </div>
+
+    <div id="myapp07">
+        <ul>
+            <li v-repeat="d1">{{$value}}</li>
+        </ul>
+        <ul>
+            <li v-repeat="d2">{{$key}} - {{$value}}</li>
+        </ul>
+        <ul>
+            <li v-repeat="d3">{{$index}}: {{name}} - {{score}}</li>
+        </ul>
+        <ul>
+            <!-- 番号だけを表示 -->
+            <li v-repeat="5">{{$index}}</li>
+        </ul>
+    </div>
+        
     <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/0.11.4/vue.min.js"></script>
     <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.10/vue.js'></script>   -->
     <script src="assets/practice_vuejs.js"></script>

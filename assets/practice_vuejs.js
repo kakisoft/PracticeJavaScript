@@ -12,6 +12,9 @@ var chunk02 = new Vue({
     }
 });
 
+//==========================
+//  表示制御(v-show、v-if)
+//==========================
 var chunk03 = new Vue({
     el:'#myapp03',
     data:{
@@ -30,4 +33,43 @@ var chunk04 = new Vue({
            this.showContent = !this.showContent;
         }
    }
+});
+
+//==========================
+//  クラス制御（v-class）
+//==========================
+var chunk05 = new Vue({
+    el:'#myapp05',
+    data:{
+        content5:"class control sample1",
+        myStyle05: 'red' //クラスを指定
+    }
+});
+
+var chunk06 = new Vue({
+    el:'#myapp06',
+    data:{
+        content6:"class control sample2",
+        isRed: true,
+        isBold: true
+    },
+    methods:{
+        fontColorSwitch: function() {this.isRed = !this.isRed},
+        boldSwitch: function() {this.isBold = !this.isBold}
+    }
+});
+
+//==========================
+//  （v-repeat）
+//==========================
+var chunk07 = new Vue({
+    el: '#myapp07',
+    data: {
+        d1: ['a', 'b'],
+        d2: {k1: 'v1', k2: 'v2'},
+        d3: [
+            {name: 'yamada', score: 62},
+            {name: 'sagawa', score: 84}
+        ]
+    }
 });
