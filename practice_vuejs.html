@@ -5,7 +5,7 @@
     <title>Practice Vue.js</title>
 </head>
 <body>
-    <div id="mycounter"> <!-- interface(View) -->
+    <div id="myapp01"> <!-- interface(View) -->
         <!-- 
             v-から始まる命令を「ディレクティブ」と呼ぶ。
             htmlの特殊属性として書いておき、objectの dataや振る舞いに応じた
@@ -19,16 +19,40 @@
         <button v-on="click: count++">Up2</button> <!-- 直接式を書くこともできる -->
     </div>
 
+    <div id="myapp02">
+        <div v-text="content2"></div>
+        <div>{{content2}}</div> <!-- mustacheという記法 -->
+        <div>{{'content:' + content2}}</div> <!-- 文字列の連結も可 -->
+    </div>
+
+    <div id="myapp03">
+        <div v-text="content3"></div> <!-- セキュリティ上の理由で、タグが評価されずに、そのまま出力される -->
+        <div v-html="content3"></div> <!-- こうする事で、タグを評価して出力できる。（ただし、表示する文字列が安全であるかを確認しておく） -->
+        <div>{{{content3}}}</div>     <!-- こう記述してもタグを評価する。 -->
+    </div>
+
+    <div id="myapp04">
+        <button v-on="click: visibleSwitch">VisibleSwitch</button>
+        <div v-show="showContent">
+            {{content}}
+        </div>
+        <div v-if="showContent">
+                {{content}}
+        </div>
+    </div>
+
     <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/0.11.4/vue.min.js"></script>
     <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.10/vue.js'></script>   -->
+    <script src="assets/practice_vuejs.js"></script>
     <script>
         // 【 Model View ViewModel - MVVM 】
         // object(ViewModel) - data/methods(Model) <--> interface(View)
 
+        //「data/methods」に、どのインターフェースを結び付
         //「data/methods」に、どのインターフェースを結び付けるかを指定する。（以下では elが相当する）
 
         var vm = new Vue({
-            el: '#mycounter', //elは、「element」かな。
+            el: '#myapp01', //elは、「element」かな。
             data: {
                 count: 0
             },
@@ -38,6 +62,8 @@
                 }
             }
         });
+
+
     </script>
 </body>
 </html>
