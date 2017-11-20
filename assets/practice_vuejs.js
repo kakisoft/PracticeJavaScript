@@ -60,7 +60,7 @@ var chunk06 = new Vue({
 });
 
 //==========================
-//  （v-repeat）
+//   ループ（v-repeat）
 //==========================
 var chunk07 = new Vue({
     el: '#myapp07',
@@ -73,3 +73,17 @@ var chunk07 = new Vue({
         ]
     }
 });
+
+//==========================
+//  モデルの内容を表示（v-model）
+//==========================
+var chunk08 = new Vue({
+    el: '#myapp08',
+    data: {
+        name: 'yamada', 
+        isAdmin: true,
+        phone: 'iphone',
+        city: 'tokyo'
+    }
+});
+
