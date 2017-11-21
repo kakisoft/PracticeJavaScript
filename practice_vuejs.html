@@ -101,6 +101,13 @@
         </p>
     </div>
     
+    <div id="myapp09">
+        <div v-text="msg | uppercase"></div>    <!-- 大文字 -->
+        <div v-text="msg | capitalize"></div>   <!-- 先頭のみ大文字 -->
+        <div v-text="price | currency"></div>   <!-- 通貨：$ -->
+        <div v-text="price | currency \"></div> <!-- 通貨：日本円 -->
+        <div>{{$data | json}}</div> <!-- json形式で出力 -->
+    </div>
     
     <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/0.11.4/vue.min.js"></script>
     <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.10/vue.js'></script>   -->

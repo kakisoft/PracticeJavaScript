@@ -87,3 +87,13 @@ var chunk08 = new Vue({
     }
 });
 
+//==========================
+//       filter
+//==========================
+var chunk09 = new Vue({
+    el:'#myapp09',
+    data:{
+        msg:'hello',
+        price:7980
+    }
+});
