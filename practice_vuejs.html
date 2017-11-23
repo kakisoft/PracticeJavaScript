@@ -9,6 +9,7 @@
     </style>
 </head>
 <body>
+
     <div id="myapp01"> <!-- interface(View) -->
         <!-- 
             v-から始まる命令を「ディレクティブ」と呼ぶ。
@@ -38,7 +39,7 @@
     <div id="myapp04">
         <button v-on="click: visibleSwitch">VisibleSwitch</button>
         <!-- 非表示 -->
-        <div v-show="showContent">
+        <div v-show="showContent">  
             {{content}}
         </div>
         <!-- 要素そのものを削除 -->
@@ -108,7 +109,22 @@
         <div v-text="price | currency \"></div> <!-- 通貨：日本円 -->
         <div>{{$data | json}}</div> <!-- json形式で出力 -->
     </div>
-    
+
+    <div id="myapp10">
+        <ul>
+            <li v-repeat="users | filterBy 't'"> <!-- 全要素が検索対象 -->
+                {{name}} - {{score}}
+            </li>
+            <li v-repeat="users | filterBy 't' in 'name'"> <!-- 'name'要素のみが検索対象 -->
+                {{name}} - {{score}}
+            </li>
+            <input type="text" v-model="keyword">
+            <li v-repeat="users | filterBy keyword in 'name'"> <!-- ユーザ入力内容でフィルタリング -->
+                {{name}} - {{score}}
+            </li>
+        </ul>
+    </div>
+
     <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/0.11.4/vue.min.js"></script>
     <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.10/vue.js'></script>   -->
     <script src="assets/practice_vuejs.js"></script>

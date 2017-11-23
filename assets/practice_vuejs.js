@@ -88,7 +88,7 @@ var chunk08 = new Vue({
 });
 
 //==========================
-//       filter
+//       filters
 //==========================
 var chunk09 = new Vue({
     el:'#myapp09',
@@ -97,3 +97,20 @@ var chunk09 = new Vue({
         price:7980
     }
 });
+
+var chunk10 = new Vue({
+    el:'#myapp10',
+    data:{
+        keyword:'',
+        users:[
+            {name: 'tagawa', score: 81},
+            {name: 'yamada', score: 92},
+            {name: 'tom', score: 64}
+        ]
+    }
+}); 
+
+//==========================
+//       Order by
+//==========================
+
