@@ -125,6 +125,48 @@
         </ul>
     </div>
 
+    <div id="myapp11">
+        <input type="text" v-model="keyword">
+
+        <ul>
+            <li v-repeat="users | filterBy 't' in 'name' | orderBy 'name' ">
+                {{name}} - {{score}}
+            </li>
+            <br>
+            <li v-repeat="users | filterBy keyword | orderBy 'score' -1">
+                {{name}} - {{score}}
+            </li>    
+            <br>
+
+            <p>
+                <input type="radio" name="x" v-model="y" value="z">
+                <input type="radio" name="x" v-model="y" value="z">
+            </p>
+            <li v-repeat="users | filterBy keyword | orderBy orderKey reverse">
+                {{name}} - {{score}}
+            </li>
+        </ul>
+    </div>
+
+    <div id="myapp12">
+        <!-- enterが入力されたときにイベントが走る -->
+        <input type="text" v-on="keyup:showLength | key enter" v-model="msg">
+        <!-- 65(アスキーコードでa)が入力されたときにイベントが走る -->
+        <input type="text" v-on="keyup:showLength | key 65" v-model="msg">
+    <div>
+
+    <br>
+
+    <div id="myapp13">
+        side: <input type="text" v-model="side">
+        area: {{area}}
+    </div>
+
+    <div id="myapp14">
+        side: <input type="text" v-model="side">
+        area: <input type="text" v-model="area">
+    </div>
+    
     <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/0.11.4/vue.min.js"></script>
     <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.10/vue.js'></script>   -->
     <script src="assets/practice_vuejs.js"></script>

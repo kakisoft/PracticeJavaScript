@@ -113,4 +113,74 @@ var chunk10 = new Vue({
 //==========================
 //       Order by
 //==========================
+var chunk11 = new Vue({
+    el:'#myapp11',
+    data: {
+        keyword: '',
+        orderKey: 'score',
+        reverse: false,
+        users: [
+            {name: 'tagawa', score: 81},
+            {name: 'yamada', score: 92},
+            {name: 'tom', score: 64}
+        ]
+    }
+});
 
+//==========================
+//       Key
+//==========================
+// key
+// v-on
+// 特定のキーを押したときにイベントが走る
+var chunk12 = new Vue({
+    el: '#myapp12',
+    data: {
+        msg: ''
+    }, 
+    methods: {
+        showLength: function() {
+            console.log(this.msg.length);
+        }
+    }
+});
+
+//==========================
+//   computed property
+//==========================
+// 計算結果を動的に反映させる的な
+var chunk13 = new Vue({
+    el: '#myapp13',
+    data: {
+        side: 20
+    },
+    computed: {
+        area: function() {
+            return this.side * this.side;
+        }
+    }
+});
+
+var chunk14 = new Vue({
+    el: '#myapp14',
+    data: {
+        side: 20
+    },
+    computed: {
+        area: {
+            get: function() {
+                return this.side * this.side;
+            },
+            set: function(v) {
+                this.side = Math.sqrt(v);
+            }
+        }
+    }
+});
+
+/*
+myapp13～14 がちゃんと動いてない。
+radiobuttonが変わった時のイベントを定義しない。
+マニュアル読んでも勘所が良くわからん・・
+
+*/
