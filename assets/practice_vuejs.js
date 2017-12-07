@@ -18,7 +18,7 @@ var chunk02 = new Vue({
 var chunk03 = new Vue({
     el:'#myapp03',
     data:{
-        content3:"<h1>タグを含む場合</h1>"
+        content3:"<h2>タグを含む場合</h2>"
     }
 });
 

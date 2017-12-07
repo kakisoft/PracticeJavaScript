@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="utf-8">
+    <title>Practice Vue.js</title>
+    <style>
+        .red { color:red }
+        .bold { font-weight: bold }
+    </style>
+</head>
+<body>
+
+    <div id="myapp02">
+        <div v-text="content2"></div>
+        <div>{{content2}}</div> <!-- mustacheという記法 -->
+        <div>{{'content:' + content2}}</div> <!-- 文字列の連結も可 -->
+    </div>
+
+    <div id="myapp03">
+        <div v-text="content3"></div> <!-- セキュリティ上の理由で、タグが評価されずに、そのまま出力される -->
+        <div v-html="content3"></div> <!-- こうする事で、タグを評価して出力できる。（ただし、表示する文字列が安全であるかを確認しておく） -->
+    </div>
+
+    <div id="myapp04">
+        <button v-on="click: visibleSwitch">VisibleSwitch</button>
+        <!-- 非表示 -->
+        <div v-show="showContent">  
+            {{content}}
+        </div>
+        <!-- 要素そのものを削除 -->
+        <div v-if="showContent">
+            {{content}}
+        </div>
+    </div>
+
+
+    <div id="myapp05">
+        <div :class="myStyle05">
+            {{content5}}
+        </div>
+    </div>
+
+    <div id="myapp06">
+        <button v-on="click: fontColorSwitch">fontColorSwitch</button>
+        <button v-on="click: boldSwitch">boldSwitch</button>
+        <div v-class="red: isRed, bold: isBold">
+            {{content6}}
+        </div>
+    </div>
+
+    <!-- これらで利用している「in」は、代わりに「of」と書くこともできます。 -->
+    <div id="myapp07">
+        <ul>
+            <li v-for="d in d1">{{ d }}</li>
+        </ul>
+        <ul>
+            <li v-for="(k, d) in d2">{{ k }} - {{ d }}</li>
+        </ul>
+        <ul>
+            <li v-for="d in d3">{{ d.name }} - {{ d.score }}</li>
+        </ul>
+
+        <p v-for="index in 10">ワン</p>
+    </div>
+
+    <div id="myapp08">
+        <p>
+            <input type="text" v-model="name">
+            {{name}}
+        </p>
+        <p>
+            <input type="checkbox" v-model="isAdmin">
+            {{isAdmin ? "admin" : "not admin"}}
+        </p>
+        <p>
+            <input type="radio" name="phone" v-model="phone" value="iphone">
+            <input type="radio" name="phone" v-model="phone" value="android">
+            {{phone}}
+        </p>
+        <p>
+            <select v-model="city">
+                <option value="tokyo">tokyo</option>
+                <option value="kyoto">kyoto</option>
+                <option value="osaka">osaka</option>
+            </select>
+            {{city}}
+        </p>
+    </div>
+
+    <div id="myapp09">
+        <div v-text="price | currency '\'"></div>
+        <div v-text="msg | uppercase"></div>    <!-- 大文字 -->
+        <div v-text="msg | capitalize"></div>   <!-- 先頭のみ大文字 -->
+        <div v-text="price | currency"></div>   <!-- 通貨：$ -->
+        <div v-text="price | currency '\''"></div> <!-- 通貨：日本円 -->
+        <div>{{$data | json}}</div> <!-- json形式で出力 -->
+    </div>
+
+    <div id="myapp10">
+        <ul>
+            <li v-repeat="users | filterBy 't'"> <!-- 全要素が検索対象 -->
+                {{name}} - {{score}}
+            </li>
+            <li v-repeat="users | filterBy 't' in 'name'"> <!-- 'name'要素のみが検索対象 -->
+                {{name}} - {{score}}
+            </li>
+            <input type="text" v-model="keyword">
+            <li v-repeat="users | filterBy keyword in 'name'"> <!-- ユーザ入力内容でフィルタリング -->
+                {{name}} - {{score}}
+            </li>
+        </ul>
+    </div>
+
+    <div id="myapp11">
+        <input type="text" v-model="keyword">
+
+        <ul>
+            <!-- <li v-repeat="users | filterBy 't' in 'name' | orderBy 'name' ">
+                {{name}} - {{score}}
+            </li> -->
+
+            <li v-for="user in users | filterBy 't' in 'name'">
+                {{user.name}} - {{user.score}}
+            </li>
+
+
+            <br>
+            <li v-repeat="users | filterBy keyword | orderBy 'score' -1">
+                {{name}} - {{score}}
+            </li>    
+            <br>
+
+            <p>
+                <input type="radio" name="x" v-model="y" value="z">
+                <input type="radio" name="x" v-model="y" value="z">
+            </p>
+            <li v-repeat="users | filterBy keyword | orderBy orderKey reverse">
+                {{name}} - {{score}}
+            </li>
+        </ul>
+    </div>
+
+    <div id="myapp12">
+        <!-- enterが入力されたときにイベントが走る -->
+        <input type="text" v-on="keyup:showLength | key enter" v-model="msg">
+        <!-- 65(アスキーコードでa)が入力されたときにイベントが走る -->
+        <input type="text" v-on="keyup:showLength | key 65" v-model="msg">
+    <div>
+
+    <br>
+
+    <div id="myapp13">
+        side: <input type="text" v-model="side">
+        area: {{area}}
+    </div>
+
+    <div id="myapp14">
+        side: <input type="text" v-model="side">
+        area: <input type="text" v-model="area">
+    </div>
+    
+    <script src='https://cdn.jsdelivr.net/npm/vue'></script>  
+    <script src="assets/practice_vuejs.js"></script>
+    <script>
+        // 【 Model View ViewModel - MVVM 】
+        // object(ViewModel) - data/methods(Model) <--> interface(View)
+
+        //「data/methods」に、どのインターフェースを結び付
+        //「data/methods」に、どのインターフェースを結び付けるかを指定する。（以下では elが相当する）
+
+        var vm = new Vue({
+            el: '#myapp01', //elは、「element」かな。
+            data: {
+                count: 0
+            },
+            methods: {
+                countUp: function() {
+                    this.count++;
+                }
+            }
+        });
+
+
+    </script>
+</body>
+</html>
+
