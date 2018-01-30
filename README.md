@@ -1,6 +1,7 @@
 # PracticeJavaScript
 JavaScript練習用  
 https://kakisoft.github.io/PracticeJavaScript/practice_javascript.html  
+https://kakisoft.github.io/PracticeJavaScript/practice_javascript.html  
 
 https://github.com/kakisoft/PracticeJavaScript/blob/master/practice_javascript.html
 https://kakisoft.github.com/PracticeJavaScript/practice_javascript.html  
