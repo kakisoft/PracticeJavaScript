@@ -48,4 +48,9 @@ constはローカルスコープ
 先頭の宣言が無い場合、グローバルスコープ。
 グローバルを使いたい場合は、外に出すという方法が。
 
+＜textarea から内容を取得＞
+var targetSyntaxElement = document.getElementById("target-syntax");
+var targetSyntaxContent1 = targetSyntaxElement.textContent; //placeholderも取得
+var targetSyntaxContent2 = targetSyntaxElement.value; //placeholderは取得しない
+・・・でいいのか？
 
