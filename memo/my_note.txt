@@ -38,4 +38,14 @@ filenameslikethis.js  //ファイル
 https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Regular_Expressions
 
 
+＜引数＞
+通常、値渡し。
+配列・オブジェクトだと、参照渡し。
+・・・で合ってる？
+
+＜スコープ＞
+constはローカルスコープ
+先頭の宣言が無い場合、グローバルスコープ。
+グローバルを使いたい場合は、外に出すという方法が。
+
 
