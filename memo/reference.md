@@ -40,3 +40,12 @@ https://angularjs.org/
 　  
 ## JavaScriptの落とし穴
 https://www.slideshare.net/ikdysfm/java-script-20131612?next_slideshow=1
+　  
+　  
+　  
+## JavaScriptを読んでて「なにこれ！？」と思うけれど調べられない記法8選。
+https://qiita.com/ukiuni@github/items/5f3d8620187905aea3d4
+　  
+　  
+　  
+## 1
