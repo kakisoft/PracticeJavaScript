@@ -1,0 +1,34 @@
+# TypeScript
+
+## * 概要
+- マイクロソフト
+- TypeScript -> JavaScript（トランスパイル）
+- 静的な型付け
+- クラスベースのオブジェクト指向
+
+
+## 公式サイト
+https://www.typescriptlang.org/  
+「Playground」にて、どんなjsに変換されるか、確認できる。  
+　  
+　  
+### インストール
+```
+sudo npm install -g typescript
+```
+　  
+### バージョン確認
+```
+tsc --version
+```
+　  
+### コンパイル
+```
+tsc main.ts
+```
+　  
+### 実行
+```
+node main.js
+```
+　  
