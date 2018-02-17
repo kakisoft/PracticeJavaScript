@@ -35,8 +35,8 @@ var x; // var x: anyと扱う
 x = 10;
 x = "hello"; //コンパイルが通る。※一見、動的型付けのように見えるが、「any型」
 
-var results: number[];
-results = [10, 5, 3];
+var results1: number[];
+results1 = [10, 5, 3];
 
 //==================================
 //            列挙型
@@ -57,10 +57,10 @@ enum Signal {
     Green = 5   // 別の場所に他の要素を記述できる
 }
 
-var result: Signal;
-result = Signal.Blue;
-if (result === Signal.Blue) { console.log(Signal.Yellow) }     // 3
-if (result === Signal['Blue']) { console.log(Signal['Blue']) } //3
+var resultOfSignal: Signal;
+resultOfSignal = Signal.Blue;
+if (resultOfSignal === Signal.Blue) { console.log(Signal.Yellow) }     // 3
+if (resultOfSignal === Signal['Blue']) { console.log(Signal['Blue']) } //3
 
 console.log(Signal[3]); // Blue
 console.log(Signal[4]); // Yellow
@@ -201,3 +201,29 @@ console.log(User.count);
 User.showDescription();  //()を忘れないようにしよう！
 
 
+
+//==================================
+//            Interface
+//==================================
+
+
+
+// Interface
+// 構造的部分型
+
+interface Result {
+    a: number;
+    b: number;
+}
+
+function getTotal(result: Result) {
+    return result.a + result.b;
+}
+
+var result = {
+    a: 32,
+    b: 58,
+    c: "hello"
+};
+
+console.log(getTotal(result));

@@ -38,8 +38,8 @@ var i = 10; // i: numberと推測してくれる
 var x; // var x: anyと扱う
 x = 10;
 x = "hello"; //コンパイルが通る。※一見、動的型付けのように見えるが、「any型」
-var results;
-results = [10, 5, 3];
+var results1;
+results1 = [10, 5, 3];
 //==================================
 //            列挙型
 //==================================
@@ -58,12 +58,12 @@ var Signal;
 (function (Signal) {
     Signal[Signal["Green"] = 5] = "Green"; // 別の場所に他の要素を記述できる
 })(Signal || (Signal = {}));
-var result;
-result = Signal.Blue;
-if (result === Signal.Blue) {
+var resultOfSignal;
+resultOfSignal = Signal.Blue;
+if (resultOfSignal === Signal.Blue) {
     console.log(Signal.Yellow);
 } // 3
-if (result === Signal['Blue']) {
+if (resultOfSignal === Signal['Blue']) {
     console.log(Signal['Blue']);
 } //3
 console.log(Signal[3]); // Blue
@@ -183,3 +183,12 @@ var bob = new AdminUser("Bob", 23);
 bob.sayHi();
 console.log(User.count);
 User.showDescription(); //()を忘れないようにしよう！
+function getTotal(result) {
+    return result.a + result.b;
+}
+var result = {
+    a: 32,
+    b: 58,
+    c: "hello"
+};
+console.log(getTotal(result));
