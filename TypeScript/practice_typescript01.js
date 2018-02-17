@@ -101,6 +101,7 @@ console.log(add6(1, 2)); // 3
 //-----< アロー関数式３ >-----
 var add7 = function (a, b) { return a + b; }; //戻り値の型が推測可能な場合、省略可。
 console.log(add7(1, 2)); // 3
+//実際の処理自体は any 型で書いておいて処理の中で振り分けをしていく。
 function add(a, b) {
     if (typeof a === "string" && typeof b === "string") {
         return a + " " + b;

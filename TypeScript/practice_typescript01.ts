@@ -125,6 +125,7 @@ console.log(add7(1,2)); // 3
 function add(a: number, b: number): number;
 function add(a: string, b: string): string;
 
+//実際の処理自体は any 型で書いておいて処理の中で振り分けをしていく。
 function add(a: any, b: any): any {
     if (typeof a === "string" && typeof b === "string") {
         return a + " " + b;
