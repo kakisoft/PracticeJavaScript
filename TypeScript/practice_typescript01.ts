@@ -141,15 +141,22 @@ console.log(add("hello", "world")); // hello world
 //            クラス
 //==================================
 class User {
-    //-----< コンストラクタ >-----
-    /*
-    protected _name: string;
-    constructor(name: string) {
-        this._name = name;
+    //-----< 静的メンバ >-----
+    static count: number = 0;
+    static showDescription(): void {
+        console.log("this class is about users");
     }
-    */    
-    //↑の糖衣構文
+
+    //-----< コンストラクタ >-----
+    // protected _name: string;
+    // constructor(name: string) {
+    //     this._name = name;
+    //     User.count++;
+    // }
+
+    //( ↑の糖衣構文 )
     constructor(protected _name: string) {
+        User.count++; //静的メンバへのアクセス時には、クラス名を付ける
     }
 
     //-----< アクセサ >-----
@@ -190,6 +197,7 @@ class AdminUser extends User {
 
 var bob = new AdminUser("Bob", 23);
 bob.sayHi();
-
+console.log(User.count);
+User.showDescription();  //()を忘れないようにしよう！
 
 

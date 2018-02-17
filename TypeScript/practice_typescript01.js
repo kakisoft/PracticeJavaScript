@@ -125,16 +125,19 @@ console.log(add("hello", "world")); // hello world
 //==================================
 var User = /** @class */ (function () {
     //-----< コンストラクタ >-----
-    /*
-    protected _name: string;
-    constructor(name: string) {
-        this._name = name;
-    }
-    */
-    //↑の糖衣構文
+    // protected _name: string;
+    // constructor(name: string) {
+    //     this._name = name;
+    //     User.count++;
+    // }
+    //( ↑の糖衣構文 )
     function User(_name) {
         this._name = _name;
+        User.count++; //静的メンバへのアクセス時には、クラス名を付ける
     }
+    User.showDescription = function () {
+        console.log("this class is about users");
+    };
     Object.defineProperty(User.prototype, "name", {
         //-----< アクセサ >-----
         get: function () {
@@ -150,6 +153,8 @@ var User = /** @class */ (function () {
     User.prototype.sayHi = function () {
         console.log("hi! i am " + this.name);
     };
+    //-----< 静的メンバ >-----
+    User.count = 0;
     return User;
 }());
 var tom = new User("Tom");
@@ -176,3 +181,5 @@ var AdminUser = /** @class */ (function (_super) {
 }(User));
 var bob = new AdminUser("Bob", 23);
 bob.sayHi();
+console.log(User.count);
+User.showDescription(); //()を忘れないようにしよう！
