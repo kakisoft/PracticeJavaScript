@@ -27,6 +27,14 @@ tsc --version
 tsc main.ts
 ```
 　  
+### ES5でコンパイル
+```
+tsc main.ts -t ES5
+```
+「error TS1056: Accessors are only available when targeting ECMAScript 5 and higher.」  
+というエラーメッセージが出た場合、こっちを使う。
+
+　  
 ### 実行
 ```
 node main.js

@@ -1,7 +1,7 @@
-var User = /** @class */ (function () {
-    function User() {
+var Agent = /** @class */ (function () {
+    function Agent() {
     }
-    return User;
+    return Agent;
 }());
 console.log("hello world");
 //==================================
@@ -110,3 +110,37 @@ function add(a, b) {
 }
 console.log(add(5, 3)); // 8
 console.log(add("hello", "world")); // hello world
+//==================================
+//            クラス
+//==================================
+var User = /** @class */ (function () {
+    /*
+    public name: string;
+    constructor(name: string) {
+        this.name = name;
+    }
+    */
+    //↑の糖衣構文
+    function User(_name) {
+        this._name = _name;
+    }
+    Object.defineProperty(User.prototype, "name", {
+        get: function () {
+            return this._name;
+        },
+        set: function (newValue) {
+            this._name = newValue;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    User.prototype.sayHi = function () {
+        console.log("hi! i am " + this.name);
+    };
+    return User;
+}());
+var tom = new User("Tom");
+console.log(tom.name);
+tom.name = "TOM";
+console.log(tom.name);
+tom.sayHi();

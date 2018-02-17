@@ -1,4 +1,4 @@
-class User {
+class Agent {
     
 }
 
@@ -135,3 +135,37 @@ function add(a: any, b: any): any {
 
 console.log(add(5, 3)); // 8
 console.log(add("hello", "world")); // hello world
+
+
+//==================================
+//            クラス
+//==================================
+class User {
+    get name() {
+        return this._name;
+    }
+    set name(newValue: string) {
+        this._name = newValue;
+    }
+
+    /*
+    public name: string;
+    constructor(name: string) {
+        this.name = name;
+    }
+    */
+   //↑の糖衣構文
+    constructor(private _name: string) {
+    }
+    public sayHi(): void {
+        console.log("hi! i am " + this.name);
+    }
+}
+
+var tom = new User("Tom");
+console.log(tom.name);
+tom.name = "TOM";
+console.log(tom.name);
+tom.sayHi();
+
+
