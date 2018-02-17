@@ -66,3 +66,30 @@ console.log(Signal[3]); // Blue
 console.log(Signal[4]); // Yellow
 
 console.log(Signal.Green); // 5
+
+//==================================
+//            関数
+//==================================
+//戻り値が無い場合は、void を使用する。
+function add1(a: number, b: number): number { //「:number」は、戻り値の型。
+    return a + b;
+}
+console.log(add1(3,5)); // 8
+
+//オプション引数
+function add2(a: number, b?: number): number {
+    if (b) {
+        return a + b;
+    } else {
+        return a + a;
+    }
+}
+console.log(add2(5, 3)); // 8
+console.log(add2(5));    // 10
+
+//デフォルト引数
+function add3(a: number, b: number = 10): number {
+    return a + b;
+}
+console.log(add3(5, 3)); // 8
+console.log(add3(5));    // 15

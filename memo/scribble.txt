@@ -1,0 +1,12 @@
+// 昔の書き方
+const isHoge = function(a) {
+  return a === 'hoge';
+};
+
+// 今
+const isHoge = a => {
+  return a === 'hoge';
+};
+
+// 解読不能w
+const isHoge = a => a === 'hoge';
