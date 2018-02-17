@@ -205,12 +205,7 @@ User.showDescription();  //()を忘れないようにしよう！
 //==================================
 //            Interface
 //==================================
-
-
-
-// Interface
 // 構造的部分型
-
 interface Result {
     a: number;
     b: number;
