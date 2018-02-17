@@ -62,12 +62,12 @@ console.log(Signal.Green); // 5
 //==================================
 //            関数
 //==================================
-//戻り値が無い場合は、void を使用する。
+//-----< 戻り値が無い場合は、void を使用する。>-----
 function add1(a, b) {
     return a + b;
 }
 console.log(add1(3, 5)); // 8
-//オプション引数
+//-----< オプション引数 >-----
 function add2(a, b) {
     if (b) {
         return a + b;
@@ -78,9 +78,26 @@ function add2(a, b) {
 }
 console.log(add2(5, 3)); // 8
 console.log(add2(5)); // 10
+//-----< デフォルト引数 >-----
 function add3(a, b) {
     if (b === void 0) { b = 10; }
     return a + b;
 }
 console.log(add3(5, 3)); // 8
 console.log(add3(5)); // 15
+//-----< 式と関数を等価に扱う >-----
+var add4 = function (a, b) {
+    return a + b;
+};
+console.log(add4(1, 2)); // 3
+//-----< アロー関数式 >-----
+var add5 = function (a, b) {
+    return a + b;
+};
+console.log(add5(1, 2)); // 3
+//-----< アロー関数式２ >-----
+var add6 = function (a, b) { return a + b; }; // return 省略
+console.log(add6(1, 2)); // 3
+//-----< アロー関数式３ >-----
+var add7 = function (a, b) { return a + b; }; //戻り値の型が推測可能な場合、省略可。
+console.log(add7(1, 2)); // 3
