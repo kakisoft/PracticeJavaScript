@@ -24,7 +24,7 @@ var tx1: number = 10;
 number
 string
 boolean
-any    何でもあり（Objectみてーなもん？）
+any    何でもあり（Objectみたいなもん？）
 */
 
 var i: number;
