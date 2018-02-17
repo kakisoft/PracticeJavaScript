@@ -118,5 +118,19 @@ var add7 = (a: number, b: number) => a + b   //戻り値の型が推測可能な
 console.log(add7(1,2)); // 3
 
 
+//-----------------------
+//  関数のオーバーロード
+//-----------------------
+//引数や返り値との組み合わせを「関数のシグネチャ」と呼ぶ。
+function add(a: number, b: number): number;
+function add(a: string, b: string): string;
 
+function add(a: any, b: any): any {
+    if (typeof a === "string" && typeof b === "string") {
+        return a + " " + b;
+    }
+    return a + b;
+}
 
+console.log(add(5, 3)); // 8
+console.log(add("hello", "world")); // hello world

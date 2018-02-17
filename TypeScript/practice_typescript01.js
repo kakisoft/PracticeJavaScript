@@ -20,7 +20,7 @@ var tx1 = 10;
 number
 string
 boolean
-any    何でもあり（Objectみてーなもん？）
+any    何でもあり（Objectみたいなもん？）
 */
 var i;
 var i = 10;
@@ -101,3 +101,11 @@ console.log(add6(1, 2)); // 3
 //-----< アロー関数式３ >-----
 var add7 = function (a, b) { return a + b; }; //戻り値の型が推測可能な場合、省略可。
 console.log(add7(1, 2)); // 3
+function add(a, b) {
+    if (typeof a === "string" && typeof b === "string") {
+        return a + " " + b;
+    }
+    return a + b;
+}
+console.log(add(5, 3)); // 8
+console.log(add("hello", "world")); // hello world
