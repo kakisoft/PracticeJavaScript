@@ -141,6 +141,18 @@ console.log(add("hello", "world")); // hello world
 //            クラス
 //==================================
 class User {
+    //-----< コンストラクタ >-----
+    /*
+    protected _name: string;
+    constructor(name: string) {
+        this._name = name;
+    }
+    */    
+    //↑の糖衣構文
+    constructor(protected _name: string) {
+    }
+
+    //-----< アクセサ >-----
     get name() {
         return this._name;
     }
@@ -148,15 +160,7 @@ class User {
         this._name = newValue;
     }
 
-    /*
-    public name: string;
-    constructor(name: string) {
-        this.name = name;
-    }
-    */
-   //↑の糖衣構文
-    constructor(private _name: string) {
-    }
+    //-----< メソッド >-----
     public sayHi(): void {
         console.log("hi! i am " + this.name);
     }
@@ -167,5 +171,25 @@ console.log(tom.name);
 tom.name = "TOM";
 console.log(tom.name);
 tom.sayHi();
+
+//-----------------------
+//     クラスの継承
+//-----------------------
+class AdminUser extends User {
+    private _age: number;
+    constructor(_name: string, _age: number) {
+        super(_name);
+        this._age = _age;
+    }
+    public sayHi(): void {
+        console.log("my age: " + this._age);
+        console.log("my name: " + this._name);
+        super.sayHi();
+    }
+}
+
+var bob = new AdminUser("Bob", 23);
+bob.sayHi();
+
 
 
