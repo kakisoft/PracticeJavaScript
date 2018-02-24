@@ -205,7 +205,21 @@ User.showDescription();  //()を忘れないようにしよう！
 //==================================
 //            Interface
 //==================================
-// 構造的部分型
+// オブジェクトの型付けに使う機能（Javaのそれとは異なる？）
+// 構造的部分型（ある型のプロパティを持ってさえいればその型であるとみなす）
+
+//-----< Interfaceを使わない書き方 >-----
+var result2 = {
+    a: 1,
+    b: 2,
+};
+
+function getTotal2(result2: {a:number; b:number}) { // オブジェクトを引数に渡し、プロパティも合わせて書く。
+    return result2.a + result2.b;
+}
+console.log(getTotal2(result2));
+
+//-----< Interfaceを使う場合 >-----
 interface Result {
     a: number;
     b: number;

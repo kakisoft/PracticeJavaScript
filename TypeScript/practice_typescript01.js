@@ -183,6 +183,20 @@ var bob = new AdminUser("Bob", 23);
 bob.sayHi();
 console.log(User.count);
 User.showDescription(); //()を忘れないようにしよう！
+//==================================
+//            Interface
+//==================================
+// オブジェクトの型付けに使う機能（Javaのそれとは異なる？）
+// 構造的部分型（ある型のプロパティを持ってさえいればその型であるとみなす）
+var result2 = {
+    a: 1,
+    b: 2,
+};
+//-----< Interfaceを使わない書き方 >-----
+function getTotal2(result2) {
+    return result2.a + result2.b;
+}
+console.log(getTotal2(result2));
 function getTotal(result) {
     return result.a + result.b;
 }
