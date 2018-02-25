@@ -188,11 +188,11 @@ User.showDescription(); //()を忘れないようにしよう！
 //==================================
 // オブジェクトの型付けに使う機能（Javaのそれとは異なる？）
 // 構造的部分型（ある型のプロパティを持ってさえいればその型であるとみなす）
+//-----< Interfaceを使わない書き方 >-----
 var result2 = {
     a: 1,
     b: 2,
 };
-//-----< Interfaceを使わない書き方 >-----
 function getTotal2(result2) {
     return result2.a + result2.b;
 }
@@ -206,3 +206,25 @@ var result = {
     c: "hello"
 };
 console.log(getTotal(result));
+var result3 = {
+    a: 32,
+    b: 58,
+    final: 82
+};
+function getTotal3(result3) {
+    return result3.a + result3.b + result3.final;
+}
+console.log(getTotal3(result3));
+var result4 = {
+    a: 32,
+    b: 58
+};
+function getTotal4(result4) {
+    if (result4.final) {
+        return result4.a + result4.b + result4.final;
+    }
+    else {
+        return result4.a + result4.b;
+    }
+}
+console.log(getTotal4(result4));

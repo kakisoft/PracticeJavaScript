@@ -236,3 +236,48 @@ var result = {
 };
 
 console.log(getTotal(result));
+
+//-----------------
+// Interfaceの継承
+//-----------------
+interface SpringResult {
+    a: number;
+}
+
+interface FallResult {
+    b: number;
+}
+
+interface FinalResult extends SpringResult, FallResult { //複数のInterfaceを継承できる
+    final?: number;  //?を付けると、オプション引数
+    // a, b, final のプロパティを保有する
+}
+
+
+var result3 = {
+    a: 32,
+    b: 58,
+    final: 82
+};
+
+function getTotal3(result3: FinalResult) {
+    return result3.a + result3.b + result3.final;
+}
+
+console.log(getTotal3(result3));
+
+
+var result4 = {
+    a: 32,
+    b: 58
+};
+
+function getTotal4(result4: FinalResult) {
+    if (result4.final) {
+        return result4.a + result4.b + result4.final;
+    } else {
+        return result4.a + result4.b;
+    }
+}
+
+console.log(getTotal4(result4));
