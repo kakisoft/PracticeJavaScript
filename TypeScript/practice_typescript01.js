@@ -228,3 +228,19 @@ function getTotal4(result4) {
     }
 }
 console.log(getTotal4(result4));
+var Player = /** @class */ (function () {
+    function Player(name) {
+        this.score = 0;
+        this.name = name;
+    }
+    Player.prototype.sayHi = function () {
+        console.log("hi! i am " + this.name);
+    };
+    Player.prototype.showScore = function () {
+        console.log("score " + this.score);
+    };
+    return Player;
+}());
+var alex = new Player("Alex");
+alex.score = 56;
+alex.showScore();

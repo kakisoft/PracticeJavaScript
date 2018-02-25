@@ -281,3 +281,33 @@ function getTotal4(result4: FinalResult) {
 }
 
 console.log(getTotal4(result4));
+
+
+//==================================
+//      Interfaceの実装
+//==================================
+//こっちは Javaのそれと同一。
+interface GamePlayer {
+    score: number;
+    showScore(): void;
+}
+
+class Player implements GamePlayer {
+    name: string;
+    score: number = 0;
+    constructor(name: string) {
+        this.name = name;
+    }
+    sayHi(): void {
+        console.log("hi! i am " + this.name);
+    }
+    showScore(): void {
+        console.log("score " + this.score);
+    }
+}
+
+var alex = new Player("Alex");
+alex.score = 56;
+alex.showScore();
+
+
