@@ -244,3 +244,18 @@ var Player = /** @class */ (function () {
 var alex = new Player("Alex");
 alex.score = 56;
 alex.showScore();
+//==================================
+//     ジェネリクス Generics
+//==================================
+//抽象化されたデータ型
+// function getStringArray(value: string): string[] {
+//     return [value, value, value];
+// }
+// function getNumberArray(value: number): number[] {
+//     return [value, value, value];
+// }
+function getArray(value) {
+    return [value, value, value];
+}
+console.log(getArray(3)); //
+console.log(getArray("hello")); // 
