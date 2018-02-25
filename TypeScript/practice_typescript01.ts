@@ -330,3 +330,17 @@ function getArray<T>(value: T): T[] {
 console.log(getArray<number>(3));        // [ 3, 3, 3 ]
 console.log(getArray<string>("hello"));  // [ 'hello', 'hello', 'hello' ]
 
+
+//-----< Generics：制約 >-----
+class MyData<T> {
+    constructor(public value: T) {}
+    getArray(): T[] {
+        return [this.value, this.value, this.value];
+    }
+}
+var v1 = new MyData<string>("hello");
+console.log(v1.getArray()); // [ 'hello', 'hello', 'hello' ]
+var v2 = new MyData<number>(234);
+console.log(v2.getArray()); // [ 234, 234, 234 ]
+
+

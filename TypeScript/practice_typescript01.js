@@ -257,5 +257,19 @@ alex.showScore();
 function getArray(value) {
     return [value, value, value];
 }
-console.log(getArray(3)); //
-console.log(getArray("hello")); // 
+console.log(getArray(3)); // [ 3, 3, 3 ]
+console.log(getArray("hello")); // [ 'hello', 'hello', 'hello' ]
+//-----< Generics：制約 >-----
+var MyData = /** @class */ (function () {
+    function MyData(value) {
+        this.value = value;
+    }
+    MyData.prototype.getArray = function () {
+        return [this.value, this.value, this.value];
+    };
+    return MyData;
+}());
+var v1 = new MyData("hello");
+console.log(v1.getArray());
+var v2 = new MyData(234);
+console.log(v2.getArray());
