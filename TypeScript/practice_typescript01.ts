@@ -331,7 +331,8 @@ console.log(getArray<number>(3));        // [ 3, 3, 3 ]
 console.log(getArray<string>("hello"));  // [ 'hello', 'hello', 'hello' ]
 
 
-//-----< Generics：制約 >-----
+//-----< Generics：制約について >-----
+//---(制約を入れない場合)---
 class MyData<T> {
     constructor(public value: T) {}
     getArray(): T[] {
@@ -343,4 +344,24 @@ console.log(v1.getArray()); // [ 'hello', 'hello', 'hello' ]
 var v2 = new MyData<number>(234);
 console.log(v2.getArray()); // [ 234, 234, 234 ]
 
+//---(制約を入れる場合)---
+interface Result5 {
+    a: number;
+    b: number;
+}
+interface FinalResult5 {
+    a: number;
+    b: number;
+    c: string;
+}
 
+class MyData5<T extends Result> {
+    constructor(public value: T) {}
+    getArray(): T[] {
+        return [this.value, this.value, this.value];
+    }
+}
+var v3 = new MyData5<Result5>({a: 32, b: 16});
+console.log(v3.getArray());
+var v4 = new MyData5<FinalResult5>({a: 32, b: 16, c: "hello"});
+console.log(v4.getArray());

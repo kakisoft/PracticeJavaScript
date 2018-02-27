@@ -259,7 +259,8 @@ function getArray(value) {
 }
 console.log(getArray(3)); // [ 3, 3, 3 ]
 console.log(getArray("hello")); // [ 'hello', 'hello', 'hello' ]
-//-----< Generics：制約 >-----
+//-----< Generics：制約について >-----
+//---(制約を入れない場合)---
 var MyData = /** @class */ (function () {
     function MyData(value) {
         this.value = value;
@@ -270,6 +271,19 @@ var MyData = /** @class */ (function () {
     return MyData;
 }());
 var v1 = new MyData("hello");
-console.log(v1.getArray());
+console.log(v1.getArray()); // [ 'hello', 'hello', 'hello' ]
 var v2 = new MyData(234);
-console.log(v2.getArray());
+console.log(v2.getArray()); // [ 234, 234, 234 ]
+var MyData5 = /** @class */ (function () {
+    function MyData5(value) {
+        this.value = value;
+    }
+    MyData5.prototype.getArray = function () {
+        return [this.value, this.value, this.value];
+    };
+    return MyData5;
+}());
+var v3 = new MyData5({ a: 32, b: 16 });
+console.log(v3.getArray());
+var v4 = new MyData5({ a: 32, b: 16, c: "hello" });
+console.log(v4.getArray());
