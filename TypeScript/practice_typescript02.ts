@@ -39,6 +39,3 @@ console.log(DeveloperModule.AddressModule.zip);
 
 import devaddr = DeveloperModule.AddressModule; 
 console.log(devaddr.zip);
-
-
-
