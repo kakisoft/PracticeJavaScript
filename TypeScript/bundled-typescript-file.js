@@ -8,11 +8,6 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-/*
-tsc practice_typescript01.ts -t ES5
-
-node practice_typescript01.js
-*/
 var Agent = /** @class */ (function () {
     function Agent() {
     }
@@ -292,3 +287,25 @@ var v3 = new MyData5({ a: 32, b: 16 });
 console.log(v3.getArray());
 var v4 = new MyData5({ a: 32, b: 16, c: "hello" });
 console.log(v4.getArray());
+//==================================
+//         内部モジュール
+//==================================
+// module UserModule {
+//     export var name = "yamada"; //exportを付けると、外部からアクセスできる
+//     export module AddressModule { //入れ子にする事もできる
+//         export var zip = "111-1111";
+//     }
+// }
+// console.log(UserModule.name);
+// console.log(UserModule.AddressModule.zip);
+// import addr = UserModule.AddressModule; //エイリアス。（UserModule.Address<odule を addr でコールできるようにする）
+// console.log(addr.zip);
+//-----< 別ファイルからコール >-----
+//★↓のように、スラッシュを３つ付けたコメントの後に、importするモジュールを指定する。（同時にコンパイルする）
+/// <reference path="./modules/developers.ts" />
+//console.log(DeveloperModule.name);
+//console.log(DeveloperModule.AddressModule.zip);
+//import devaddr = DeveloperModule.AddressModule; 
+//console.log(devaddr.zip);
+/// <reference path="./user.ts" />
+console.log(UserModule.name);

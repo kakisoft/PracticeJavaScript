@@ -1,3 +1,8 @@
+/*
+tsc practice_typescript01.ts -t ES5
+
+node practice_typescript01.js
+*/
 class Agent {
     
 }
@@ -365,3 +370,4 @@ var v3 = new MyData5<Result5>({a: 32, b: 16});
 console.log(v3.getArray());
 var v4 = new MyData5<FinalResult5>({a: 32, b: 16, c: "hello"});
 console.log(v4.getArray());
+
