@@ -10,23 +10,6 @@ https://docs.npmjs.com/getting-started/installing-npm-packages-locally
 https://qiita.com/sinmetal/items/395edf1d195382cfd8bc
 #### webpack のチュートリアルをやってみる
 https://qiita.com/cortyuming/items/ba4c4d61fdf262bc2303
-_____________________________________
-
-# npm
-
-_____________________________________
-
-# yarn
-https://yarnpkg.com/en/
-    
-### インストール（Windows）
-```
-choco install yarn
-```
-### バージョン確認
-```
-yarn --version
-```
 
 
 
