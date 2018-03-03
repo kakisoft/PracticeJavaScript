@@ -45,3 +45,6 @@ tsc main.ts -t ES5 --out bundled-typescript-file.js
 node main.js
 ```
 　  
+
+### TypeScriptチュートリアル① -環境構築編-
+https://qiita.com/ochiochi/items/efdaa0ae7d8c972c8103

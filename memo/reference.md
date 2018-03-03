@@ -47,5 +47,12 @@ https://www.slideshare.net/ikdysfm/java-script-20131612?next_slideshow=1
 https://qiita.com/ukiuni@github/items/5f3d8620187905aea3d4
 　  
 　  
-　  
+## JavaScriptのモジュールシステムに関するまとめ
+https://qiita.com/kami_zh/items/f093c34906d14ba65ad3　  
+
+
+## AMD & RequireJS
+https://qiita.com/nanocloudx/items/70f1316debf05b93ac82
+
+
 ## 1
