@@ -30,4 +30,20 @@
 
 ２．jQuery をダウンロードする
 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+＜CDNからの利用＞
+「jquery google api」で検索。
+
+https://developers.google.com/speed/libraries/
+「jQuery」を選択
+
+```
+3.x snippet:
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+```
+といったURLをコピー。
+```
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</body>
+```
 
