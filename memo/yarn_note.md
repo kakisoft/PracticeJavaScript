@@ -9,6 +9,13 @@ choco install yarn
 ```
 yarn --version
 ```
+_______________________________________
 
+## ビルドから開始まで
+```
+yarn
+yarn build
+yarn start
+```
 
 
