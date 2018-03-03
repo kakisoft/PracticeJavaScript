@@ -3,7 +3,7 @@
 -------------------------------------------------------
 tsc practice_typescript04.ts -t ES5 -m amd
 
-node practice_typescript04.js
+※nodeで実行できない
 -------------------------------------------------------
 '--module' option : 'none', 'commonjs', 'amd', 'system', 'umd', 'es6', 'es2015', 'esnext'.
 */

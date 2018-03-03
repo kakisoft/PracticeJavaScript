@@ -4,8 +4,9 @@
 tsc practice_typescript03.ts -t ES5 -m commonjs
 
 node practice_typescript03.js
+
+※nodeはCommonJSを採用している。
 -------------------------------------------------------
-'--module' option : 'none', 'commonjs', 'amd', 'system', 'umd', 'es6', 'es2015', 'esnext'.
 */
 //==================================
 //         外部モジュール
