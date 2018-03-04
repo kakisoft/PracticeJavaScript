@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>QRコード生成</title>
+</head>
+<body>
+    <h1>QRコード生成</h1>
+    <p>
+        <input type="text" id="msg">
+        <input type="button" value="変換" id="button">
+    </p>
+    <div id="barCode"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        // https://chart.googleapis.com/chart?cht=qr&chs=150x150&chl=hello
+        $(function() {
+            $('#button').click(function() {
+                var msg = encodeURIComponent($('#msg').val());
+                var img = $('<img>').attr('src', 'https://chart.googleapis.com/chart?cht=qr&chs=150x150&choe=Shift_JIS&chl='+msg);
+                $('#barCode').html(img);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -2,19 +2,59 @@
 <html lang="ja">
 <head>
     <meta charset="utf-8">
-    <title>jQueryの練習</title>
+    <title>QRコード生成</title>
 </head>
 <body>
-    <h1>jQueryの練習</h1>
+    <h1>QRコード生成</h1>
     <p>
-        <input type="text" id="msg">
-        <input type="button" value="変換" id="button">
+        <input type="text" id="param1">
+        <input type="button" value="convert-to-QRcode" id="convert-to-QRcode">
     </p>
-    <div id="barCode"></div>
-    <!-- 
-        サンプルコードでは、こっちのバージョン
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <br>
+    <p>
+        標準：
+        <div id="barCode"></div>
+    </p>
+    <br>
+    <p>
+        日本語対応：
+        <div id="barCode-jp"></div>
+    </p>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        // https://chart.googleapis.com/chart?cht=qr&chs=150x150&chl=hello
+
+        $(function() {
+            $('#convert-to-QRcode').click(function() {
+                ConvertToQRcode();
+            });
+        });
+
+        function ConvertToQRcode(){
+            QR_CODE_WIDTH  = 150;
+            QR_CODE_HEIGHT = 150;
+
+            //=======< 標準 >=======
+            var param1 = $('#param1').val();
+            var img = $('<img>').attr('src',   'https://chart.googleapis.com/'
+                                             + 'chart?cht=qr'
+                                             + '&chs=' + QR_CODE_WIDTH + 'x' + QR_CODE_HEIGHT
+                                             + '&chl=' + param1 
+                                     );
+            $('#barCode').html(img);
+
+            //=======< 日本語対応 >=======
+            var param1_jp = encodeURIComponent($('#param1').val());
+            var img_jp = $('<img>').attr('src',   'https://chart.googleapis.com/'
+                                               + 'chart?cht=qr'
+                                               + '&chs=' + QR_CODE_WIDTH + 'x' + QR_CODE_HEIGHT
+                                               + '&choe=Shift_JIS'  //日本語対応
+                                               + '&chl=' + param1_jp 
+                                       );
+            $('#barCode-jp').html(img_jp);
+
+        }
+
+    </script>
 </body>
 </html>
