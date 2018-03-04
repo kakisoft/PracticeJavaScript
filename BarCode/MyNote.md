@@ -16,4 +16,8 @@ Root URL: https://chart.googleapis.com/chart?
 https://chart.googleapis.com/chart?cht=qr&chs=150x150&chl=hello
 ```
 
-
+|       Parameter       |  Description
+|:----------------------|:---
+| cht=qr                | Specifies a QR code
+| chs=<width>x<height>  | Image size.
+| chl=<data>            | 
