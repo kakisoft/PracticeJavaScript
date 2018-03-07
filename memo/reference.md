@@ -1,6 +1,6 @@
 ## リファレンス  
 https://developer.mozilla.org/ja/docs/Web/JavaScript  
-https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference
+https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference    
 (例：Stringを検索)  
 ビルトインオブジェクト→String  
   
