@@ -1,12 +1,12 @@
 # PracticeJavaScript
 JavaScript練習用  
 
-https://kakisoft.github.io/PracticeJavaScript/practice_javascript.html  
+#### JavaScript
+https://kakisoft.github.io/PracticeJavaScript/practice_javascript.html
 
-https://kakisoft.github.io/PracticeJavaScript/practice_jquery.html  
+#### jQuery
+https://kakisoft.github.io/PracticeJavaScript/practice_jquery.html
 
-https://kakisoft.github.io/PracticeJavaScript/practice_vuejs.html  
+#### vue.js
+https://kakisoft.github.io/PracticeJavaScript/vuejs2/practice_vuejs2.html
 
-https://kakisoft.github.io/PracticeJavaScript/practice_vuejs2.html  
-
-https://kakisoft.github.io/PracticeJavaScript/practice_vuejs-todo.html  
