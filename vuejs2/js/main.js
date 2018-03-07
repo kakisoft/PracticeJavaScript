@@ -28,11 +28,16 @@
     el: '#app03',
     data: {
       newItem: '',
-      todos: [
-        'task 1',
-        'task 2',
-        'task 3'
-      ]
+      todos: [{
+        title: 'task 1',
+        isDone: false
+      }, {
+        title: 'task 2',
+        isDone: false
+      }, {
+        title: 'task 3',
+        isDone: true
+      }]
     },
     methods: {
       //この記述が無いと、formがsubmitされて画面が遷移し、上手く行かない。（html側のディレクティブにて対処する方法もある）
@@ -41,12 +46,16 @@
       //   this.todos.push(this.newItem);
       // }
       addItem: function() {
-        this.todos.push(this.newItem); //data内のデータは、thisでアクセスできる。
+        var item = {
+          title: this.newItem,
+          isDone: false
+        };
+        this.todos.push(item);
         this.newItem = '';
       },
       deleteItem: function(index) {
         if (confirm('are you sure?')) {
-          this.todos.splice(index, 1); //index番目から 1つ削除
+          this.todos.splice(index, 1);
         }
       }
     }

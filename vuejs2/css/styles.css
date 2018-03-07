@@ -8,17 +8,17 @@ body {
     margin: auto;
   }
   
-  #app h1 {
+  #app03 h1 {
     font-size: 16px;
     border-bottom: 1px solid #ddd;
     padding: 16px 0;
   }
   
-  #app li {
+  #app03 li {
     line-height: 1.5;
   }
   
-  #app input[type="text"] {
+  #app03 input[type="text"] {
     padding: 2px;
   }
 
@@ -26,4 +26,14 @@ body {
     font-size: 12px;
     cursor: pointer;
     color: #08c;
+  }
+
+  #app03 ul {
+    padding: 0;
+    list-style: none;
+  }
+  
+  #app03 li > span.done {
+    text-decoration: line-through;
+    color: #bbb;
   }
