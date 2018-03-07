@@ -5,6 +5,9 @@
   //双方向データバインディング
   //UIを更新したらデータが更新され、データが更新されたらUIが更新される
 
+  //==========================
+  //
+  //==========================
   //vm：View Model
   var vm01 = new Vue({
     el: '#app01',
@@ -13,6 +16,9 @@
     }
   });
 
+  //==========================
+  //
+  //==========================
   var vm02 = new Vue({
     el: '.app02',
     data: {
@@ -24,20 +30,24 @@
     }
   });
 
+  //==========================
+  //
+  //==========================
   var vm03 = new Vue({
     el: '#app03',
     data: {
       newItem: '',
-      todos: [{
-        title: 'task 1',
-        isDone: false
-      }, {
-        title: 'task 2',
-        isDone: false
-      }, {
-        title: 'task 3',
-        isDone: true
-      }]
+      todos: []
+      // todos: [{
+      //   title: 'task 1',
+      //   isDone: false
+      // }, {
+      //   title: 'task 2',
+      //   isDone: false
+      // }, {
+      //   title: 'task 3',
+      //   isDone: true
+      // }]
     },
     methods: {
       //この記述が無いと、formがsubmitされて画面が遷移し、上手く行かない。（html側のディレクティブにて対処する方法もある）
@@ -60,4 +70,41 @@
       }
     }
   });
+
+  //==========================
+  //
+  //==========================
+  var vm04 = new Vue({
+    el: '#app04',
+    data: {
+      newItem: '',
+      todos: [{
+        title: 'task 1',
+        isDone: false
+      }, {
+        title: 'task 2',
+        isDone: false
+      }, {
+        title: 'task 3',
+        isDone: true
+      }]
+    },
+    methods: {
+      addItem: function() {
+        var item = {
+          title: this.newItem,
+          isDone: false
+        };
+        this.todos.push(item);
+        this.newItem = '';
+      },
+      deleteItem: function(index) {
+        if (confirm('are you sure?')) {
+          this.todos.splice(index, 1);
+        }
+      }
+    }
+  });
+
+
 })();
