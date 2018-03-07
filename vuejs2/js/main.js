@@ -43,6 +43,11 @@
       addItem: function() {
         this.todos.push(this.newItem); //data内のデータは、thisでアクセスできる。
         this.newItem = '';
+      },
+      deleteItem: function(index) {
+        if (confirm('are you sure?')) {
+          this.todos.splice(index, 1); //index番目から 1つ削除
+        }
       }
     }
   });

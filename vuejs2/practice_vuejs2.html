@@ -27,7 +27,10 @@
     <h1>My Todos</h1>
     <ul>
       <!-- ループ構文 -->　<!-- vから始まる属性を、「ディレクティブ」と呼ぶ -->
-      <li v-for="todo in todos">{{ todo }}</li> 
+      <li v-for="(todo, index) in todos"> <!-- indexには、0から開始する順番が入る -->
+        {{ todo }}
+        <span @click="deleteItem(index)" class="command">[x]</span>
+      </li> 
     </ul>
     <!-- <form v-on:submit="addItem"> -->
       　<!-- イベントの紐付けには、v-onを使用する。 -->
