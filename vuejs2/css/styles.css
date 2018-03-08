@@ -8,17 +8,17 @@ body {
     margin: auto;
   }
   
-  #app03 h1 {
+  .myapp h1 {
     font-size: 16px;
     border-bottom: 1px solid #ddd;
     padding: 16px 0;
   }
   
-  #app03 li {
+  .myapp li {
     line-height: 1.5;
   }
   
-  #app03 input[type="text"] {
+  .myapp input[type="text"] {
     padding: 2px;
   }
 
@@ -28,12 +28,18 @@ body {
     color: #08c;
   }
 
-  #app03 ul {
+  .myapp ul {
     padding: 0;
     list-style: none;
   }
   
-  #app03 li > span.done {
+  .myapp li > span.done {
     text-decoration: line-through;
     color: #bbb;
+  }
+
+  .info {
+    color: #bbb;
+    font-size: 12px;
+    font-weight: normal;
   }

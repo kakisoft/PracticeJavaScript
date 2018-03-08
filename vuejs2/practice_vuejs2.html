@@ -9,7 +9,7 @@
 
   <!--
   ==========================
-
+           app01
   ==========================
   -->
   <div id="app01">
@@ -20,11 +20,11 @@
 
   <!--
   ==========================
-
+           app02
   ==========================
   -->
   <div class="app02">
-    <h1>My Todos</h1>
+    <h1>My Todos：app02</h1>
     <ul>
       <!-- 要素を１つ１つ指定 -->
       <li>{{ todos[0] }}</li>
@@ -35,11 +35,11 @@
 
   <!--
   ==========================
-
+           app03
   ==========================
   -->
-  <div id="app03" class="container">
-    <h1>My Todos</h1>
+  <div id="app03" class="container myapp">
+    <h1>My Todos：app03</h1>
     <ul>
       <!-- ループ構文 -->　<!-- vから始まる属性を、「ディレクティブ」と呼ぶ -->
       <li v-for="(todo, index) in todos"> <!-- indexには、0から開始する順番が入る -->
@@ -60,11 +60,11 @@
 
   <!--
   ==========================
-
+           app04
   ==========================
   -->
-  <div id="app04" class="container">
-    <h1>My Todos</h1>
+  <div id="app04" class="container myapp">
+    <h1>My Todos：app04</h1>
     <ul v-if="todos.length"> <!-- v-ifディレクティブでも分岐を表現できる -->
       <li v-for="(todo, index) in todos">
         <input type="checkbox" v-model="todo.isDone">
@@ -74,6 +74,31 @@
     </ul>
     <ul v-else>
       <li>Nothing to do, yay!</li>
+    </ul>
+    <form @submit.prevent="addItem">
+      <input type="text" v-model="newItem">
+      <input type="submit" value="Add">
+    </form>
+  </div>
+
+  <!--
+  ==========================
+           app05
+  ==========================
+  -->
+  <div id="app05" class="container myapp">
+    <h1>
+      <button @click="purge">Purge</button>
+      My Todos：app05
+      <span class="info">({{ remaining.length }}/{{ todos.length }})</span>
+    </h1>
+    <ul>
+      <li v-for="(todo, index) in todos">
+        <input type="checkbox" v-model="todo.isDone">
+        <span :class="{done: todo.isDone}">{{ todo.title }}</span>
+        <span @click="deleteItem(index)" class="command">[x]</span>
+      </li>
+      <li v-show="!todos.length">Nothing to do, yay!</li>
     </ul>
     <form @submit.prevent="addItem">
       <input type="text" v-model="newItem">

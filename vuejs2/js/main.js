@@ -6,7 +6,7 @@
   //UIを更新したらデータが更新され、データが更新されたらUIが更新される
 
   //==========================
-  //
+  //         app01
   //==========================
   //vm：View Model
   var vm01 = new Vue({
@@ -17,7 +17,7 @@
   });
 
   //==========================
-  //
+  //         app02
   //==========================
   var vm02 = new Vue({
     el: '.app02',
@@ -31,7 +31,7 @@
   });
 
   //==========================
-  //
+  //         app03
   //==========================
   var vm03 = new Vue({
     el: '#app03',
@@ -72,7 +72,7 @@
   });
 
   //==========================
-  //
+  //         app04
   //==========================
   var vm04 = new Vue({
     el: '#app04',
@@ -106,5 +106,60 @@
     }
   });
 
+  //==========================
+  //         app05
+  //==========================
+  var vm05 = new Vue({
+    el: '#app05',
+    data: {
+      newItem: '',
+      todos: [{
+        title: 'task 1',
+        isDone: false
+      }, {
+        title: 'task 2',
+        isDone: false
+      }, {
+        title: 'task 3',
+        isDone: true
+      }]
+    },
+    methods: {
+      addItem: function() {
+        var item = {
+          title: this.newItem,
+          isDone: false
+        };
+        this.todos.push(item);
+        this.newItem = '';
+      },
+      deleteItem: function(index) {
+        if (confirm('are you sure?')) {
+          this.todos.splice(index, 1);
+        }
+      },
+      purge: function() {
+        if (!confirm('delete finished?')) {
+          return;
+        }
+        // this.todos = this.todos.filter(function(todo) {
+        //   return !todo.isDone;
+        // });
+        this.todos = this.remaining;
+      }
+    },
+    //データから動的にプロパティを計算する
+    computed: {
+      remaining: function() {
+        // var items = this.todos.filter(function(todo) {
+        //   return !todo.isDone;
+        // });
+        // return items.length;
+        return this.todos.filter(function(todo) { //フィルタリングした配列を返している
+          return !todo.isDone;
+        }); 
+      }
+    }
+  });
 
 })();
