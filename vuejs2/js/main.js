@@ -162,4 +162,73 @@
     }
   });
 
+  //==========================
+  //         app06
+  //==========================
+  var vm06 = new Vue({
+    el: '#app06',
+    data: {
+      newItem: '',
+      todos: [{
+        title: 'task 1',
+        isDone: false
+      }, {
+        title: 'task 2',
+        isDone: false
+      }, {
+        title: 'task 3',
+        isDone: true
+      }]
+    },
+    //watchで指定したデータの監視ができる
+    watch: {
+      //----------------------------
+      // todosに何か変更があった時には次の処理をする
+      // この書き方では、チェックした時はイベントが走らない。（配列そのものに変更は検知するが、配列の要素が変わったイベントは検知しない）
+      //----------------------------
+      // todos: function() {
+      //   localStorage.setItem('todos', JSON.stringify(this.todos)); //Edge未対応？
+      //   alert('Data saved!');
+      // }
+      //----------------------------
+      // 要素の変更までを検知する場合、deep watchという仕組みを使う。
+      //----------------------------
+      todos: {
+        handler: function() {
+          localStorage.setItem('todos', JSON.stringify(this.todos));
+          console.log('Data saved!');
+        },
+        deep: true
+      }
+    },    
+    methods: {
+      addItem: function() {
+        var item = {
+          title: this.newItem,
+          isDone: false
+        };
+        this.todos.push(item);
+        this.newItem = '';
+      },
+      deleteItem: function(index) {
+        if (confirm('are you sure?')) {
+          this.todos.splice(index, 1);
+        }
+      },
+      purge: function() {
+        if (!confirm('delete finished?')) {
+          return;
+        }
+        this.todos = this.remaining;
+      }
+    },
+    computed: {
+      remaining: function() {
+        return this.todos.filter(function(todo) {
+          return !todo.isDone;
+        }); 
+      }
+    }
+  });
+
 })();
