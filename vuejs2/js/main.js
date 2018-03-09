@@ -200,7 +200,17 @@
         },
         deep: true
       }
-    },    
+    },
+    //----------------------------
+    // LocalStrage読出し
+    //   vue.js ライフサイクル：ページにマウントされるタイミングでデータ読出し
+    //----------------------------
+    mounted: function() {
+      this.todos = JSON.parse(localStorage.getItem('todos')) || [];
+      //========================================
+      // ローカルストレージの内容確認：（Chrome）デベロッパーツール→Application→Storage→Local Strage
+      //========================================
+    }, 
     methods: {
       addItem: function() {
         var item = {
