@@ -50,9 +50,11 @@
     }
   });
 
-  //==================================
-  // 
-  //==================================
+  //=========================================
+  //  コンポーネントから親要素に値を渡す
+  //    Component からイベントを発火して、親要素にて検出する。
+  //    イベントの発火には emitを使う。 
+  //=========================================
   var likeComponent3 = Vue.extend({
     // props: ['message'],   //カスタム属性を Componentで受け取るには、propsキーワードが必要となる。
     props: {  //デフォルト値や型を指定できる
@@ -70,6 +72,7 @@
     methods: {
       countUp: function() {
         this.count++;
+        this.$emit('increment');
       }
     }
   });
@@ -78,6 +81,14 @@
     el: '#app03',
     components: {
       'like-component3': likeComponent3
+    },
+    data: {
+      total: 0
+    },
+    methods: {
+      incrementTotal: function() {
+        this.total++;
+      }
     }
   });
 

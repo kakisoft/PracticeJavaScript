@@ -24,10 +24,11 @@
   </div>
 
   <div id="app03">
-    <like-component3 message="Like"></like-component3>     <!-- message・・・カスタム属性 -->
-    <like-component3 message="Awesome"></like-component3>
-    <like-component3 message="Great"></like-component3>
-    <like-component3></like-component3>
+    <p>Total Likes: {{ total }}</p>    
+    <like-component3 message="Like"    v-on:increment="incrementTotal"></like-component3>  <!-- message・・・カスタム属性 -->
+    <like-component3 message="Awesome" @increment="incrementTotal"></like-component3>  <!--　発火するイベントと、ファンクションを記述　-->
+    <like-component3 message="Great"   @increment="incrementTotal"></like-component3>
+    <like-component3                   @increment="incrementTotal"></like-component3>
     <hr>    
   </div>
 
