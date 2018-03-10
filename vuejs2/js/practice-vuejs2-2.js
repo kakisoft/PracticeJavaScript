@@ -21,15 +21,15 @@
   var appA = new Vue({
     el: '#app01',
     components: {  //Componentのdataは、関数で返さなければならないというルールがある。
-      'my-component1': myComponent1,
-      'my-component2': myComponent2
+      'my-component1': myComponent1, 
+      'my-component2': myComponent2   // htmlタグ名：vue.jsファンクション名
     }
   });
 
   //==================================
   // 
   //==================================
-  var likeComponent = Vue.extend({
+  var likeComponent2 = Vue.extend({
     data: function() {
       return {
         count: 0
@@ -44,9 +44,40 @@
   });
 
   var appB = new Vue({
-    el: '#app01',
+    el: '#app02',
     components: {
-      'like-component': likeComponent
+      'like-component2': likeComponent2
+    }
+  });
+
+  //==================================
+  // 
+  //==================================
+  var likeComponent3 = Vue.extend({
+    // props: ['message'],   //カスタム属性を Componentで受け取るには、propsキーワードが必要となる。
+    props: {  //デフォルト値や型を指定できる
+      message: {
+        type: String,
+        default: 'Like'
+      }
+    },
+    data: function() {
+      return {
+        count: 0
+      }
+    },
+    template: '<button @click="countUp">{{ message }} {{ count }}</button>',
+    methods: {
+      countUp: function() {
+        this.count++;
+      }
+    }
+  });
+
+  var appC = new Vue({
+    el: '#app03',
+    components: {
+      'like-component3': likeComponent3
     }
   });
 
