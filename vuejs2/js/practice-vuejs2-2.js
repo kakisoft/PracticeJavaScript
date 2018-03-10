@@ -11,9 +11,6 @@
     template: '<button>Like</button>'
     //-----( ↓の書き方だとNG。)-----
     // template: '<button>Like</button><button>Like</button>'
-
-    //-----( 複数の要素を持たせる場合、何らかの親要素で囲む。)-----
-    // template2: '<div><button>Like</button><button>Like</button></div>'
   });
 
   var likeComponent2 = Vue.extend({
