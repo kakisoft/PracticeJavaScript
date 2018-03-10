@@ -20,7 +20,7 @@
 
   var appA = new Vue({
     el: '#app01',
-    components: {
+    components: {  //Componentのdataは、関数で返さなければならないというルールがある。
       'my-component1': myComponent1,
       'my-component2': myComponent2
     }
