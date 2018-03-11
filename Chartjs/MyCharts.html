@@ -5,8 +5,35 @@
   <title>My Chart</title>
 </head>
 <body>
-  <canvas id="my_chart">
+  <canvas id="my_chart" height="10  0">
     Canvas not supported...
   </canvas>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+  <script>
+    (function() {
+      'use strict';
+
+      var type = 'line';
+
+      var data = {
+        labels: [2010, 2011, 2012, 2013],
+        datasets: [{
+          label: '@taguchi',
+          data: [120, 300, 200, 210]
+        }, {
+          label: '@fkoji',
+          data: [180, 250, 320, 180]
+        }]
+      };
+  
+      var options;
+      var ctx = document.getElementById('my_chart').getContext('2d');
+      var myChart = new Chart(ctx, {
+        type: type,
+        data: data,
+        options: options
+      });
+    })();
+  </script>
 </body>
 </html>
