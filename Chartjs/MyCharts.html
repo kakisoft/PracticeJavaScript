@@ -22,11 +22,28 @@
           data: [120, 300, 200, 210]
         }, {
           label: '@fkoji',
-          data: [180, 250, 320, 180]
+          // data: [180, 250, 320, 180]
+          data: [180, 250, 320, 500]
         }]
       };
   
-      var options;
+      var options = {
+        scales: {
+          yAxes: [{
+            ticks: {
+              // min: 0,           //縦を0から開始
+              // max: 400
+              suggestedMin: 0,     //グラフを突き抜けないようにする
+              suggestedMax: 400,  
+              stepSize: 100,       //グラフを100刻み
+              callback: function(value, index, values) { //単位をつける
+                return 'JPY' + value;
+              }
+            }
+          }]
+        }
+      };
+
       var ctx = document.getElementById('my_chart').getContext('2d');
       var myChart = new Chart(ctx, {
         type: type,
