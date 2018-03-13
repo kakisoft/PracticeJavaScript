@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>My Chart</title>
+</head>
+<body>
+  <canvas id="my_chart">
+    Canvas not supported...
+  </canvas>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+  <script>
+    (function() {
+      'use strict';
+
+      var type = 'bar';
+
+      var data = {
+        labels: [2010, 2011, 2012, 2013],
+        datasets: [{
+          label: 'Sales',
+          data: [120, 300, 200, 210],
+          yAxisID: 'sales-axes'
+        }, {
+          label: 'Subscribers',
+          data: [802, 1324, 1433, 1889],
+          type: 'line',
+          fill: false,
+          yAxisID: 'subscribers-axes'
+        }]
+      };
+
+      var options = {
+        scales: {
+          yAxes: [{
+            ticks: {
+              suggestedMin: 0,
+              suggestedMax: 400
+            },
+            id: 'sales-axes',
+            type: 'linear',
+            position: 'left'
+          }, {
+            ticks: {
+              suggestedMin: 0,
+              suggestedMax: 2000
+            },
+            id: 'subscribers-axes',
+            type: 'linear',
+            position: 'right',
+            gridLines: {
+              display: false
+            }
+          }]
+        }
+      };
+
+      var ctx = document.getElementById('my_chart').getContext('2d');
+      var myChart = new Chart(ctx, {
+        type: type,
+        data: data,
+        options: options
+      });
+    })();
+  </script>
+</body>
+</html>
