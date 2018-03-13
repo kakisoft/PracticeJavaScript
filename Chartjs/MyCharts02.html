@@ -5,7 +5,11 @@
   <title>My Chart</title>
 </head>
 <body>
-  <canvas id="my_chart" height="100">
+  <canvas id="my_chart1" >
+    Canvas not supported...
+  </canvas>
+  <hr>
+  <canvas id="my_chart2" height="100">
     Canvas not supported...
   </canvas>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
@@ -13,8 +17,8 @@
     (function() {
       'use strict';
 
-      // var type = 'bar';
-      var type = 'horizontalBar';
+      var type = 'bar';
+      //var type = 'horizontalBar';
 
       var data = {
         labels: [2010, 2011, 2012, 2013],
@@ -47,7 +51,7 @@
         // }
         scales: {
           xAxes: [{
-            stacked: true
+            stacked: true  //積み上げグラフ
           }],
           yAxes: [{
             stacked: true
@@ -55,12 +59,21 @@
         }
       };
 
-      var ctx = document.getElementById('my_chart').getContext('2d');
-      var myChart = new Chart(ctx, {
+      var ctx1 = document.getElementById('my_chart1').getContext('2d');
+      var myChart1 = new Chart(ctx1, {
         type: type,
         data: data,
         options: options
       });
+
+
+      var ctx2 = document.getElementById('my_chart2').getContext('2d');
+      var myChart2 = new Chart(ctx2, {
+        type: 'horizontalBar',
+        data: data,
+        options: options
+      });
+
     })();
   </script>
 </body>
