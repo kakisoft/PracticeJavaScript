@@ -19,13 +19,22 @@
         labels: [2010, 2011, 2012, 2013],
         datasets: [{
           label: '@taguchi',
-          data: [120, 300, 200, 210]
+          data: [120, 300, 200, 210],
+          borderColor: 'red',  //cssの表現が使用可能
+          borderWidth: 5,
+          fill: false,         //線の下の色を非表示
+          pointStyle: 'rect'   //ポイント
         }, {
           label: '@fkoji',
-          // data: [180, 250, 320, 180]
-          data: [180, 250, 320, 500]
+          data: [180, 250, 320, 500],
+          borderColor: 'blue',
+          borderWidth: 5,
+          backgroundColor: 'rgba(0, 0, 255, 0.3)',
+          lineTension: 0,      //直線
+          //pointStyle: 'triangle'
         }]
       };
+
   
       var options = {
         scales: {
