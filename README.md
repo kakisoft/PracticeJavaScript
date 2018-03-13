@@ -16,6 +16,7 @@ https://kakisoft.github.io/PracticeJavaScript/Chartjs/MyCharts01.html
 https://kakisoft.github.io/PracticeJavaScript/Chartjs/MyCharts02.html    
 https://kakisoft.github.io/PracticeJavaScript/Chartjs/MyCharts03.html    
 https://kakisoft.github.io/PracticeJavaScript/Chartjs/MyCharts04.html    
+https://kakisoft.github.io/PracticeJavaScript/Chartjs/MyCharts05.html    
 
 ## QRコード生成
 https://kakisoft.github.io/PracticeJavaScript/BarCode/QRCodeGenerator.html    
