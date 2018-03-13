@@ -12,7 +12,8 @@ https://kakisoft.github.io/PracticeJavaScript/vuejs2/practice_vuejs2_1.html
 https://kakisoft.github.io/PracticeJavaScript/vuejs2/practice_vuejs2_2.html    
 
 ## chart.js
-https://kakisoft.github.io/PracticeJavaScript/Chartjs/MyCharts.html    
+https://kakisoft.github.io/PracticeJavaScript/Chartjs/MyCharts01.html    
+https://kakisoft.github.io/PracticeJavaScript/Chartjs/MyCharts02.html    
 
 ## QRコード生成
 https://kakisoft.github.io/PracticeJavaScript/BarCode/QRCodeGenerator.html    

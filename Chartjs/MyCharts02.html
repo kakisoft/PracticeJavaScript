@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>My Chart</title>
+</head>
+<body>
+  <canvas id="my_chart" height="100">
+    Canvas not supported...
+  </canvas>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+  <script>
+    (function() {
+      'use strict';
+
+      // var type = 'bar';
+      var type = 'horizontalBar';
+
+      var data = {
+        labels: [2010, 2011, 2012, 2013],
+        datasets: [{
+          label: '@kaki',
+          data: [120, 300, 200, 210],
+          backgroundColor: 'skyblue',
+          borderWidth: 0
+        }, {
+          label: '@ogawa',
+          data: [180, 250, 320, 500],
+          backgroundColor: [
+            'hsla(90, 60%, 60%, 0.3)',
+            'hsla(180, 60%, 60%, 0.3)',
+            'hsla(270, 60%, 60%, 0.3)',
+            'hsla(360, 60%, 60%, 0.3)'
+          ],
+          borderWidth: 0
+        }]
+      };
+
+      var options = {
+        // scales: {
+        //   yAxes: [{
+        //     ticks: {
+        //       suggestedMin: 0,
+        //       suggestedMax: 400
+        //     }
+        //   }]
+        // }
+        scales: {
+          xAxes: [{
+            stacked: true
+          }],
+          yAxes: [{
+            stacked: true
+          }]
+        }
+      };
+
+      var ctx = document.getElementById('my_chart').getContext('2d');
+      var myChart = new Chart(ctx, {
+        type: type,
+        data: data,
+        options: options
+      });
+    })();
+  </script>
+</body>
+</html>
