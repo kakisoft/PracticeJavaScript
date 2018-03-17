@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>Countdown to Q!</title>
+    <link href='http://fonts.googleapis.com/css?family=Bilbo' rel='stylesheet' type='text/css'>
+    <style>
+        body {
+            font-family: 'Bilbo', cursive;
+            background: #000;
+            text-align: center;
+            font-size: 36px;
+            color: red;
+        }
+        h1 {
+            color:#fff;
+            font-size: 128px;
+            margin:0;
+        }
+        #remainingDays, #remainingTime {
+            font-size: 64px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Q</h1>
+    <p><span id="remainingDays"></span> days <span id="remainingTime"></span> to go...</p>
+    <script>
+    function getResult() {
+        // 現在時刻とターゲットの時刻の差を算出
+        var target = new Date(2012, 10, 17, 19, 0, 0).getTime();
+        var now = Date.now();
+        var diff = (target - now) / 1000;
+                        
+        // 残り日数や時間を計算
+        var d = Math.floor(diff / 60 / 60 / 24);
+        diff = diff - 60 * 60 * 24 * d;
+        var h = Math.floor(diff / 60 / 60);
+        diff = diff - 60 * 60 * h;
+        var m = Math.floor(diff / 60);
+        diff = diff - 60 * m;
+        var s = Math.floor(diff);
+        
+        // 結果を表示
+        document.getElementById('remainingDays').innerHTML = d;
+        document.getElementById('remainingTime').innerHTML = padZero(h)+':'+padZero(m)+':'+padZero(s);
+        
+        // 繰り返し処理
+        setTimeout(function() {
+            getResult();
+        }, 200);
+    }
+    getResult();
+    
+    function padZero(n) {
+        return (n < 10) ? '0'+n : n;
+    }
+        
+    </script>
+</body>
+</html>
