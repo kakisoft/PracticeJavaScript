@@ -1,64 +1,107 @@
 body {
-  background: #bdc3c7;
+  background: #ddd;
   font-size: 16px;
-  font-weight: bold;
   font-family: Arial, sans-serif;
 }
 
-.slot {
-  width: 300px;
-  padding: 20px;
-  background: #ecf0f1;
-  border: 5px solid #fff;
-  border-radius: 10px;
-  margin: 15px auto;
+.stage {
+  margin: 0 auto;
+  width: 500px;
+  height: 260px;
   overflow: hidden;
 }
 
-.panel {
+#cards {
+  width: 1500px;
+  height: 260px;
+  transition: 0.8s;
+}
+
+.card {
+  width: 450px;
+  height: 210px;
+  padding: 25px;
+  background: #fff;
   float: left;
+  border-radius: 10px;
 }
 
-.panel + .panel {
-  margin-left: 15px;
+.card + .card {
+  margin-left: 500px;
 }
 
-.panel img {
-  margin-bottom: 5px;
+#cards.move {
+  transform: translate(-1000px, 0);
 }
 
-.stop {
-  cursor: pointer;
-  width: 90px;
-  height: 30px;
-  background: #ef454a;
-  box-shadow: 0 3px 0 #d1483e;
-  border-radius: 15px;
-  line-height: 30px;
+.left-side {
+  width: 160px;
+  float: left;
+  border-radius: 10px;
+  background-size: cover;
+}
+
+.left-side img {
+  border-radius: 10px;
+}
+
+.right-side {
+  width: 260px;
+  float: right;
   text-align: center;
+}
+
+.right-side h1 {
+  margin: 10px 0;
+}
+
+.card input {
+  width: 230px;
+  padding: 10px;
   font-size: 14px;
-  color: #fff;
-  user-select: none;
+  margin-bottom: 20px;
 }
 
-#spin {
+.btn {
   cursor: pointer;
-  width: 280px;
-  height: 35px;
-  background: #3498db;
-  box-shadow: 0 3px 0 #2880b9;
-  border-radius: 17px;
-  line-height: 35px;
-  text-align: center;
+  width: 200px;
+  height: 45px;
+  background: #35ac64;
+  box-shadow: 0 5px 0 green;
   color: #fff;
-  user-select: none;
+  line-height: 45px;
+  border-radius: 20px;
   margin: 0 auto;
+  display: block;
+  text-decoration: none;
 }
 
-.unmatched {
-  opacity: 0.6;
+#tweet {
+  margin-bottom: 20px;
+  background: #1da1f2;
+  box-shadow: 0 5px 0 #006dbf;
 }
 
-.inactive {
-  opacity: 0.5;
+#result_name,
+#result_msg,
+#result_job,
+#result_type {
+  font-weight: bold;
+}
+
+#retry {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.bg-fire {
+  background-image: url(../img/bg-fire.gif);
+}
+
+.bg-water {
+  background-image: url(../img/bg-water.gif);
+}
+
+.bg-thunder {
+  background-image: url(../img/bg-thunder.gif);
 }

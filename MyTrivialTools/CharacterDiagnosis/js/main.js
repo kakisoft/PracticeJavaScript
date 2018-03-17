@@ -1,75 +1,77 @@
 (function() {
   'use strict';
 
-  var panels = document.getElementsByClassName('panel');
-  var spin = document.getElementById('spin');
+  var cards = document.getElementById('cards');
+  var check = document.getElementById('check');
+  var retry = document.getElementById('retry');
+  var userName = document.getElementById('user_name');
 
-  var cards = [
-    'seven.png',
-    'bell.png',
-    'cherry.png'
-  ];
+  userName.focus();
 
-  var timers = [];
+  check.addEventListener('click', function() {
+    var msgs = [
+      '究極の進化を遂げた',
+      '太古より蘇った',
+      '最も恐れられた'
+    ];
+    var jobs = [
+      {name: '勇者', img: 'hero.gif'},
+      {name: '魔法使い', img: 'wizard.gif'},
+      {name: '武闘家', img: 'fighter.gif'}
+    ];
+    var types = [
+      {name: 'その炎はすべてを焼き尽くす', img: 'bg-fire'},
+      {name: 'その清水ですべてを浄化する', img: 'bg-water'},
+      {name: 'その雷撃は万物の怒りを鎮める', img: 'bg-thunder'}
+    ];
 
-  var stopCount = 0;
+    var msg;
+    var job;
+    var type;
 
-  function runSlot(n) {
-    timers[n] = setTimeout(function() {
-      panels[n].children[0].src =
-       'img/' +
-       cards[Math.floor(Math.random() * cards.length)];
-       runSlot(n);
-    }, 50);
-  }
+    var resultImg = document.getElementById('result_img');
+    var tweet = document.getElementById('tweet');
+    var tweetUrl;
 
-  function initPanel() {
-    var i;
-    for (i = 0; i < panels.length; i++) {
-      panels[i].children[1].addEventListener('click', function() {
-        if (this.className.indexOf('inactive') !== -1) {
-          return;
-        }
-        clearTimeout(timers[this.dataset.index]);
-        stopCount++;
-        this.className = 'stop inactive';
-        if (stopCount === panels.length) {
-          stopCount = 0;
-          checkResults();
-          spin.className = '';
-        }
-      });
+    function getRandomElement(array) {
+      return array[Math.floor(Math.random() * array.length)];
     }
-  }
 
-  function checkResults() {
-    var img0 = panels[0].children[0];
-    var img1 = panels[1].children[0];
-    var img2 = panels[2].children[0];
+    function setTextContent(id, text) {
+      document.getElementById(id).textContent = text;
+    }
 
-    if (img0.src !== img1.src && img0.src !== img2.src) {
-      img0.className = 'unmatched';
+    if (userName.value === '' || userName.value.length > 10) {
+      userName.value = '名無し';
     }
-    if (img1.src !== img0.src && img1.src !== img2.src) {
-      img1.className = 'unmatched';
-    }
-    if (img2.src !== img0.src && img2.src !== img1.src) {
-      img2.className = 'unmatched';
-    }
-  }
 
-  initPanel();
+    msg = getRandomElement(msgs);
+    job = getRandomElement(jobs);
+    type = getRandomElement(types);
 
-  spin.addEventListener('click', function() {
-    var i;
-    if (this.className.indexOf('inactive') !== -1) {
-      return;
-    }
-    this.className = 'inactive';
-    for (i = 0; i < panels.length; i++) {
-      runSlot(i);
-      panels[i].children[0].className = '';
-      panels[i].children[1].className = 'stop';
-    }
+    tweetUrl =
+      'https://twitter.com/intent/tweet?text=' +
+      encodeURIComponent(
+        userName.value + 'さんは' +
+        msg +
+        job.name + 'でした！'
+      ) +
+      '&hashtags=dotinstall';
+
+    setTextContent('result_name', userName.value);
+    setTextContent('result_msg', msg);
+    setTextContent('result_job', job.name);
+    resultImg.children[0].src = 'img/' + job.img;
+    setTextContent('result_type', type.name);
+    resultImg.className = 'left-side ' + type.img;
+    tweet.href = tweetUrl;
+
+    cards.className = 'move';
+  });
+
+  retry.addEventListener('click', function() {
+    cards.className = '';
+    userName.value = '';
+    userName.focus();
   });
 })();
