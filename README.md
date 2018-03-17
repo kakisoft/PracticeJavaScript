@@ -28,8 +28,6 @@ https://kakisoft.github.io/PracticeJavaScript/TrivialTools/Timer/my-timer.html
 　      
 　      
 　      
-　      
-　      
 __________________________________________________________________
 ほか
 ### 文字数カウンタ
@@ -65,11 +63,14 @@ https://kakisoft.github.io/PracticeJavaScript/TrivialTools/SlotMachine/index.htm
 ### 間違い探し
 https://kakisoft.github.io/PracticeJavaScript/TrivialTools/SpotTheDifference/index.html    
 
-### 宝探し
-https://kakisoft.github.io/PracticeJavaScript/TrivialTools/TreasureHunt/index.html    
-
 ### 単語帳
 https://kakisoft.github.io/PracticeJavaScript/TrivialTools/VocabularyBook/index.html    
+
+### 迷路
+https://kakisoft.github.io/PracticeJavaScript/TrivialTools/Maze/index.html    
+
+### 宝探し
+https://kakisoft.github.io/PracticeJavaScript/TrivialTools/TreasureHunt/index.html    
 
 ## i
 https://kakisoft.github.io/PracticeJavaScript/TrivialTools/InteractiveArt/index.html    
