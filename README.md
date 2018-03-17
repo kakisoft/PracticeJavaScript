@@ -32,21 +32,45 @@ https://kakisoft.github.io/PracticeJavaScript/TrivialTools/Timer/my-timer.html
 　      
 __________________________________________________________________
 ほか
-### -
-https://kakisoft.github.io/PracticeJavaScript/TrivialTools/Warikan/index.html    
-https://kakisoft.github.io/PracticeJavaScript/TrivialTools/CharacterDiagnosis/index.html    
-https://kakisoft.github.io/PracticeJavaScript/TrivialTools/ConcentrationGame/index.html    
-https://kakisoft.github.io/PracticeJavaScript/TrivialTools/HigherLower/index.html    
-https://kakisoft.github.io/PracticeJavaScript/TrivialTools/InteractiveArt/index.html    
-https://kakisoft.github.io/PracticeJavaScript/TrivialTools/NumbersTouchGame/index.html    
-https://kakisoft.github.io/PracticeJavaScript/TrivialTools/Omikuji/index.html    
-https://kakisoft.github.io/PracticeJavaScript/TrivialTools/QuizApp/index.html    
-https://kakisoft.github.io/PracticeJavaScript/TrivialTools/Slideshow/index.html    
-https://kakisoft.github.io/PracticeJavaScript/TrivialTools/SlotMachine/index.html    
-https://kakisoft.github.io/PracticeJavaScript/TrivialTools/SpotTheDifference/index.html    
+### 文字数カウンタ
 https://kakisoft.github.io/PracticeJavaScript/TrivialTools/StringCounter/index.html    
-https://kakisoft.github.io/PracticeJavaScript/TrivialTools/Timer/index.html    
+
+### おみくじ 
+https://kakisoft.github.io/PracticeJavaScript/TrivialTools/Omikuji/index.html    
+
+### スライドショー
+https://kakisoft.github.io/PracticeJavaScript/TrivialTools/Slideshow/index.html    
+
+### クイズ
+https://kakisoft.github.io/PracticeJavaScript/TrivialTools/QuizApp/index.html    
+
+### 割り勘計算
+https://kakisoft.github.io/PracticeJavaScript/TrivialTools/Warikan/index.html    
+
+### キャラ診断
+https://kakisoft.github.io/PracticeJavaScript/TrivialTools/CharacterDiagnosis/index.html    
+
+### 神経衰弱
+https://kakisoft.github.io/PracticeJavaScript/TrivialTools/ConcentrationGame/index.html    
+
+### Hight and Low
+https://kakisoft.github.io/PracticeJavaScript/TrivialTools/HigherLower/index.html    
+
+### 数字タッチゲーム
+https://kakisoft.github.io/PracticeJavaScript/TrivialTools/NumbersTouchGame/index.html    
+
+### スロットマシン
+https://kakisoft.github.io/PracticeJavaScript/TrivialTools/SlotMachine/index.html    
+
+### 間違い探し
+https://kakisoft.github.io/PracticeJavaScript/TrivialTools/SpotTheDifference/index.html    
+
+### 宝探し
 https://kakisoft.github.io/PracticeJavaScript/TrivialTools/TreasureHunt/index.html    
+
+### 単語帳
 https://kakisoft.github.io/PracticeJavaScript/TrivialTools/VocabularyBook/index.html    
 
+## i
+https://kakisoft.github.io/PracticeJavaScript/TrivialTools/InteractiveArt/index.html    
 
