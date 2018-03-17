@@ -20,7 +20,7 @@
       var s = d.getSeconds();
       var ms = d.getMilliseconds();
       var timerString;
-      m = ('0' + m).slice(-2);
+      m = ('0' + m).slice(-2); //文字列として扱うために、先頭に'0'を付けた後に、必要な部分を取り除く
       s = ('0' + s).slice(-2);
       ms = ('00' + ms).slice(-3);
       timerString = m + ':' + s + '.' + ms;
