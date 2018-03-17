@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>割り勘電卓</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="input-area">
+      <input type="text" id="price" placeholder="金額">
+      <input type="text" id="num" placeholder="人数">
+      <select id="unit">
+        <option value="10">10円単位</option>
+        <option value="100" selected>100円単位</option>
+        <option value="1000">1000円単位</option>
+      </select>
+      <div id="btn" class="disabled">計算</div>
+    </div>
+    <div class="result-area">
+      <p id="result">ここに結果を表示します</p>
+      <div id="reset" class="hidden">もう一度計算する？</div>
+    </div>
+  </div>
+  <script src="js/main.js"></script>
+</body>
+</html>
