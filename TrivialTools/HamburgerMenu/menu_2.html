@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>Menu 2</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css">
+  <style>
+  body {
+    padding: 0;
+    margin: 0;
+    font-family: Verdana, sans-serif;
+    background: #eee;
+    color: #333;
+    padding: 8px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+  }
+  #cover {
+    background: #000;
+    opacity: 0.6;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: none;
+  }
+  #menu {
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    right: -180px;
+    color: #fff;
+    background: #4c81e9;
+    padding: 8px;
+    box-sizing: border-box;
+    width: 180px;
+    min-height: 100%;
+    transition: .4s;
+  }
+  #show, #hide {
+    float: right;
+    cursor: pointer;
+  }
+  body.menu-open {
+    overflow-y: hidden;
+  }
+  body.menu-open #cover {
+    display: block;
+  }
+  body.menu-open #menu {
+    right: 0;
+  }
+  </style>
+</head>
+<body>
+
+  <i class="fa fa-bars" id="show"></i>
+  <h1>Hello</h1>
+  <p>Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. </p>
+  <p>Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. </p>
+  <p>Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. </p>
+  <p>Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. </p>
+  <p>Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. </p>
+
+  <div id="cover"></div>
+
+  <div id="menu">
+    <i class="fa fa-times" id="hide"></i>
+    <ul>
+      <li>MENU</li>
+      <li>MENU</li>
+      <li>MENU</li>
+      <li>MENU</li>
+      <li>MENU</li>
+    </ul>
+  </div>
+  <!-- menu -->
+
+  <script>
+  (function() {
+    'use strict';
+
+    var show = document.getElementById('show');
+    var hide = document.getElementById('hide');
+
+    show.addEventListener('click', function() {
+      document.body.className = 'menu-open';
+    });
+
+    hide.addEventListener('click', function() {
+      document.body.className = '';
+    });
+  })();
+  </script>
+
+</body>
+</html>
