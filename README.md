@@ -24,5 +24,30 @@ https://kakisoft.github.io/PracticeJavaScript/BarCode/QRCodeGenerator.html
 __________________________________________________________________
 ちょっとしたツール
 ### ストップウォッチ
-https://kakisoft.github.io/PracticeJavaScript/MyTrivialTools/Timer/my-timer.html    
+https://kakisoft.github.io/PracticeJavaScript/TrivialTools/Timer/my-timer.html    
+　      
+　      
+　      
+　      
+　      
+__________________________________________________________________
+ほか
+### -
+https://kakisoft.github.io/PracticeJavaScript/Warikan/index.html    
+https://kakisoft.github.io/PracticeJavaScript/CharacterDiagnosis/index.html    
+https://kakisoft.github.io/PracticeJavaScript/ConcentrationGame/index.html    
+https://kakisoft.github.io/PracticeJavaScript/HigherLower/index.html    
+https://kakisoft.github.io/PracticeJavaScript/InteractiveArt/index.html    
+https://kakisoft.github.io/PracticeJavaScript/NumbersTouchGame/index.html    
+https://kakisoft.github.io/PracticeJavaScript/Omikuji/index.html    
+https://kakisoft.github.io/PracticeJavaScript/QuizApp/index.html    
+https://kakisoft.github.io/PracticeJavaScript/Slideshow/index.html    
+https://kakisoft.github.io/PracticeJavaScript/SlotMachine/index.html    
+https://kakisoft.github.io/PracticeJavaScript/SpotTheDifference/index.html    
+https://kakisoft.github.io/PracticeJavaScript/StringCounter/index.html    
+https://kakisoft.github.io/PracticeJavaScript/Timer/index.html    
+https://kakisoft.github.io/PracticeJavaScript/TreasureHunt/index.html    
+https://kakisoft.github.io/PracticeJavaScript/VocabularyBook/index.html    
+
+
 
