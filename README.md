@@ -42,6 +42,9 @@ https://kakisoft.github.io/PracticeJavaScript/TrivialTools/Slideshow/index.html
 ### クイズ
 https://kakisoft.github.io/PracticeJavaScript/TrivialTools/QuizApp/index.html    
 
+### モーダルウィンドウ
+https://kakisoft.github.io/PracticeJavaScript/TrivialTools/ModalWindow/index.html    
+
 ### 割り勘計算
 https://kakisoft.github.io/PracticeJavaScript/TrivialTools/Warikan/index.html    
 
