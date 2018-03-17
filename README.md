@@ -21,3 +21,8 @@ https://kakisoft.github.io/PracticeJavaScript/Chartjs/MyCharts05.html
 ## QRコード生成
 https://kakisoft.github.io/PracticeJavaScript/BarCode/QRCodeGenerator.html    
 
+__________________________________________________________________
+ちょっとしたツール
+### ストップウォッチ
+https://kakisoft.github.io/PracticeJavaScript/MyTrivialTools/Timer/my-timer.html    
+
