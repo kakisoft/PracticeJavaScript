@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>My Chart</title>
+</head>
+<body>
+  <canvas id="my_chart" height="100">
+    Canvas not supported...
+  </canvas>
+  <--
+  「エンジニア成長曲線」というタイトルでSNS投稿するために一時的に作成したグラフ。
+  -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+  <script>
+    (function() {
+      'use strict';
+
+      var type = 'line';
+
+      var data = {
+        labels: [ 
+                  "", "", "", "", "","", "", "", "", "",
+                  "", "", "", "", "","", "", "", "", "",
+                  "", "", "", "", "","", "", "", "", "",
+                  "", "", "", "", "","", "", "", "", "",
+                  "", "", "", "", "","", "", "", "", "",
+                ],
+        datasets: [{
+          label: '@kaki',
+          data: [
+                  11, 12, 13, 14, 15,  
+                  16, 17, 18, 19, 25,
+                  100, 210, 310, 370, 380, 
+                  385, 387, 389, 391
+                ],
+          borderColor: 'blue',  //cssの表現が使用可能
+          borderWidth: 5,
+          fill: false,         //線の下の色を非表示
+          pointStyle: 'dash'          
+        }]
+      };
+
+  
+      var options = {
+        scales: {
+          yAxes: [{
+            ticks: {
+              // min: 0,           //縦を0から開始
+              // max: 400
+              suggestedMin: 0,     //グラフを突き抜けないようにする
+              suggestedMax: 350,  
+              stepSize: 100,       //グラフを100刻み
+              callback: function(value, index, values) { //単位をつける
+                return 'Lv' + ( (value / 100) + 1 );
+              }              
+            }
+          }]
+        },
+        title: {
+          display: true,
+          text: 'エンジニア成長曲線（※主観）',  //タイトル
+          fontSize: 18,
+//          position: 'left'       //左側に表示
+        },        
+        //animation: {   //アニメーションをしない
+        //  duration: 0 
+        //},
+        legend: {
+           position: 'right',  //top, bottom, left, right
+           display: false    //凡例を表示しない
+        }
+      };
+
+      var ctx = document.getElementById('my_chart').getContext('2d');
+      var myChart = new Chart(ctx, {
+        type: type,
+        data: data,
+        options: options
+      });
+    })();
+  </script>
+</body>
+</html>
