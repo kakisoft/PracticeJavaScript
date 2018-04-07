@@ -8,16 +8,17 @@ https://php-archive.net/html/css-class-naming-rules/
 http://www.hp-stylelink.com/news/2013/10/20131008.php#lowList21      
 
 ## js：適用例
-```js
-functionNameLikeThis  //関数名の例
-variableNamesLikeThis  //変数名の例
-ClassNamesLikeThis  //クラス名の例
-EnumNamesLikeThis  //列挙型名の例
-methodNamesLikeThis  //メソッド名の例
-CONSTANT_VALUES_LIKE_THIS  //定数名の例
-hoge.namespaceNamesLikeThis.bar  //名前空間名の例
-filenameslikethis.js  //ファイル名の例
-```
+|　　記述例                         |　　内容          |
+|:----------------------------------|:-----------------|
+|  functionNameLikeThis             |  関数名の例      |
+|  variableNamesLikeThis            |  変数名の例      |
+|  ClassNamesLikeThis               |  クラス名の例    |
+|  EnumNamesLikeThis                |  列挙型名の例    |
+|  methodNamesLikeThis              |  メソッド名の例  |
+|  CONSTANT_VALUES_LIKE_THIS        |  定数名の例      |
+|  hoge.namespaceNamesLikeThis.bar  |  名前空間名の例  |
+|  filenameslikethis.js             |  ファイル名の例  |
+
 
 
 ## 慣習
