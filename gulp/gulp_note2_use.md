@@ -17,3 +17,7 @@ package.json が更新される。
 
 npm install
 ```
+
+## gulpfile.js
+gulp で実行するファイルは gulpfile.js に書く。（作成する）
+
