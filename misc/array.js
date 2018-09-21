@@ -8,6 +8,9 @@ console.log(arr.filter(function (element) {
   return element.trim().length > 0;
 }));
 
+//========================
+arr01 = arr01.filter( (element) => element.trim().length > 0 );
+
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 var arr = [1, 2, 3, 4, 5];
 
