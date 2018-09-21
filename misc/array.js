@@ -8,7 +8,7 @@ console.log(arr.filter(function (element) {
   return element.trim().length > 0;
 }));
 
-//========================
+//=========================
 arr01 = arr01.filter( (element) => element.trim().length > 0 );
 
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
