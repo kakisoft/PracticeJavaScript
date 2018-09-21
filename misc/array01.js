@@ -45,7 +45,16 @@ console.log(firstElement);
 // expected output: 1
 
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+//reverse  反転
+
+var array1 = ['one', 'two', 'three'];
+console.log('array1: ', array1);
+// expected output: Array ['one', 'two', 'three']
+
+var reversed = array1.reverse(); 
+console.log('reversed: ', reversed);
+// expected output: Array ['three', 'two', 'one']
 
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-//━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
