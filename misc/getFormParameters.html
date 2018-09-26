@@ -1,0 +1,34 @@
+<!--
+
+window
+window.document
+window.document.forms[インデックス]
+window.document.forms[要素名]
+
+
+forms[0]とすると、HTMLドキュメント内の1番目のform要素が参照される。
+-->
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>My Boiler Plate</title>
+</head>
+<body>
+
+<form name="my_form_01">
+<input type="text" name="app01" value="app01">
+
+
+</form>
+
+<script>
+console.log("Hello World");
+
+var a1 = document.forms['my_form_01"'].elements['app01']
+console.log(a1)
+
+</script>  
+</body>
+</html>
