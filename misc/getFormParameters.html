@@ -21,13 +21,24 @@ forms[0]とすると、HTMLドキュメント内の1番目のform要素が参照
 <input type="text" name="app01" value="app01">
 
 
+
+<button type="button" id="my-button-01">format-syntax</button>
 </form>
 
 <script>
-console.log("Hello World");
+document.getElementById("my-button-01").addEventListener("click", myButton01Clicked)
+//var targetSyntaxElement1 = document.getElementById("target-syntax1");
 
-var a1 = document.forms['my_form_01"'].elements['app01']
-console.log(a1)
+function myButton01Clicked(){
+    var a1 = document.forms['my_form_01"'].elements['app01']
+
+
+
+    console.log("Hello World");
+}
+
+
+// console.log(a1)
 
 </script>  
 </body>
