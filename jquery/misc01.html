@@ -12,6 +12,12 @@
         <span id="my-span01">n</span>
     </div>
 
+    <div>
+        <input type="checkbox" name="name-my-checkbox02" id="is_edit_password" value="1">パスワードを変更する
+        <input type="password" name="name-my-password01" id="password" value="password">
+    </div>
+
+
     <!--<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>--><!-- こっちでもOK -->
     <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
     <!-- スクリプトはjQueryを読み込んだ後に記述する -->
@@ -53,15 +59,33 @@ $(function() {
 //============================================
 //  id をキーにチェックボックスの状態を取得
 //============================================
-    $('#id-my-checkbox01').change(function() {
-        var prop = $('#id-my-checkbox01').prop('checked');
+$('#id-my-checkbox01').change(function() {
+    var prop = $('#id-my-checkbox01').prop('checked');
 
-        if (prop) {
-            $("#id-my-textbox01").prop("disabled", true);
-        } else {
-            $("#id-my-textbox01").prop("disabled", false);
-        }
-    });
+    if (prop) {
+        $("#id-my-textbox01").prop("disabled", true);
+    } else {
+        $("#id-my-textbox01").prop("disabled", false);
+    }
+});
+
+//============================================
+//  
+//============================================
+changePasswordInputStatus();
+$('#is_edit_password').change(function() {
+    changePasswordInputStatus();
+});
+function changePasswordInputStatus(){
+    var isEditPassword = $('#is_edit_password').prop('checked');
+
+    if (isEditPassword) {
+        $("#password").prop("disabled", false);
+        $("#password").val("");
+    } else {
+        $("#password").prop("disabled", true);
+    }
+}
 
     </script>
 </body>
