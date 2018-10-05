@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>My Boiler Plate</title>
+</head>
+<body>
+
+  <!-- <form action='#' method='post' name="my_form_01"> -->
+  <form action='#' method='post'>
+    name<input type='text' name='fullname'>
+    password<input type='password' name='pass'>
+    <input type='submit' id='mySubmit'  >
+  </form>
+
+  <p>【参考】</p>
+  <a href="http://kihon-no-ki.com/jquery-change-method-bind-form-tag">[jQuery] $(‘form’).change()でフォーム全体の変更を監視する</a><br>
+  <a href="https://qiita.com/naoki_koreeda/items/bf0f512dbd91b450c671">【JavaScript】ページ離脱時に beforeunload でアラート表示、だがカスタムメッセージが設定できない</a><br>
+
+
+<script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+// $("form").change(function(e){
+//   var target = $( e.target )
+//   if( target.attr('name') === 'fullname' ){
+//     //フルネーム欄の変更があった際の処理
+//   }elseif( target.attr('name') === 'password' ){
+//     //パスワード欄の変更があった際の処理
+//   }
+// });
+
+
+
+  var isChanged = false;
+  $("form").change(function(){
+    //フォーム内の要素に変更があると発火
+    console.log("aaa");
+
+    isChanged = true;
+  });
+
+//  $(window).bind("beforeunload", function() {
+//     console.log(isChanged);
+//     if (isChanged) {
+//       // isChangedフラグがtrueの場合、つまり入力内容が変更されていた
+//       // 場合のみ文字列を返すようにします。
+//       return "このページを離れようとしています。";
+//     }
+//   });
+
+
+var unloaded = function (e) {
+  if(isChanged){
+
+    // カスタムメッセージの設定（後述するが、EdgeとIEしか表示されない）
+    var confirmMessage = '離脱するの？';
+    e.returnValue = confirmMessage;
+    // return confirmMessage;
+    return true;
+  }
+};
+
+// beforeunloadイベントの登録
+window.addEventListener('beforeunload', unloaded, false);
+
+// 特定のボタンがクリックされたときはアラートを表示しないようにもできます。
+document.getElementById('mySubmit').addEventListener('click', function(){
+    // submit時はアラート表示させない
+    window.removeEventListener('beforeunload', unloaded, false);
+});
+
+
+
+
+
+</script> 
+</body>
+</html>
