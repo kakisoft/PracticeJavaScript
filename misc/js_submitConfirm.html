@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>My Boiler Plate</title>
+</head>
+<body>
+
+<form name="my_form_01">
+<input type="text" id="id_app01" name="name_app01" value="app01">
+<a href="javascript:void(0);" onclick="registUser()"><span>登録</span></a>
+
+</form>
+
+<script>
+
+function registUser() {
+  if (!window.confirm('登録します。よろしいですか？')) {
+    return;
+  }
+      document.forms[0].submit();
+}
+
+</script>  
+</body>
+</html>
