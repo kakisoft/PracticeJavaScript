@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>My Boiler Plate</title>
+</head>
+<body>
+
+  <!-- <form action='#' method='post' name="my_form_01"> -->
+  <form action='#' method='post'>
+    name<input type='text' name='fullname'>
+    password<input type='password' name='pass'>
+    <input type='submit' id='mySubmit'  >
+
+    <a href="javascript:void(0);" onclick="registUser()">aタグによる submit(js)</a>
+  </form>
+
+  <p>【参考】</p>
+  <a href="http://kihon-no-ki.com/jquery-change-method-bind-form-tag">[jQuery] $(‘form’).change()でフォーム全体の変更を監視する</a><br>
+  <a href="https://qiita.com/naoki_koreeda/items/bf0f512dbd91b450c671">【JavaScript】ページ離脱時に beforeunload でアラート表示、だがカスタムメッセージが設定できない</a><br>
+
+
+<script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+
+//====================================
+//      javascriptによるsubmit
+//====================================
+function registUser() {
+  window.removeEventListener('beforeunload', unloaded, false);
+
+  if (!window.confirm('登録します。よろしいですか？')) {
+    return;
+  }
+  document.forms[0].submit();
+}
+
+
+//====================================
+//      
+//====================================
+var isChanged = false;
+$("form").change(function(){
+  isChanged = true;
+});
+
+window.addEventListener('beforeunload', unloaded, false);
+var unloaded = function (e) {
+  if(isChanged){
+    e.returnValue = true;
+    return true;
+  }
+};
+
+
+</script> 
+</body>
+</html>
