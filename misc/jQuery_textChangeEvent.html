@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>My Boiler Plate</title>
+</head>
+<body>
+
+<form name="my_form_01">
+  <p>【 keypressとkeyupを組み合わせる（フォーカスが外れていなくても検知できる。全角は不可。）】</p>
+  <input type="text" id="id_textbox01" name="name_textbox01" value="textbox01">
+  <input type="text" id="id_textbox02" name="name_textbox02" value="textbox02">
+
+  <p>【 changeイベントで検知（フォーカスが外れた時に検知） 】</p>
+  <input type="text" id="id_textbox03" name="name_textbox03" value="textbox03">
+  <input type="text" id="id_textbox04" name="name_textbox04" value="textbox04">
+
+
+  <button type="button" id="my-button-01">format-syntax</button>
+</form>
+
+<p>【参考】</p>
+<a href="https://qiita.com/maruyam-a/items/cf0168f91d934b449a07">jQueryでテキストボックスの変更を監視/検知する</a><br>
+<a href="https://web-designer.cman.jp/javascript_ref/keyboard/keycode/">キーコード</a><br>
+
+<script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+
+//====================================
+//      
+//====================================
+// 半角英数の入力を検知
+$('#id_textbox01').keypress(function() {
+    isChange = true;
+    clearCnfirmContents();
+
+    console.log($('#id_textbox01').val());
+});
+// deleteキーとbackspaceキーの入力を検知
+$('#id_textbox01').keyup(function(e) {
+    //Delete:46   BackSpace:8
+    if (e.keyCode == 46 || e.keyCode == 8){
+        isChange = true;
+        clearCnfirmContents();
+        
+        console.log($('#id_textbox01').val());
+    }
+});
+
+function clearCnfirmContents(){
+    // $("#id_textbox02").val("");
+    $("#id_textbox02").val($('#id_textbox01').val());
+}
+
+//====================================
+//      
+//====================================
+$('#id_textbox03').change(function() {
+    // isChange = true;
+    $("#id_textbox04").val($('#id_textbox03').val());
+});
+
+</script>  
+</body>
+</html>
