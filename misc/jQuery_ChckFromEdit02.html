@@ -14,6 +14,7 @@
     <button type='submit' name='action' value='save'>【button type='submit'】</button>
     <button onclick="registUser()"><span>【button onclick="registUser()"】</span></button>
     <a href="javascript:void(0);" onclick="registUser()">aタグによる submit(js)</a>
+    <a href="javascript:void(0);" onclick="deleteUser()">aタグによる ダイアログ⇒遷移(js)</a>
   </form>
 
   <p>【参考】</p>
@@ -37,9 +38,9 @@ function registUser() {
 }
 
 
-//====================================
-//      
-//====================================
+//====================================================
+//  フォームに変更があった場合、離脱確認ダイアログを表示
+//====================================================
 var isChanged = false;
 $("form").change(function(){
   isChanged = true;
@@ -51,8 +52,23 @@ var unloaded = function (e) {
     return true;
   }
 };
-window.addEventListener('beforeunload', unloaded, false);  //↑のロジックの後ろに書かないといけないよ。
+window.addEventListener('beforeunload', unloaded, false);  //これは、↑のロジックの後ろに書かないといけないよ。
 
+
+//====================================
+//      
+//====================================
+function deleteUser() {
+  window.removeEventListener('beforeunload', unloaded, false);
+
+  if (!window.confirm('削除します。よろしいですか？')) {
+    return;
+  }
+
+  // location.href="http://www.google.co.jp";
+  location.href="./jQuery_ChckFromEdit01.html?val01=100";
+
+}
 
 </script> 
 </body>
