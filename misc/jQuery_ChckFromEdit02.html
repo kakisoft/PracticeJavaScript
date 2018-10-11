@@ -8,8 +8,8 @@
 
   <!-- <form action='#' method='post' name="my_form_01"> -->
   <form action='#' method='post'>
-    name<input type='text' name='fullname'>
-    password<input type='password' name='pass'>
+    name    <input type='text'     name='n_name'     id='i_name'>
+    password<input type='password' name='n_password' id='i_password'>
     <input type='submit' id='mySubmit' >
     <button type='submit' name='action' value='save'>【button type='submit'】</button>
     <button onclick="registUser()"><span>【button onclick="registUser()"】</span></button>
@@ -66,7 +66,10 @@ function deleteUser() {
   }
 
   // location.href="http://www.google.co.jp";
-  location.href="./jQuery_ChckFromEdit01.html?val01=100&val02=200";
+  // location.href="./jQuery_ChckFromEdit01.html?val01=100&val02=200";
+
+  var val02 = $("#i_name").val();
+  location.href="./jQuery_ChckFromEdit01.html?val01=100&val02=" + val02;
 }
 
 </script> 
