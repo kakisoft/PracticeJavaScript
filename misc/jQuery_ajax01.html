@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>My Boiler Plate</title>
+</head>
+<body>
+
+<form name="my_form_01">
+<input type="text" id="id_app01" name="name_app01" value="app01">
+
+
+
+<button type="button" id="my-button-01">format-syntax</button>
+</form>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+document.getElementById("my-button-01").addEventListener("click", myButton01Clicked)
+
+function myButton01Clicked(){
+    console.log("Hello ");
+
+    var url = 'http://challenge-your-limits.herokuapp.com/call/me';
+
+    $.ajax({
+        type: "GET",
+        url: url,
+        // data : {
+        //       'cmd' : 'search'
+        //     ,'blockId' : '1'
+        //     ,'tagId' : '2'
+        // },
+        crossDomain: false,
+        async: false,
+        dataType : 'html',
+        scriptCharset: 'utf-8',
+        beforeSend: function(xhr) {
+            xhr.setRequestHeader('Pragma', 'no-cache');
+            xhr.setRequestHeader('Cache-Control', 'no-cache');
+            xhr.setRequestHeader('If-Modified-Since', 'Thu, 01 Jun 1970 00:00:00 GMT');
+        },
+    }).success(function(response){
+      console.log(response);
+    // $("#xi_ip_searchResult").html(response);
+    // $(".pager" + blockId + "-" + tagId).children("ul").remove();
+    // $(".pager" + blockId + "-" + tagId).unbind();
+    // genPagerLoad();
+    }).fail(function(XMLHttpRequest, textStatus, errorThrown){
+        alert(errorThrown);
+    });
+}
+
+</script>  
+</body>
+</html>
