@@ -24,7 +24,7 @@
           form.setAttribute("method", method); // POSTリクエストもしくはGETリクエストを書く。
           form.style.display = "none"; // 画面に表示しないことを指定する
           document.body.appendChild(form);
-          if (data01 !== undefined) {
+          //if (data01 !== undefined) {
               var input01 = document.createElement('input');
               input01.setAttribute('type', 'hidden');
               input01.setAttribute('name',  name01); //「name」は適切な名前に変更する。
@@ -36,8 +36,7 @@
               input02.setAttribute('name',  name02);
               input02.setAttribute('value', data02);
               form.appendChild(input02);
-
-          }
+          //}
           form.submit();
 
         });
