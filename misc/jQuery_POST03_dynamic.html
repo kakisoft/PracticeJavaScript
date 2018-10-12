@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  </head>
+  <body>
+    <!-- action先を動的に変更 -->
+    <form method="post">
+      <p>案件No.123</p>
+      <input type="hidden" name="project_id" value="123"> 
+      <button type="button" onclick="submitAction('/approve')">承認</button>
+      <button type="button" onclick="submitAction('/reject')">却下</button>
+    </form>
+
+<script>
+  function submitAction(url) {
+    $('form').attr('action', url);
+    $('form').submit();
+  }
+</script>
+  </body>
+</html>
