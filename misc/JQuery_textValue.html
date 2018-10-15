@@ -5,6 +5,8 @@
     <title>jQuery misc01</title>
 </head>
 <body>
+    <button type="button" id="id_my_button_01" name="name_my_button_01">my-button-01</button>
+    <br><br>
 
     <div>
         <input type="checkbox" name="name-my-checkbox01" id="id-my-checkbox01" value="1">チェックボックス
@@ -17,6 +19,24 @@
         <input type="password" name="name-my-password01" id="password" value="password">
     </div>
 
+    <div>
+        <ul>
+            <li>
+                <label><input type="radio" value="1" name="admin" id="admin_1" checked><span>管理者</span></label>
+            </li>
+            <li>
+                <label><input type="radio" value="0" name="admin" id="admin_0" ><span>一般ユーザー</span></label>
+            </li>
+            <li>
+                <label><input type="radio" value="" name="admin" id="admin" ><span>指定なし</span></label>
+            </li>
+        </ul>
+
+
+        <label><input type="radio" id="rd0" name="radio_test" value="０番" />ラジオテスト0</label>
+        <label><input type="radio" id="rd1" name="radio_test" value="１番" />ラジオテスト1</label>
+        <label><input type="radio" id="rd2" name="radio_test" value="２番" checked/>ラジオテスト2</label>
+    </div>
 
     <!--<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>--><!-- こっちでもOK -->
     <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
@@ -86,6 +106,25 @@ function changePasswordInputStatus(){
         $("#password").prop("disabled", true);
     }
 }
+
+//============================================
+//  
+//============================================
+$('#id_my_button_01').on('click', function() {
+    // var a1 = $('input[name="admin"]').val();
+    // var a1 = $('input[name="admin"]:eq(0)').prop('checked');
+    // var a1 = $('input[name="admin"]:checked').val();
+    var a1 = $("input[name='admin']:checked").val();
+
+    console.log(a1);
+
+
+
+    var radioVal = $("input[name='radio_test']:checked").val();
+    // alert(radioVal);
+    console.log(radioVal);
+
+});
 
     </script>
 </body>
