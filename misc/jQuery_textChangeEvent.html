@@ -7,6 +7,9 @@
 <body>
 
 <form name="my_form_01">
+  <label for="email"><span>(メールアドレス）</span></label>
+  <input type="text" id="email" name="email" value="" aria-required="true" aria-invalid="true">      
+    
   <p>【 keypressとkeyupを組み合わせる（フォーカスが外れていなくても検知できる。全角は不可。）】</p>
   <input type="text" id="id_textbox01" name="name_textbox01" value="textbox01">
   <input type="text" id="id_textbox02" name="name_textbox02" value="textbox02">
@@ -16,8 +19,9 @@
   <input type="text" id="id_textbox04" name="name_textbox04" value="textbox04">
 
 
-  <button type="button" id="my-button-01">format-syntax</button>
+  <button type="button" id="id_my_button_01" name="name_my_button_01">my-button-01</button>
 </form>
+
 
 <p>【参考】</p>
 <a href="https://qiita.com/maruyam-a/items/cf0168f91d934b449a07">jQueryでテキストボックスの変更を監視/検知する</a><br>
@@ -59,6 +63,23 @@ $('#id_textbox03').change(function() {
     // isChange = true;
     $("#id_textbox04").val($('#id_textbox03').val());
 });
+
+
+//====================================
+//      
+//====================================
+$('#id_my_button_01').on('click', function() {
+    console.log("id_my_button_01  Clicked");
+
+});
+
+//($("input[name=a_id]").filter(":checked").val()){
+//if($("*[name=a_id]").filter(":checked").val()){
+$('button[name="name_my_button_01"]').on('click', myButton01Clicked);
+
+function myButton01Clicked(){
+    console.log("name_my_button_01  Clicked");
+}
 
 </script>  
 </body>
