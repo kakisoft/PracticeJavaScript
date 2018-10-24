@@ -7,10 +7,12 @@ function createInsertStatement(){
       var linerContentArray = [];
       var linerContentArray = lineUnitElement.split(/\t/g);
   
+      
       linerContentArray.forEach(function(cellUnitElement) {
-  
+        console.log(cellUnitElement)  
       });
-      console.log(cellUnitElement)  
+
+
     });
   }
   
