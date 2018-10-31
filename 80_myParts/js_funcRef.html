@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+      <meta charset="utf8">
+      <title>Ssample function</title>
+  </head>
+<body>
+<h1 style="font-size: 1.5em">sample function</h1>
+<div>
+  <textarea id="target_syntax" style="width:60%; height:10em" placeholder="Please input any Select Statement."></textarea>
+</div>
+
+<p>
+  <button type="button" id="do_sample_function01">do sample function01</button>
+</p>
+<p>
+  <textarea id="result_syntax" style="width:60%; height:10em" ></textarea>
+</p>
+
+<script>
+
+targetSyntaxElement = document.getElementById("target_syntax");
+resultSyntaxElement = document.getElementById("result_syntax");
+
+document.getElementById("do_sample_function01").addEventListener("click", sampleFunction01)
+
+//=======================================================================================================
+//=======================================================================================================
+
+//======================================
+//      Format SelectStatement
+//======================================
+function sampleFunction01(){
+
+  var array1 = [];
+  var array2 = [];
+  refSample1(array1, array2);
+  console.log(array1);  // => []
+  console.log(array2);  // => ["football", "swimming"]
+
+
+  var array3 = [];
+  refSample2(array3);
+  console.log(array3);  // => ["soccer", "baseball"]
+
+}
+
+//----------------
+//
+//----------------
+function refSample1(array1, array2){
+  array1 = ['soccer', 'baseball'];
+  array2.push('football', 'swimming');
+
+  return true;
+}
+
+//----------------
+//
+//----------------
+function refSample2(array3){
+  var tmpArray = ['soccer', 'baseball'];
+  Array.prototype.push.apply(array3, tmpArray);
+
+  return true;
+}
+
+//=======================================================================================================
+//=======================================================================================================
+
+</script>
+</body>
+</html>
