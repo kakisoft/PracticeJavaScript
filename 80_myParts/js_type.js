@@ -1,3 +1,6 @@
+// 型とか
+//　typeof は、かなり微妙らしい。
+
 var a1 = "aaa";         // => [object String]
 var a2 = 123;           // => [object Number]
 var a3 = [1,2,3]        // => [object Array]
