@@ -56,5 +56,12 @@ console.log('reversed: ', reversed);
 // expected output: Array ['three', 'two', 'one']
 
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// 特定の要素を削除
 
+var startWord = "SELECT";
+var endWord = ["FROM","WHERE","GROUP BY","SELECT","ORDER BY"]
+
+endWord = endWord.filter((el)=> el !== startWord);
+
+//━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
