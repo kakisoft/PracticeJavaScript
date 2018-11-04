@@ -32,5 +32,27 @@ unitArray = unitArray.map(
 
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
+  //-----< ToUppr or ToLower Reserved Words >-----
+  if(resultType == RESULT_TYPE.TO_LOWER){
+    unitArray = unitArray.map(function(el){
+        if(RESERVED_WORD_LIST.indexOf(el.toUpperCase()) >= 0){ 
+          return el.toLowerCase();
+        }else{
+          return el;
+        }
+      }
+    );
 
+  }else{
+    unitArray = unitArray.map(function(el){
+        if(RESERVED_WORD_LIST.indexOf(el.toUpperCase()) >= 0){ 
+          return el.toUpperCase();
+        }else{
+          return el;
+        }
+      }
+    );    
+  }
+
+//━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
