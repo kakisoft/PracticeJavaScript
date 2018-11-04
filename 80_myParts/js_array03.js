@@ -31,6 +31,7 @@ unitArray = unitArray.map(
   );
 
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// 大文字・小文字を問わずに
 
   //-----< ToUppr or ToLower Reserved Words >-----
   if(resultType == RESULT_TYPE.TO_LOWER){
