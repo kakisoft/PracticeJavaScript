@@ -17,6 +17,12 @@ function createInsertStatement(){
   }
   
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// 【 全て大文字 or 全て小文字 】
+
+unitArray = unitArray.map((el) => el.toUpperCase());
+unitArray = unitArray.map((el) => el.toLowerCase());
+
+//━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 // 【 配列で指定した特定の文字を大文字化 】 
 
 unitArray = unitArray.map(
