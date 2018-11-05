@@ -62,4 +62,14 @@ unitArray = unitArray.map(
   }
 
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+//【 配列のコピーと参照渡し 】
+
+//参照渡し
+var remainingDifinedPhraseList = DIFINED_PHRASE_LIST;
+
+//配列のコピー
+var remainingDifinedPhraseList = DIFINED_PHRASE_LIST.concat();
+
+//━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
 
