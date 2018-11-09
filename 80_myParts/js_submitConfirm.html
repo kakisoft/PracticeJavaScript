@@ -8,12 +8,12 @@
 
 <form name="my_form_01">
 <input type="text" id="id_app01" name="name_app01" value="app01">
+<!-- // 古い書き方なので、やめとこう。密結合になるよ。// -->
 <a href="javascript:void(0);" onclick="registUser()"><span>登録</span></a>
 
 </form>
 
 <script>
-
 function registUser() {
   if (!window.confirm('登録します。よろしいですか？')) {
     return;
