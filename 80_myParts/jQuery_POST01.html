@@ -22,11 +22,23 @@
 
 
 
-//======================================
-//           formの値を取得
-//======================================
+//===========================================
+//               formの値を取得
+//===========================================
 var str1 = $("form").serialize();
 var str2 = $("#Xi_jm_form_admin_user_search").serialize();
+
+
+//===========================================
+//           一時的にパラメータを追加
+//  （ダウンロード用のコマンドを付けたりとか）
+//===========================================
+function download(){
+  $("#download_area").html("");
+  $("#download_area").html("<input type='text' name='cmd' value='download' >");
+  document.forms['indivisual_form_001'].submit();
+  $("#download_area").html("");
+}
 
     </script>
   </body>
