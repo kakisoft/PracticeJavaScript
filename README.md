@@ -78,3 +78,8 @@ https://kakisoft.github.io/PracticeJavaScript/TrivialTools/TreasureHunt/index.ht
 ## i
 https://kakisoft.github.io/PracticeJavaScript/TrivialTools/InteractiveArt/index.html    
 
+
+__________________________________________________________________
+## push stateとかよくわかんないから実験
+https://kakisoft.github.io/PracticeJavaScript/80_myParts/js_push_state.html    
+
