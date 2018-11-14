@@ -33,6 +33,26 @@ function myButton01Clicked(){
     console.log("Hello " + myText01 + myText02);
 }
 
+
+// 現在の履歴を置き換え
+// history.replaceState
+
+//====================================
+//     Get HTTP GET Parameters
+//====================================
+function myButton02Clicked(){
+		var gets = location.href.split('?');
+		var newGets = ['_page=' + p];
+		if (gets[1]) {
+			gets = gets[1].split('&');
+			for (var i in gets) {
+				if (!gets[i].match(/^_page=/)) {
+					newGets.unshift(gets[i]);
+				}
+			}
+		}
+}
+
 </script>  
 </body>
 </html>
