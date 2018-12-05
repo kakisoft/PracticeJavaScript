@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>My Boiler Plate</title>
+</head>
+<body>
+
+<form name="my_form_01">
+<input type="text" id="id_app01" name="name_app01" value="app01">
+
+<div>
+  <p>参考サイト</p>
+https://qiita.com/_takeshi_24/items/1403727efb3fd86f0bcd
+</div>>
+
+<button type="button" id="my-button-01">format-syntax</button>
+</form>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+document.getElementById("my-button-01").addEventListener("click", myButton01Clicked)
+
+function myButton01Clicked(){
+
+  const processA = function(afterProcess1, afterProcess2) {
+    $.ajax({
+      url: 'https://qiita.com/api/v2/items?page=1&per_page=100',
+      type: 'GET',
+      success: function () {
+        console.log("processA")
+        afterProcess1(afterProcess2)
+      }
+    })
+  }
+
+  const processB = function(afterProcess) {
+    $.ajax({
+      url: 'https://qiita.com/api/v2/items?page=2&per_page=20',
+      type: 'GET',
+      success: function () {
+        console.log("processB")
+        afterProcess()
+      }
+    })
+  }
+
+  const processC = function() {
+    console.log("processC")
+  }
+
+  processA(processB, processC)
+
+
+}
+
+</script>  
+</body>
+</html>

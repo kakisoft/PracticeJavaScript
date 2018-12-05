@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>My Boiler Plate</title>
+</head>
+<body>
+
+<form name="my_form_01">
+<input type="text" id="id_app01" name="name_app01" value="app01">
+
+
+
+<button type="button" id="my-button-01">format-syntax</button>
+</form>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+document.getElementById("my-button-01").addEventListener("click", myButton01Clicked)
+
+function myButton01Clicked(){
+
+  const processA =function() {
+    return new Promise(function(resolve, reject) {
+      $.ajax({
+        url: 'https://qiita.com/api/v2/items?page=1&per_page=100',
+        type: 'GET',
+        success: function () {
+          console.log("processA")
+          resolve()
+        }
+      })
+    })
+  }
+
+  const processB = function() {
+    return new Promise(function(resolve, reject) {
+      $.ajax({
+        url: 'https://qiita.com/api/v2/items?page=2&per_page=20',
+        type: 'GET',
+        success: function () {
+          console.log("processB")
+          resolve()
+        }
+      })
+    })
+  }
+
+  const processC = function() {
+    return new Promise(function(resolve, reject) {
+      console.log("processC")
+      resolve()
+    })
+  }
+
+  processA()
+    .then(processB)
+    .then(processC)
+}
+
+</script>  
+</body>
+</html>
