@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>React Practice</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+<body>
+  <!--
+    ===================================
+               コンポーネント
+    ===================================
+  -->
+  <div id="root01"></div>
+  <script type="text/babel">
+    (() => {
+
+      //------------------------
+      //  Counterコンポーネント
+      //------------------------
+      function Counter(props) {
+      //  属性を引数で渡せる
+        //   props.color = 'red';  //Error!!ReadOnly!!
+        return <li style={{backgroundColor:props.color}}>{props.color}：0</li>;
+      }
+
+      ReactDOM.render(
+        //<Counter/>
+        <div className="container">
+          <ul>
+            <Counter color="tomato"/>
+            <Counter color="skyblue"/>
+            <Counter color="limegreen"/>
+          </ul>
+        </div>,
+        document.getElementById('root01')
+      );
+    })();
+  </script>
+</body>
+</html>
