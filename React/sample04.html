@@ -22,12 +22,37 @@
         constructor(props) {
           super(props);
           this.state = {
-            count: 10
+            count: 0
           };
+          this.countUp = this.countUp.bind(this);
+        }
+        countUp() {
+          //------
+          //setState が実行されるタイミングは React が勝手に決めるので、
+          // こう書いてしまうと count の値がほかの処理で書き換わってしまって、
+          // うまくカウントアップできない場合もあります。
+          //-----
+          // this.state.count = this.state.count + 1;
+          // this.setState({
+          //   count: this.state.count + 1
+          // });
+
+
+          //this.state に値がセットできるのは constructor のみ。
+          // それ以外の場所では setState を使う。
+          this.setState(prevState => {
+            // prevState には、直前の値が入っている。
+            return {
+              count: prevState.count + 1
+            };
+          });
+
+          // ちなみに React では setState するたびに render() が呼ばれて、
+          // それによって新しい値で UI が再描画されるといった仕組みとなっている。
         }
         render() {
           return (
-            <li style={{backgroundColor:this.props.color}}>
+            <li style={{backgroundColor:this.props.color}} onClick={this.countUp}>
               {this.state.count}
             </li>
           );
