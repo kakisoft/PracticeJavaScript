@@ -18,41 +18,32 @@
   <script type="text/babel">
     (() => {
 
-      class Counter extends React.Component {
-        constructor(props) {
-          super(props);
-          this.state = {
-            count: 0
-          };
-          this.countUp = this.countUp.bind(this);
-        }
-        countUp() {
-          this.setState(prevState => {
-            return {
-              count: prevState.count + 1
-            };
-          });
-        }
-        render() {
-          return (
-            <li style={{backgroundColor:this.props.color}} onClick={this.countUp}>
-              {this.state.count}
-            </li>
-          );
-        }
+      function Counter(props) {
+        return (
+          <li style={{backgroundColor:props.counter.color}}>
+            {props.counter.id}:{props.counter.count}
+          </li>
+        );
       }
 
       class App extends React.Component {
         constructor() {
           super();
+          this.state = {
+            counters: [
+              {id: 'A', count: 0, color: 'tomato'},
+              {id: 'B', count: 0, color: 'skyblue'},
+              {id: 'C', count: 0, color: 'limegreen'}
+            ]
+          };
         }
         render() {
           return (
             <div className="container">
               <ul>
-                <Counter color="tomato"/>
-                <Counter color="skyblue"/>
-                <Counter color="limegreen"/>
+                <Counter counter={this.state.counters[0]}/>
+                <Counter counter={this.state.counters[1]}/>
+                <Counter counter={this.state.counters[2]}/>
               </ul>
               <div>TOTAL INVENTORY: 3</div>
             </div>
