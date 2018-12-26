@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>React Practice</title>
-  <link rel="stylesheet" href="css/styles02.css">
+  <link rel="stylesheet" href="css/styles03.css">
   <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
   <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
   <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
@@ -22,27 +22,39 @@
       //  Counterコンポーネント
       //------------------------
       function Counter(props) {
-      //  属性を引数で渡せる
-        //   props.color = 'red';  //Error!!ReadOnly!!
 
-        // return <li style={{backgroundColor:props.color}}>{props.color}：0</li>;
-
-
-        function countUp(color) {
+        // function countUp() {
+        //   alert('count up!');
+        // }
+        // function countUp(color) {
+        //   alert(color);
+        // }
+        function countUp(e, color) {
+          e.preventDefault();
           alert(color);
         }
 
+        // return (
+        //   <li style={{backgroundColor:props.color}} onClick={countUp}>
+        //     0
+        //   </li>
+        // );
+        // return (
+        //   <li style={{backgroundColor:props.color}} onClick={() => countUp(props.color)}>
+        //     0
+        //   </li>
+        // );
         return (
-          <li style={{backgroundColor:props.color}} onClick={() => countUp(props.color)}>
-            0
+          <li style={{backgroundColor:props.color}}>
+            <a href="#" onClick={e => countUp(e, props.color)}>
+              0
+            </a>
           </li>
         );
-
-
       }
 
+
       ReactDOM.render(
-        //<Counter/>
         <div className="container">
           <ul>
             <Counter color="tomato"/>
@@ -52,6 +64,7 @@
         </div>,
         document.getElementById('root01')
       );
+
     })();
   </script>
 </body>
