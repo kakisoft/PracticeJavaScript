@@ -9,13 +9,35 @@
   <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
 </head>
 <body>
-  <div id="root"></div>
+  <div id="root01"></div>
+  <div id="root02"></div>
   <script type="text/babel">
     (() => {
+      //----------------
+      //   JSX記法
+      // 第一引数：タグ
+      // 第二引数：要素
+      //----------------
       ReactDOM.render(
         <p>Hello!</p>,
-        document.getElementById('root')
+        document.getElementById('root01')
       );
+
+      //----------------
+      //  JavaScriptの変数が使用可。
+      //  使用できるタグは１つのみ（複数使いたい場合、divで囲む）
+      //  hr のように、閉じタグがない場合、「/」が必要。
+      //----------------
+      const name = 'kaki';
+      ReactDOM.render(
+        <div>
+          <p>Hello</p>
+          <hr/>
+          <p>World from {name.toUpperCase()}</p>
+        </div>,
+        document.getElementById('root02')
+      );
+
     })();
   </script>
 </body>
