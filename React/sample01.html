@@ -11,6 +11,9 @@
 <body>
   <div id="root01"></div>
   <div id="root02"></div>
+  <div id="root03"></div>
+  <div id="root04"></div>
+  <div id="root05"></div>
   <script type="text/babel">
     (() => {
       //----------------
@@ -36,6 +39,35 @@
           <p>World from {name.toUpperCase()}</p>
         </div>,
         document.getElementById('root02')
+      );
+
+      //----------------
+      //  style指定
+      //----------------
+      ReactDOM.render(
+        <div style={{width:100, height:100, backgroundColor:'blue'}}></div>,
+        document.getElementById('root03')
+      );
+
+      //----------------
+      //  css適用
+      //    「class」はJSの予約語なので、「className」とする
+      //----------------
+      ReactDOM.render(
+        <div className="box"></div>,
+        document.getElementById('root04')
+      );
+
+      //----------------
+      //   イベント
+      //----------------
+      function showMessage() {
+        alert('Hello');
+      }
+
+      ReactDOM.render(
+        <div style={{width:100, height:100, backgroundColor:'#ffff00'}} onClick={showMessage}></div>,
+        document.getElementById('root05')
       );
 
     })();
