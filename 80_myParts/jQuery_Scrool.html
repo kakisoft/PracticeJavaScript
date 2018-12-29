@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <title>スクロール実験</title>
+</head>
+<body style="text-align:center;">
+    <h1>スクロール実験</h1>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <div id="back-to-top" style="position:fixed;right:5px;bottom:5px"><a href="#"><img src="./asset/back-to.png"></a></div>
+    <div id="pos" style="position:fixed;left:5px;bottom:5px"></div>
+    <script>
+    $(function() {
+        // #back-to-topを消す
+        $('#back-to-top').hide();
+        
+        // スクロールが十分されたら#back-to-topを表示、スクロールが戻ったら非表示
+        $(window).scroll(function() {
+            $('#pos').text($(this).scrollTop());
+            if ($(this).scrollTop() > 60) {
+                $('#back-to-top').fadeIn();
+            } else {
+                $('#back-to-top').fadeOut();
+            }
+        });
+        
+        // // #back-to-topがクリックされたら上に戻る
+        // $('#back-to-top a').click(function() {
+        //     $('body').animate({
+        //         scrollTop:0
+        //     }, 500);
+        //     return false;
+        // });
+
+        // #back-to-topがクリックされたら上に戻る
+        $('#back-to-top a').click(function() {
+            $('html, body').animate({
+                scrollTop:0
+            }, 500);
+            return false;
+        });
+        // イベントハンドラでreturn falseすると、その後起きることが起きないようにする効果があります。
+        // この場合はa要素のclickなので、「リンクをクリックした→リンク先に遷移する」という動作がキャンセルされます。
+
+    });
+    </script>
+</body>
+</html>
