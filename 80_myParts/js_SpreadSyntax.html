@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>My Boiler Plate</title>
+</head>
+<body>
+<!--
+      【 スプレッド構文 】
+関数呼び出し    ：0 個以上の引数として、オブジェクトをその場で展開。
+Array リテラル ：0 個以上の要素として、オブジェクトをその場で展開。
+Object リテラル：0 個以上の key-value のペアとして、オブジェクトをその場で展開。
+
+
+-->
+<form name="my_form_01">
+<input type="text" id="id_app01" name="name_app01" value="app01">
+
+
+<button type="button" id="my-button-01">format-syntax</button>
+</form>
+
+<script>
+document.getElementById("my-button-01").addEventListener("click", myButton01Clicked)
+
+function myButton01Clicked(){
+
+  //---------------------
+  //
+  //---------------------
+  console.log(sum(...numbers01)); //-> 6
+
+  console.log(sum.apply(null, numbers01)); //-> 6
+
+  // console.log(...obj01); //-> 
+
+  //---------------------
+  //
+  //---------------------
+  console.log(numbers02); //-> (6) [1, 2, 3, 4, 5, 6]
+  console.log("result02-01:" + sum(...numbers02)); //-> result02:6
+
+  myEach01(...numbers01); //-> 1 2 3 4 5 6
+
+
+  //===============================
+  //          apply()
+  //
+  //   Function.prototype.apply()
+  //===============================
+//apply() メソッドは与えられた this 参照値と、配列 (もしくは配列風のオブジェクト) の形で与えられた引数を用いて関数を呼び出します。
+// https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Function/apply
+  var numbers = [5, 6, 2, 3, 7];
+
+  var max = Math.max.apply(null, numbers);
+
+  console.log(max);
+  // expected output: 7
+
+  var min = Math.min.apply(null, numbers);
+
+  console.log("result03:" + min); //-> 2
+}
+
+function sum(x, y, z) {
+  return x + y + z;
+}
+
+function myEach01(ay01){
+  console.log(ay01);
+  // ay01.forEach(el => {
+  //   // console.log(el);
+  // });
+}
+
+const numbers01 = [1, 2, 3];
+const numbers02 = [1, 2, 3, 4, 5, 6];
+
+var obj01 = {'key1': 'value1', 'key2': 'value2', 'key3': 'value3'};
+
+</script>  
+</body>
+</html>
