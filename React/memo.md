@@ -1,4 +1,5 @@
 ## JSX
+JavaScript を拡張した言語。  
 描画したい UI を JSX という記法で書く。
 
 
