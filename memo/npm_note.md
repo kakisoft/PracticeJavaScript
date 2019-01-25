@@ -11,7 +11,7 @@ $ npm start
 ### generate static project
 $ npm run generate
 
-_____________________________________\
+_____________________________________
 
 ## npm install option
 --save は package.json の dependencies に追記される。    
@@ -22,3 +22,18 @@ _____________________________________\
 他の人が npm install した時に、dependencies に指定したパッケージが全てインストールされる。
 
 https://qiita.com/msakamoto_sf/items/a1ae46979a42d6948ebd
+
+_____________________________________\
+
+## npmの--save, --save-dev, --save-optionalの違いAdd Star
+```
+1. --save は package.json の dependencies に追記される。
+アプリケーションの実行に必要なパッケージ	
+
+2. --save-dev は package.json の devDependencies に追記される。
+開発時に利用するパッケージ
+
+
+http://d.hatena.ne.jp/seinzumtode/20160226/1456450867
+https://the2g.com/2280
+```
