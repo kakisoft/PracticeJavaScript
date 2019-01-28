@@ -23,3 +23,13 @@ https://jp.vuejs.org/
 インストール→<script> 直接組み込み→「cdnjs」のリンクをコピー。
 
 ```
+## _
+```
+Chrome のコンソールで参照できるのは、「window.xxxx」の空間。
+
+window['LolPricingSimulator'] = LolPricingSimulator;
+の記述にて、window 名前空間から参照できるようにしている。
+
+
+Vue.js は、小さな部品（コンポーネント）を、１つのアプリとして動作する。
+```
