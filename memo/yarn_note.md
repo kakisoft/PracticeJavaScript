@@ -5,6 +5,14 @@ https://yarnpkg.com/en/
 ```
 choco install yarn
 ```
+
+### インストール（Mac）
+```
+brew install yarn
+yarn
+yarn global add gulp
+```
+
 ### バージョン確認
 ```
 yarn --version

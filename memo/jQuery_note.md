@@ -1,3 +1,4 @@
+```
 【 jQuery 】
 
 セレクタ：処理対象となるDOM要素を指定するための記法
@@ -36,10 +37,12 @@
 
 https://developers.google.com/speed/libraries/
 「jQuery」を選択
-
 ```
-3.x snippet:
+
+## _
+```html
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+3.x snippet:
 ```
 といったURLをコピー。
 ```

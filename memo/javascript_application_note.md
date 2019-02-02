@@ -1,3 +1,4 @@
+```
 Javascriptのループ
 https://qiita.com/endam/items/808a084859e3a101ab8f
 
@@ -35,3 +36,4 @@ var targetSyntaxContent1 = targetSyntaxElement.textContent; //placeholderも取�
 var targetSyntaxContent2 = targetSyntaxElement.value; //placeholderは取得しない
 ・・・でいいのか？
 
+```
