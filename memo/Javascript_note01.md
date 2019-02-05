@@ -60,6 +60,29 @@ DOM：documentにアクセスするための命令
 
 基本は constを使用し、再代入が必要な場合のみ、letを使用する。
 
+
+## let と var の違い
+<https://qiita.com/y-temp4/items/289686fbdde896d22b5e>  
+let はブロックスコープ、var は関数スコープ。
+
+```js
+function f() {
+  let x = 1;
+  console.log(x);
+  {
+    let x = 2;
+    console.log(x);
+  }
+  console.log(x);
+}
+
+f()
+// 1
+// 2
+// 1
+```
+
+
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 ## var
