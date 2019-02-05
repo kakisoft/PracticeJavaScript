@@ -6,6 +6,8 @@
 F12 を押すと、[React] タブが追加されている。
 State が確認できる。
 
-Component の検索も可。
+Component の検索も可。.
 ```
+
+
 
