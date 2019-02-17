@@ -241,6 +241,8 @@ function Built_in_function(){
     console.log(s.length);
     console.log(s.replace("k","K"));    // 痴漢
     console.log(s.substring(0,4));      // 切り出し
+    // 切り出しについては、slice も。
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice
 
     //--- Array ---
     var a = new Array(100,200,300,400);
