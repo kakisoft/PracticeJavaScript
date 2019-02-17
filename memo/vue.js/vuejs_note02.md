@@ -53,10 +53,45 @@ Vue.component('selectTerm', termTemplate);
 第２引数：コンポーネントのオプションオブジェクト
 ```
 
+## Vue.component
+<https://v1-jp.vuejs.org/guide/components.html>
 
+独自のタグを作成し、機能を追加していく事ができる。  
+```
+        var myData = require('./my-component.js').default;
+        var myTemplate = Vue.extend(myData);
+        Vue.component('selectPlan', myTemplate);
+
+
+
+        <div class="aaaaa">
+            <dl class="bbbbb">
+                <dt class="ccccc">何かのヘッダ的な</dt>
+                <dd class="ddddd">
+                    <select-plan :plans="plans"></select-plan>
+                </dd>
+            </dl>
+        </div>
+```
 
 ## Vue.extend( options )
 https://vuejs.org/v2/api/#Vue-extend
 
 
 
+## ライフサイクルフック
+あらかじめ登録した処理を、Vueインスタンスの特定のタイミングで自動的に呼び出す。
+
+＜1系からの移行＞    
+compiled  -> mounted
+
+<https://jp.vuejs.org/v2/guide/migration.html#compiled-%E7%BD%AE%E3%81%8D%E6%8F%9B%E3%81%88>
+
+
+
+compiled 置き換え
+
+
+## $dispatch
+コンポーネント間のイベント通信。  
+1系のみ。2は廃止。  

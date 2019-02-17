@@ -91,4 +91,57 @@ http://analogic.jp/hoisting/
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
+
+## 「$」
+<https://qiita.com/weedslayer/items/57b6ed8643395c95c258>  
+
+「$」はなんら特別の意味は持たない。$はアルファベットの1字とまったく同様に扱われる。  
+慣例的にjQueryのコードでは、ある変数がjQueryオブジェクトへの参照を代入する変数名であることをわかりやすくするため、$を接頭辞として使っているに過ぎない。
+
+
+## click( )
+.click(function(){});
+
+## on( )
+.on('click', function(){});
+
+## 違い
+.click( )では、JavaScriptで生成したDOMに対してイベントを発火することができない。
+.on( )では、JavaScriptで生成したDOMに対してイベントを発火することができる。
+
+
+
+## jQuery：　.on()
+<http://js.studio-kingdom.com/jquery/events/on>  
 ```
+.on( events [, selector] [, data], handler(eventObject) )   
+
+
+マッチした要素に任意のイベントをバインドします。
+
+events - "click" や "keydown.myPlugin",".myPlugin"などのイベント名、または任意に定義したカスタムイベント名の文字列。
+         また、スペース区切りで複数のイベントを指定することも可能です。
+```
+
+
+
+## trigger
+<https://www.sejuku.net/blog/40012>  
+```
+$('button').trigger('click');
+
+
+buttonClick イベントを走らせる。
+```
+
+## trigger：カスタムイベント
+
+
+## カスタムイベント
+<https://sota1235.hatenablog.com/entry/2015/12/01/101358>
+
+
+独自のイベントを定義し、dispatch で割り当て、  
+といった流れか？
+
+
