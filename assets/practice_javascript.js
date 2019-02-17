@@ -166,12 +166,43 @@ function array_sample() {
 
     console.log(array1[0])
     console.log(array3[4][2])
+
+    //-----( 配列のクリア )-----
+    array1.length = 0;
+    array1 = [];
 }
 array_sample();
 
-//-----( 配列のクリア )-----
-array1.length = 0;
-array1 = [];
+//====================
+//     連想配列
+//====================
+function associative_array_sample() {
+    var user = { name:'shin', age:2, tel:'080-1234-5678' };
+    user.country = 'Japan';     // ①チェーンで追加する方法
+    user['hobby'] = 'Dance';    // ②添字で追加する方法
+
+    console.table({user});
+    console.log( user['name'] );
+    console.log( user.name );    
+
+
+    var fruit = { apple: "400", banana: "300", grape: "600", peach: "700"};
+    delete fruit['peach'];
+
+    for(var key in fruit) {
+        console.log(key + ":" + fruit[key]);
+    }
+
+
+    // ECMAScript 2017
+    //https://stackoverflow.com/questions/34913675/how-to-iterate-keys-values-in-javascript
+    const object = {'a': 111, 'b': 222, 'c' : 333};
+    for (const [key, value] of Object.entries(object)) {
+      console.log(key, value);
+    }    
+}
+associative_array_sample();
+
 
 //====================
 //     ダイアログ
@@ -208,8 +239,8 @@ function Built_in_function(){
     var s = new String("kakisoft"); //文字列オブジェクト
     //var s = "kakisoft";           //文字列リテラル（メソッドを使うと、jsが自動的に文字列オブジェクトと認識してくれる。）
     console.log(s.length);
-    console.log(s.replace("k","K"));
-    console.log(s.substring(0,4));
+    console.log(s.replace("k","K"));    // 痴漢
+    console.log(s.substring(0,4));      // 切り出し
 
     //--- Array ---
     var a = new Array(100,200,300,400);
