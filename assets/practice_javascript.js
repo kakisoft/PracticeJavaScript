@@ -240,7 +240,7 @@ function Built_in_function(){
     //var s = "kakisoft";           //文字列リテラル（メソッドを使うと、jsが自動的に文字列オブジェクトと認識してくれる。）
     console.log(s.length);
     console.log(s.replace("k","K"));    // 痴漢
-    console.log(s.substring(0,4));      // 切り出し
+    console.log(s.substring(0,4));      // 切り出し  切出し
     // 切り出しについては、slice も。
     // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice
 
