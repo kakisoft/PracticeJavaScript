@@ -9,8 +9,8 @@ console.log(str1.padStart(2, '0'));
 
 const str1 = '5';
 
-console.log(str1.padStart(2, '0'));
-// expected output: "05"
+console.log(str1.padEnd(2, '0'));
+// expected output: "50"
 
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
