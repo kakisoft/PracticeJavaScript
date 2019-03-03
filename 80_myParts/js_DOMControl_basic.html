@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>JavaScript Basics</title>
+  <style>
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<!--
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+-->
+    <p>
+        Hello. Hello. Hello. Hello. Hello. Hello. Hello. Hello. Hello. Hello. Hello. Hello. Hello. Hello. Hello.
+        <span class="hidden">
+            AAAAAAAAAAAAAAAA 
+        </span>
+        <a href="">  >>もっと読む　　read more ...</a>
+    </p>
+<!--
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+-->
+
+  <script>
+//=======================================================================================================
+//=======================================================================================================
+
+'use strict';
+
+{
+  const a = document.querySelector('a');
+  const span = document.querySelector('span');
+
+  a.addEventListener('click', e => {
+    e.preventDefault();  //要素の規定の動作をキャンセル（今回は、a の操作（遷移）をキャンセル）
+    a.classList.add('hidden');
+    span.classList.remove('hidden');
+  });
+}
+//=======================================================================================================
+//=======================================================================================================
+
+  </script>
+</body>
+</html>
