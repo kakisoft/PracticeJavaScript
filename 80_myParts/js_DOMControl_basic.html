@@ -22,16 +22,28 @@
 -->
 
 <hr>
-  <!-- ======================================================================= -->
-    <p>
-        Hello. Hello. Hello. Hello. Hello. Hello. Hello. Hello. Hello. Hello. Hello. Hello. Hello. Hello. Hello.
-        <span class="hidden">
-            AAAAAAAAAAAAAAAA 
-        </span>
-        <a href="">  >>もっと読む　　read more ...</a>
-    </p>
-  <!-- ======================================================================= -->
+<!-- ======================================================================= -->
+
+  <button>OK</button>
+  
   <hr >
+<!-- ======================================================================= -->
+
+  <div></div>  
+
+  <hr >
+<!-- ======================================================================= -->
+
+  <p>
+      Hello. Hello. Hello. Hello. Hello. Hello. Hello. Hello. Hello. Hello. Hello. Hello. Hello. Hello. Hello.
+      <span class="hidden">
+          AAAAAAAAAAAAAAAA 
+      </span>
+      <a href="">  >>もっと読む　　read more ...</a>
+  </p>
+
+  <hr >
+<!-- ======================================================================= -->
 
 <!--
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -45,11 +57,40 @@
 
 {
 //--------------------------
-//        Result 2
+//  body を変えたり title を変えたり
 //--------------------------
-  document.body.textContent = 'Hello';
-  document.title = 'Changed!';
+  // document.body.textContent = 'Hello';
+  // document.title = 'Changed!';
 
+
+//--------------------------
+//       EventListener
+//--------------------------
+  const button = document.querySelector('button');
+
+  button.addEventListener('click', () => {
+    console.log('clicked!');
+  });
+  button.addEventListener('dblclick', () => {
+    console.log('dblclicked!');
+  });
+
+  // https://developer.mozilla.org/en-US/docs/Web/Events
+
+
+//--------------------------
+//       EventObject
+//--------------------------
+  const div = document.querySelector('div');
+
+  // マウスの座標を取得し、動的に表示
+  document.addEventListener('mousemove', e => {
+    div.textContent = `${e.clientX}:${e.clientY}`;
+  });
+
+//--------------------------
+//     preventDefault
+//--------------------------
   const a = document.querySelector('a');
   const span = document.querySelector('span');
 
