@@ -23,17 +23,17 @@
 
 <hr>
 <!-- ======================================================================= -->
+  <p>【 EventObject 】</p>
+  <div id="target">Target!</div>
 
+  <hr >
+<!-- ======================================================================= -->
+  <p>【 EventObject 】</p>
   <button>OK</button>
   
   <hr >
 <!-- ======================================================================= -->
-
-  <div></div>  
-
-  <hr >
-<!-- ======================================================================= -->
-
+  <p>【 preventDefault 】</p>
   <p>
       Hello. Hello. Hello. Hello. Hello. Hello. Hello. Hello. Hello. Hello. Hello. Hello. Hello. Hello. Hello.
       <span class="hidden">
@@ -62,6 +62,22 @@
   // document.body.textContent = 'Hello';
   // document.title = 'Changed!';
 
+//--------------------------
+//       DOM要素指定
+//--------------------------
+// document.getElementById('target')   //idでの指定
+// getElementsByClassName('box')       //class名での指定
+// getElementsByTagName('li')          //  HTML要素での指定
+// querySelector('form')               //css要素での指定。（単数） そのセレクターで最初に見つかったひとつの要素を取得
+// querySelectorAll()                  //css要素での指定。（複数）そのセレクターで見つかったすべての要素を取得
+
+// ＜使い分け＞
+// ・id が付いていたら getElementById() 
+// ・それ以外については querySelector() 系のほうが柔軟に指定可。
+// ・欲しい要素がひとつのときは querySelector() 
+// ・複数だったら querySelectorAll() 
+// が、良さげ。
+  document.getElementById('target').textContent = 'Changed!';
 
 //--------------------------
 //       EventListener
@@ -106,3 +122,9 @@
   </script>
 </body>
 </html>
+
+
+
+
+
+
