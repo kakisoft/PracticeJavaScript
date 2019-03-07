@@ -54,3 +54,23 @@ https://developers.google.com/speed/libraries/
 https://qiita.com/_upto_me_/items/003112b762646ede3e56
 
 
+## はじめてajaxを使うときに知りたかったこと
+jQuery で Ajax を行うのにあたり、同一ドメインにアクセスする際には問題ないけど、違うドメインにアクセスしようとする場合、何らかの対応が必要になります。  
+https://qiita.com/nekoneko-wanwan/items/bedc0e826c0842ca0b11
+
+
+## jQueryの$.getを使うと javascriptの部分がすっきりします。
+https://www.muratayusuke.com/2011/05/28/access-control-allow-origin/
+```js
+query = "./getmurata.php?url=http://www.muratayusuke.com/";
+$.get(query,function(data){
+	console.log(data);
+});
+```
+https://www.webprofessional.jp/jsonp-examples/
+```js
+$.getJSON(
+  "http://run.plnkr.co/plunks/v8xyYN64V4nqCshgjKms/data-1.json",
+  function(json) { console.log(json); }
+);
+```
