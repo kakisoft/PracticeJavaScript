@@ -23,12 +23,22 @@
 
 <hr>
 <!-- ======================================================================= -->
-  <p>【 EventObject 】</p>
+  <p>【 DOM要素指定() 】</p>
   <div id="target">Target!</div>
 
   <hr >
+<!-- ------- -->
+  <p>【 DOM要素指定(querySelector) 】</p>
+    <h5>Title</h5>
+    <ul>
+      <li>item</li>
+      <li>item</li>
+      <li>item</li>
+      <li>item</li>
+    </ul>
+  <hr >
 <!-- ======================================================================= -->
-  <p>【 EventObject 】</p>
+  <p>【 EventListener 】</p>
   <button>OK</button>
   
   <hr >
@@ -78,6 +88,17 @@
 // ・複数だったら querySelectorAll() 
 // が、良さげ。
   document.getElementById('target').textContent = 'Changed!';
+
+
+  //---------
+  //  querySelector
+  //---------
+  document.querySelector('h5').textContent = 'H1!';
+
+  // document.querySelectorAll('li').forEach(li => {                //「ノードリスト」という配列で取得される。
+  document.querySelectorAll('li:nth-child(odd)').forEach(li => {    //  奇数番目を取得
+    li.textContent = 'li!';
+  });
 
 //--------------------------
 //       EventListener
