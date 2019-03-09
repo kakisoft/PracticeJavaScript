@@ -90,15 +90,32 @@
   document.getElementById('target').textContent = 'Changed!';
 
 
-  //---------
-  //  querySelector
-  //---------
+  //==========< querySelector >==========
   document.querySelector('h5').textContent = 'H1!';
 
   // document.querySelectorAll('li').forEach(li => {                //「ノードリスト」という配列で取得される。
   document.querySelectorAll('li:nth-child(odd)').forEach(li => {    //  奇数番目を取得
     li.textContent = 'li!';
   });
+
+  //--------------------------
+  //    親要素・子要素の指定
+  //--------------------------
+  const ul = document.querySelector('ul');
+
+  // 親要素を指定
+  console.log(ul.parentNode); // body
+
+  //子要素を指定
+  console.log(ul.children); // li
+
+  
+  console.log(ul.children[0]);
+
+  for (let i = 0; i < ul.children.length; i++) {
+    console.log(ul.children[i].textContent);
+  }
+
 
 //--------------------------
 //       EventListener
