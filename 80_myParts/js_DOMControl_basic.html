@@ -26,7 +26,7 @@
   <p>【 DOM要素指定() 】</p>
   <div id="target">Target!</div>
 
-  <hr >
+  <hr>
 <!-- ------- -->
   <p>【 DOM要素指定(querySelector) 】</p>
     <h5>Title</h5>
@@ -36,7 +36,12 @@
       <li>item</li>
       <li>item</li>
     </ul>
-  <hr >
+  <hr>
+<!-- ======================================================================= -->
+    <p>【 要素の属性を操作 】</p>
+    <h1 title="this is title">Title</h1>
+
+  <hr>
 <!-- ======================================================================= -->
   <p>【 EventListener 】</p>
   <button>OK</button>
@@ -52,7 +57,7 @@
       <a href="">  >>もっと読む　　read more ...</a>
   </p>
 
-  <hr >
+  <hr>
 <!-- ======================================================================= -->
 
 <!--
@@ -117,10 +122,21 @@
     console.log(ul.children[i].textContent);
   }
 
+  //--------------------------
+  //      要素の属性を操作
+  //--------------------------
+  const h1 = document.querySelector('h1');
 
-//--------------------------
-//       EventListener
-//--------------------------
+  // console.log(h1.title);
+  // h1.title = 'Changed!';
+
+  h1.style.color = 'gray';
+  h1.style.backgroundColor = 'pink';  //「background-color」などのケバブケースは、camelで表現。
+
+
+  //--------------------------
+  //       EventListener
+  //--------------------------
   const button = document.querySelector('button');
 
   button.addEventListener('click', () => {
