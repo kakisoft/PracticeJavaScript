@@ -11,7 +11,7 @@ $ npm start
 ### generate static project
 $ npm run generate
 
-_____________________________________
+_____________________________________________________________________
 
 ## npm install option
 --save は package.json の dependencies に追記される。    
@@ -23,7 +23,7 @@ _____________________________________
 
 https://qiita.com/msakamoto_sf/items/a1ae46979a42d6948ebd
 
-_____________________________________\
+_____________________________________________________________________
 
 ## npmの--save, --save-dev, --save-optionalの違いAdd Star
 ```
@@ -37,3 +37,12 @@ _____________________________________\
 http://d.hatena.ne.jp/seinzumtode/20160226/1456450867
 https://the2g.com/2280
 ```
+
+_____________________________________________________________________
+## 新人にドヤ顔で説明できるか、今風フロントエンド開発ハンズオン(Git/Node.js/ES6/webpack4/Babel7)
+https://qiita.com/riversun/items/29d5264480dd06c7b9fb
+
+
+
+## プロジェクトを実行！npm startの使い方【初心者向け】
+https://techacademy.jp/magazine/16393
