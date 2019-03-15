@@ -55,11 +55,10 @@ src/views/dashboard/index.vue
 
 ## _
 ```
-src/views/dashboard/admin/components/BoxCard.vue
-
-
-      <div class="progress-item">
-        <span>JavaScript</span>
-        <el-progress :percentage="18"/>
-      </div>
+    <div style="position:relative;">{{ avatar }}
+      <pan-thumb :image="avatar" class="panThumb"/>
+      <mallki class-name="mallki-text" text="vue-element-admin"/>
+      <div style="padding-top:35px;" class="progress-item">
+        <span>Vue</span>
+        <el-progress :percentage="70" :show-text="false" />
 ```
