@@ -44,3 +44,9 @@ src/App.vue
 　  ↓
 src/router/index.js（多分）
 ```
+
+## dashboard
+src/views/dashboard/index.vue
+
+
+
