@@ -5,6 +5,9 @@ https://panjiachen.github.io/vue-element-admin-site/
 # vuex
 https://vuex.vuejs.org/guide/
 
+
+# Element （el-XX のタグは、多分これ。）
+https://element.eleme.io/
 ____________________________________________________________________
 ____________________________________________________________________
 ## デバッグメモ
@@ -50,3 +53,13 @@ src/views/dashboard/index.vue
 
 
 
+## _
+```
+src/views/dashboard/admin/components/BoxCard.vue
+
+
+      <div class="progress-item">
+        <span>JavaScript</span>
+        <el-progress :percentage="18"/>
+      </div>
+```
