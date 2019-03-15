@@ -38,8 +38,13 @@
     </ul>
   <hr>
 <!-- ======================================================================= -->
-    <p>【 要素の属性を操作 】</p>
-    <h1 title="this is title">Title</h1>
+  <p>【 要素の属性を操作 】</p>
+  <h1 title="this is title">Title</h1>
+
+  <hr>
+<!-- ======================================================================= -->
+  <p>【 カスタムデータ属性 】</p>
+  <h2 title="this is title" data-app-id="app01">Title</h2>
 
   <hr>
 <!-- ======================================================================= -->
@@ -133,6 +138,13 @@
   h1.style.color = 'gray';
   h1.style.backgroundColor = 'pink';  //「background-color」などのケバブケースは、camelで表現。
 
+  //--------------------------
+  //     カスタムデータ属性
+  //--------------------------
+  const h2 = document.querySelector('h2');
+
+  console.log(h2.dataset.appId);
+  h2.dataset.message = 'this is custom message!';
 
   //--------------------------
   //       EventListener
