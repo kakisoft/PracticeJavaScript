@@ -62,6 +62,10 @@
 
   <hr>
 <!-- ======================================================================= -->
+<p>【 クラス属性を操作（classList） 】</p>
+  <div class="box border-pink" id="div03"></div>
+<hr>
+<!-- ======================================================================= -->
   <p>【 EventListener 】</p>
   <button>OK</button>
   
@@ -171,6 +175,22 @@
   // class は JavaScript の予約語なので、「className」
   //  元の class を上書きする形。w
 
+  //--------------------------
+  //     クラス属性を操作（classList）
+  //--------------------------
+  const div03 = document.getElementById('div03');
+
+  // div03.classList.add('border-pink');
+  // div03.classList.remove('box');
+
+  // if (div03.classList.contains('border-pink')) {
+  //   div03.classList.remove('border-pink');
+  // } else {
+  //   div03.classList.add('border-pink');
+  // }
+
+  //無かったら追加、あったら削除。
+  div03.classList.toggle('border-pink');
 
   //--------------------------
   //       EventListener
