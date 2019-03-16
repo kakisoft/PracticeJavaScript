@@ -13,6 +13,14 @@
     .hidden {
       display: none;
     }
+    .box {
+      width: 100px;
+      height: 100px;
+      background: gray;
+    }
+    .border-pink {
+      border-bottom: 5px solid pink;
+    }    
   </style>
 </head>
 <body>
@@ -46,6 +54,11 @@
   <p>【 カスタムデータ属性 】</p>
   <h2 title="this is title" data-app-id="app01">Title</h2>
                             <!-- 開始は必ず「data-」 -->
+
+  <hr>
+<!-- ======================================================================= -->
+  <p>【 クラス属性を操作 】</p>
+  <div class="box" id="div02"></div>
 
   <hr>
 <!-- ======================================================================= -->
@@ -148,6 +161,16 @@
   h2.dataset.message = 'this is custom message!';
 //  カスタムデータの取得には「dataset」が必要。
 //  <h2 title="this is title" data-app-id="app01">Title</h2>
+
+  //--------------------------
+  //     クラス属性を操作
+  //--------------------------
+  const div02 = document.getElementById('div02');
+
+  div02.className = 'box border-pink';
+  // class は JavaScript の予約語なので、「className」
+  //  元の class を上書きする形。w
+
 
   //--------------------------
   //       EventListener
