@@ -145,3 +145,11 @@ buttonClick イベントを走らせる。
 といった流れか？
 
 
+## スプレッド構文
+...
+
+
+
+## import Hoge from '@/config/hoge'
+ vue の webpack のテンプレートを用いたときに設定されている webpack の設定で、プロジェクトの src ディレクトリへのエイリアスとして解決されるらしい。 つまり、上記の例だと src/config/hoge へと解決される。
+ 
