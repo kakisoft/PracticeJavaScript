@@ -68,6 +68,10 @@ https://docs.npmjs.com/misc/semver
 gitのリポジトリ管理に含めない。
 
 
+## webpack-dev-server
+npm run startで起動されたWebサーバー。  
+コマンドラインでwebpack-dev-serverと入力するだけでも起動できる。
+
 _____________________________________________________________________
 ## 新人にドヤ顔で説明できるか、今風フロントエンド開発ハンズオン(Git/Node.js/ES6/webpack4/Babel7)
 https://qiita.com/riversun/items/29d5264480dd06c7b9fb
