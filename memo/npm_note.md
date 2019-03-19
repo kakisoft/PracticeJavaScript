@@ -40,7 +40,12 @@ https://the2g.com/2280
 
 _____________________________________________________________________
 ## npm start
-package.json の scripts.start に指定された文字列を実行。
+package.json の scripts.start に指定された文字列を実行。  
+( “node server.js” とか)
+
+## npm --help start
+
+
 
 _____________________________________________________________________
 ## 新人にドヤ顔で説明できるか、今風フロントエンド開発ハンズオン(Git/Node.js/ES6/webpack4/Babel7)
