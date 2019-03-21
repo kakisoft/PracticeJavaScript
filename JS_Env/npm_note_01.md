@@ -12,6 +12,35 @@ $ npm start
 $ npm run generate
 
 _____________________________________________________________________
+## npx
+ * npm パッケージのダウンロードと実行を同時に行う。  
+ * ローカルにインストールしたnpmパッケージを、npxコマンドで実行できる。
+
+
+## ローカルの npm パッケージを使用
+ * 方法1: ./node_modules/.bin/(パッケージ名)で実行する
+ * 方法2: $(npm bin)/(パッケージ名)で実行する
+ * 方法3: package.jsonにnpm-scriptsを記述して実行する
+
+## npm run
+ビルド。  
+package.json に書かれたスクリプトを実行する。  
+　  
+こういう package.json があった時、
+```json
+{
+  "scripts": {
+    "build": "browserify src/main.js > build/bundle.js"
+  }
+}
+```
+npm run build  
+と実行すると、「"build"」の内容が実行される。
+
+## npm-run-all build:*  （「build:js」「build:css」）
+https://github.com/mysticatea/npm-run-all
+
+_____________________________________________________________________
 
 ## npm install option
 --save は package.json の dependencies に追記される。    
