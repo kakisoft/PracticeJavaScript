@@ -43,6 +43,15 @@ npm run build
 ## npm-run-all build:*  （「build:js」「build:css」）
 https://github.com/mysticatea/npm-run-all
 
+
+## npm run watch
+ターミナルで実行し続け、関連ファイル全部の変更を監視する。
+
+
+## npm run watch-poll
+特定の環境のWebpackでは、ファイル変更時に更新されないことがあるらしい。  
+その場合、こっちを使う。
+
 _____________________________________________________________________
 
 ## npm install option
