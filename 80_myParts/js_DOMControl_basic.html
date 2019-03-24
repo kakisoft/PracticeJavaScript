@@ -66,6 +66,10 @@
   <div class="box border-pink" id="div03"></div>
 <hr>
 <!-- ======================================================================= -->
+<p>【 要素を生成 】</p>
+  <div id="div04"></div>
+<hr>
+<!-- ======================================================================= -->
   <p>【 EventListener 】</p>
   <button>OK</button>
   
@@ -191,6 +195,21 @@
 
   //無かったら追加、あったら削除。
   div03.classList.toggle('border-pink');
+
+  //--------------------------
+  //        要素を生成
+  //--------------------------
+  const h1_04 = document.createElement('h1');
+  h1_04.textContent = 'createElement';
+  document.body.appendChild(h1);
+
+  const p_04 = document.createElement('p');
+  p_04.textContent = 'createElement';
+  document.body.appendChild(p_04);
+
+  const h2_04 = document.createElement('h2');
+  h2_04.textContent = 'insertBefore';
+  document.body.insertBefore(h2_04, p_04);
 
   //--------------------------
   //       EventListener
