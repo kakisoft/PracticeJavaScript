@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>cookie</title>
+</head>
+<body>
+
+<form name="my_form_01">
+<input type="text" id="id_app01" name="name_app01" value="app01">
+
+
+
+<button type="button" id="my-button-01">cookie</button>
+</form>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+document.getElementById("my-button-01").addEventListener("click", myButton01Clicked)
+
+function myButton01Clicked(){
+
+  console.log(isCookieEnabled());
+
+  //==============================
+  //     Cookie に値をセット
+  //==============================
+  //キー"pref01"／値"Hokkaido"、キー"pref02"／値"Aomori"　をクッキーにセットする
+  document.cookie = "pref01=Hokkaido";
+  document.cookie = "pref02=Aomori";
+  // ※２回続けて書くと１つめのが上書きされてしまいそうですが大丈夫です。
+
+  //セミコロン区切りで続けて指定してもOK
+  document.cookie = "pref01=Hokkaido;pref02=Aomori";
+
+  //値はencodeURIComponentでエンコードしてからセットした方が安全。
+  document.cookie = "pref01=" + encodeURIComponent("Hokkaido");
+  document.cookie = "pref02=" + encodeURIComponent("Aomori");
+  // ※エンコードしてセットした場合は、取得時はdecodeURIComponentでデコードする必要あり。
+
+  console.table({data:document.cookie});
+  console.log(document.cookie)
+
+
+  //==============================
+  //     Cookie の値を取得
+  //==============================
+
+  document.cookie = 'cookie_name=' + encodeURIComponent('outlet shoes');
+//データを1つずつに分ける
+var r = document.cookie.split(';');
+ 
+r.forEach(function(value) {
+ 
+    //cookie名と値に分ける
+    var content = value.split('=');
+    
+    console.log( content[1] );
+})
+
+
+
+
+  //cookieから値を取得する
+  var str = document.cookie;
+
+  //
+  var arr = getCookieArray();
+  var result = arr["pref01"];
+
+  console.log(result);
+
+  //==============================
+  //     キーの存在チェック
+  //==============================
+  document.cookie = 'number=123';
+
+  var result = document.cookie.indexOf('name');
+  if(result !== -1) {
+    console.log('存在します');
+  }
+  else {
+    console.log('存在しません！');
+  }
+
+  //==============================
+  //     Cookie の削除
+  //==============================
+  document.cookie = 'name="太郎"; max-age=0';
+
+  console.log(document.cookie);
+}
+
+
+//////////////////////////////////////
+//
+//////////////////////////////////////
+//cookie値を連想配列として取得する
+function getCookieArray(){
+  var arr = new Array();
+  if(document.cookie != ''){
+    var tmp = document.cookie.split('; ');
+    for(var i=0;i<tmp.length;i++){
+      var data = tmp[i].split('=');
+      arr[data[0]] = decodeURIComponent(data[1]);
+    }
+  }
+  return arr;
+}
+
+//////////////////////////////////////
+//     cookieが有効かどうか調べる
+//////////////////////////////////////
+function isCookieEnabled(){
+  return navigator.cookieEnabled;
+}
+
+
+
+
+// path     指定したパスがcookieの有効範囲になる
+// domain   指定したドメインがcookieの有効範囲になる
+// max-age  指定した秒数だけ有効期限になる
+// expires  指定した日付までが有効期限になる
+// secure   https通信の時だけcookieが有効になる
+
+</script>  
+</body>
+</html>
+
+
