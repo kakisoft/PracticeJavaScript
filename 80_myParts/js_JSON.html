@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>My Boiler Plate</title>
+</head>
+<body>
+
+<form name="my_form_01">
+<input type="text" id="id_app01" name="name_app01" value="app01">
+
+
+
+<button type="button" id="my-button-01">format-syntax</button>
+</form>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+document.getElementById("my-button-01").addEventListener("click", myButton01Clicked)
+
+function myButton01Clicked(){
+  //==============================
+  //  JSON to JavaScriptObject
+  //==============================
+  //JSON文字列
+  var jsonStr1 = '{"name":"山田太郎","age":10,"gender":"M"}';
+  
+  //JavaScriptオブジェクトへ変換
+  var obj1 = JSON.parse(jsonStr1);
+  
+  //表示する
+  // document.write(obj1.name);
+  // document.write(obj1.age);
+  // document.write(obj1.gender);
+  console.log(obj1.name);    //=> 山田太郎
+  console.log(obj1.age);     //=> 10
+  console.log(obj1.gender);  //=>  M
+
+  //==============================
+  //  JavaScriptObject to JSON
+  //==============================
+  //オブジェクトの生成
+  var obj2 = new Object();
+  obj2.name = "山田太郎";
+  obj2.age = 10;
+  obj2.gender = "M";
+  
+  //JSON文字列へ変換
+  var jsonStr2 = JSON.stringify(obj2);
+  
+  //表示する
+  // document.write(jsonStr2);
+  console.log(jsonStr2);    //=>  {"name":"山田太郎","age":10,"gender":"M"}
+
+}
+
+</script>  
+</body>
+</html>
