@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>querySelectorAll</title>
+</head>
+<body>
+
+<form name="my_form_01">
+<input type="text" id="id_app01" name="name_app01" value="app01">
+
+<button type="button" id="my-button-01">format-syntax</button>
+
+<!--
+------------------------------------
+
+------------------------------------
+-->
+<div class="sample-div" style="width:94%; padding:3%; background:#CCC;">
+  クリックでこのdivのクラス名をアラート表示
+</div>
+
+<!--
+------------------------------------
+
+------------------------------------
+-->
+<ul class="sample-list">
+  <li>menu1</li>
+  <li>menu2</li>
+  <li>menu3</li>
+  </ul>
+</form>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+document.getElementById("my-button-01").addEventListener("click", myButton01Clicked)
+
+function myButton01Clicked(){
+}
+
+
+//--------------------------------
+//
+//--------------------------------
+var cl = document.querySelector('.sample-div');
+cl.onclick = function() {
+    alert(cl.className);
+}    
+
+
+//--------------------------------
+//
+//--------------------------------
+var listArray = document.querySelectorAll('.sample-list li');
+for (i=0; i< listArray.length; i++) {
+    listArray[i].onclick = function() {
+        alert(this.innerHTML);
+    }
+}
+</script>  
+</body>
+</html>
