@@ -58,6 +58,36 @@ for (i=0; i< listArray.length; i++) {
         alert(this.innerHTML);
     }
 }
+
+
+
+
+// MySelectComponent.getSelectableDomains = function(id) {
+//   var result = [];
+//   var optgroups = document.querySelectorAll(`#${id} optgroup`);
+//   if (!optgroups) {
+//       return result;
+//   }
+//   for(var i = 0; i < optgroups.length; i++) {
+//       var optgroup = optgroups[i];
+//       var label = optgroup.getAttribute('label');
+//       var options = optgroup.querySelectorAll('option');
+//       var domains = []
+//       for (var j = 0; j < options.length; j++) {
+//           var option = options[j];
+//           domains.push({
+//               value: option.value,
+//               name: option.text,
+//               selected: option.selected
+//           });
+//       }
+
+//       result.push({label: label, domain: domains});
+//   }
+
+//   return result;
+// }
+
 </script>  
 </body>
 </html>
