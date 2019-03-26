@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>My Boiler Plate</title>
+</head>
+<body>
+
+<form name="my_form_01">
+<input type="text" id="id_app01" name="name_app01" value="あ1い2う">
+
+
+
+<button type="button" id="my-button-01">format-syntax</button>
+</form>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+document.getElementById("my-button-01").addEventListener("click", myButton01Clicked)
+
+function myButton01Clicked(){
+    var myText01 = document.getElementById("id_app01").value.trim();
+
+    var tlen = getByteLength(myText01);
+    console.log("バイト数： " + tlen);
+    
+}
+
+//==========================
+//   文字列のバイト数を取得
+//==========================
+function getByteLength(str){
+  str = (str==null)?"":str;
+  return encodeURI(str).replace(/%../g, "*").length;
+}
+
+// encodeURI関数はASCII文字以外を「%xx」のような文字に置き換える事を利用してバイト数を取得しています。
+// 引数がnullの場合は空文字として値を評価します。
+
+</script>  
+</body>
+</html>
+
+
+<!--
+//-----------------
+//  bytes() を使う
+//-----------------
+String.prototype.bytes = function () {
+  return(encodeURIComponent(this).replace(/%../g,"x").length);
+}
+
+var str = 'abcde';
+console.log(str.bytes()); // 5
+
+var str2 = 'あいうえお';
+console.log(str2.bytes()); // 15
+-->
