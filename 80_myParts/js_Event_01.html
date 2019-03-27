@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>My Boiler Plate</title>
+</head>
+<body>
+
+<form name="my_form_01">
+<div id="domain-select-component"> disp domain-select-component</div>
+<div class="">
+    <label for="domain-id" class="">ドメインの選択</label>
+    <div class="">
+        <select id="domain-id" name="domainId" tabindex="3">
+            <optgroup label="Group-01">
+                <option>Option 1.1</option>
+            </optgroup> 
+            <optgroup label="Group-02">
+                <option>Option 2.1</option>
+                <option>Option 2.2</option>
+            </optgroup>
+            <optgroup label="Group-03" disabled>
+                <option>Option 3.1</option>
+                <option>Option 3.2</option>
+                <option>Option 3.3</option>
+            </optgroup>
+        </select>
+
+        <button type="button" id="change-domain" class="change-domail-button">URLの末尾を変更する</button>
+    </div>
+</div>
+
+</form>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+//======================================================================================
+
+// target.addEventListener(type, listener[, useCapture]);
+// ・useCapture
+//     イベントの発生する順番。
+//     親→子　or  子→親　を選択できるみたいな感じ？
+//     WPF で言うと、バブルイベント/トンネリングイベント　の制御。
+//     https://qiita.com/hosomichi/items/49500fea5fdf43f59c58
+document.addEventListener('readystatechange', myEventFunction01, false);
+
+
+// var string = document.readyState;
+// ・loading
+//     この文書はまだ読み込み中です。
+// ・interactive
+//     この文書は読み込みが終わり、解析が済みましたが、画像、スタイルシート、フレームなどの副リソースはまだ読み込み中です。
+// ・complete
+//     この文書とすべての副リソースの読み込みが終わっています。
+function myEventFunction01(){
+    if(document.readyState !== 'complete') {
+        return;
+    }
+
+
+    if(!document.querySelector('#domain-select-component')) {
+        return;
+    }
+
+    var select = document.querySelector('#domain-id');
+    var selectButton = document.querySelector('#change-domain');
+
+    if (select) {
+
+        var domainSelectComponent;
+        domainSelectComponent = true;
+
+        addEventToSelect(select      , domainSelectComponent);
+        addEventToSelect(selectButton, domainSelectComponent);
+
+
+        //// どれを使っても、イベントをキャンセルすることができないぜ。
+        // select.addEventListener("click"       ,(e)=>{ e.preventDefault(); });
+        // select.addEventListener("focus"       ,(e)=>{ e.preventDefault(); });
+        // select.addEventListener("select"      ,(e)=>{ e.preventDefault(); });
+        // select.addEventListener("selectStart" ,(e)=>{ e.preventDefault(); });
+        // select.addEventListener("keyUp"       ,(e)=>{ e.preventDefault(); });
+        // select.addEventListener("keyDown"     ,(e)=>{ e.preventDefault(); });
+        // select.addEventListener("keyPress"    ,(e)=>{ e.preventDefault(); });
+        // select.addEventListener("mouseOver"   ,(e)=>{ e.preventDefault(); });
+        // select.addEventListener("mouseOut"    ,(e)=>{ e.preventDefault(); });
+        // select.addEventListener("mouseUp"     ,(e)=>{ e.preventDefault(); });
+        // select.addEventListener("mouseDown"   ,(e)=>{ e.preventDefault(); });
+        // select.addEventListener("change"      ,(e)=>{ e.preventDefault(); });
+
+    }
+
+}
+
+function addEventToSelect(el, com){
+    el.addEventListener('focus', function(event) {
+
+        console.log(el['type'].substr(0,6));
+        if (com) {
+            // セレクトボックスの場合、非表示にする。
+            if(el['type'].substr(0,6) === 'select'){
+                el.style.display = 'none';
+                // el.style.visibility = 'hidden'
+                // el.disabled = true;
+            }
+
+            // com.$set('ui.isActive', true);
+
+            el.blur(); // フォーカスを外す。
+            //【 element.blur() 】　https://developer.mozilla.org/ja/docs/Web/API/HTMLElement/blur
+        }
+    }, false);
+}
+
+
+// ## https://ja.wikipedia.org/wiki/%E7%84%A1%E5%90%8D%E9%96%A2%E6%95%B0
+// var add = function(a, b){ return a + b; }; // 2つの引数を取ってその和を返す無名関数を定義し、変数addにバインドする。
+// alert(add(2, 3));
+
+// var add = (a, b) => { return a + b; }; //アロー関数
+//     add = (a, b) => a + b; // 値を返すだけの関数の場合、returnと{}を同時に省略可能
+// alert(add(2, 3));
+
+</script>  
+</body>
+</html>
