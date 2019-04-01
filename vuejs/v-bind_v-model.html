@@ -9,6 +9,7 @@
         <h3>【 v-bind 】</h3>
         <div>
             <p>v-bind だと、View（テキストボックスなど）の値が変わっても、Modelは変化しない。</p>
+            <p>ただし、Modelの値が変化すると、Viewの値は変化する。（WPF知ってる人には、「単方向バインディング」って言えば伝わりやすそう。）</p>
             <p>[ {{ param1 }} ]</p>
             <div>
                 <input type="text" v-bind:value="param1">
@@ -21,6 +22,7 @@
             <h3>【 v-model 】</h3>
             <div>
                 <p>v-model だと、View（テキストボックスなど）の値が変わると、Modelも変化する。</p>
+                <p>（WPF知ってる人には、「双方向バインディング」って言えば伝わりやすそう。）</p>>
                 <p>[ {{ param2 }} ]</p>
                 <input type="text" v-model="param2">
             </div>
