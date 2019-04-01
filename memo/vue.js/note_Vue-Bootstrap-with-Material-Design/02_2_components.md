@@ -1,5 +1,5 @@
 _________________________________________________________________________________
-### ComponentsPage
+### src/docs/categories/ComponentsPage.vue
 ```
 Alerts           /components/alert
 Badge            /components/badge
