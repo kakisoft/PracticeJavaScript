@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>My Vue App</title>
+</head>
+<body>
+    <div id="app">
+        <h3>【 v-bind 】</h3>
+        <div>
+            <p>v-bind だと、View（テキストボックスなど）の値が変わっても、Modelは変化しない。</p>
+            <p>[ {{ param1 }} ]</p>
+            <div>
+                <input type="text" v-bind:value="param1">
+            </div>
+        </div>
+
+
+
+        <div>
+            <h3>【 v-model 】</h3>
+            <div>
+                <p>v-model だと、View（テキストボックスなど）の値が変わると、Modelも変化する。</p>
+                <p>[ {{ param2 }} ]</p>
+                <input type="text" v-model="param2">
+            </div>
+        </div>
+
+
+        <div>
+            <button type="button" @click="outputConsole">[ Output Console ]</button>
+            <button type="button" @click="appendParam1('a')">[ Append param1 ]</button>
+        </div>
+
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+<script>
+
+var app = new Vue({
+    el: '#app',
+    data: {
+        param1: "param1",
+        param2: "param2"
+    },
+    methods: {
+      outputConsole: function() {
+        console.table({param1:this.param1})
+        console.table({param2:this.param2})
+      },
+      appendParam1: function(addChar) {
+        this.param1 += addChar;
+      }
+    }
+})
+
+</script>
+</body>
+</html>
