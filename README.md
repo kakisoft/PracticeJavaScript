@@ -10,9 +10,10 @@ https://kakisoft.github.io/PracticeJavaScript/practice_jquery.html
 
 
 ### vue.js
-https://kakisoft.github.io/PracticeJavaScript/vuejs2/practice_vuejs2_1.html    
-https://kakisoft.github.io/PracticeJavaScript/vuejs2/practice_vuejs2_2.html    
-https://kakisoft.github.io/PracticeJavaScript/vuejs2/book/cr-vue/tutorial-todo/index.html  
+https://kakisoft.github.io/PracticeJavaScript/vuejs/practice_vuejs2_1.html    
+https://kakisoft.github.io/PracticeJavaScript/vuejs/practice_vuejs2_2.html    
+https://kakisoft.github.io/PracticeJavaScript/vuejs/v-bind_v-model.html    
+https://kakisoft.github.io/PracticeJavaScript/vuejs/book/cr-vue/tutorial-todo/index.html  
 
 ### React
 https://kakisoft.github.io/PracticeJavaScript/React/sample01.html  
