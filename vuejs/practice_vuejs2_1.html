@@ -1,3 +1,145 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>My Vue App</title>
+  <!-- <link rel="stylesheet" href="css/styles-practice-vuejs2-1.css"> -->
+</head>
+<body>
+
+  <!--
+  ==========================
+           app01
+  ==========================
+  -->
+  <div id="app01">
+    <p>Hello {{ name }}!</p>
+    <p>Hello {{ name.toUpperCase() }}!</p>
+    <p><input type="text" v-model="name"></p>
+  </div>
+  <hr>
+
+  <!--
+  ==========================
+           app02
+  ==========================
+  -->
+  <div class="app02">
+    <h1>My Todos：app02</h1>
+    <ul>
+      <!-- 要素を１つ１つ指定 -->
+      <li>{{ todos[0] }}</li>
+      <li>{{ todos[1] }}</li>
+      <li>{{ todos[2] }}</li>
+    </ul>
+  </div>
+  <hr>
+
+  <!--
+  ==========================
+           app03
+  ==========================
+  -->
+  <div id="app03" class="container myapp">
+    <h1>My Todos：app03</h1>
+    <ul>
+      <!-- ループ構文 -->　<!-- vから始まる属性を、「ディレクティブ」と呼ぶ -->
+      <li v-for="(todo, index) in todos"> <!-- indexには、0から開始する順番が入る -->
+        <input type="checkbox" v-model="todo.isDone">
+        <!-- データに応じてクラスを付け替えるには、v-bind:classというディレクティブを使う -->
+        <!-- <span v-bind:class="{done: todo.isDone}">{{ todo.title }}</span> -->
+        <span :class="{done: todo.isDone}">{{ todo.title }}</span> <!-- todo.isDoneがtrueの場合、doneクラスを適用 -->
+        <span @click="deleteItem(index)" class="command">[x]</span> <!-- v-bindは、先のようのな省略記法がある -->
+      </li>
+      <li v-show="!todos.length">Nothing to do, yay!</li> <!-- v-showディレクティブで分岐を制御できる -->
+    </ul>
+    <!-- <form v-on:submit="addItem"> --> <!-- イベントの紐付けには、v-onを使用する。 -->
+    <form @submit.prevent="addItem"><!-- v-onは頻繁に使うので、省略した書き方がある --> <!-- .preventは、formがsubmitされて画面が遷移し、上手く行かない現象を html側にて対処するための記述 -->
+      <input type="text" v-model="newItem"> <!-- モデルを結び付ける -->
+      <input type="submit" value="Add">
+    </form>
+  </div>
+  <hr>
+
+  <!--
+  ==========================
+           app04
+  ==========================
+  -->
+  <div id="app04" class="container myapp">
+    <h1>My Todos：app04</h1>
+    <ul v-if="todos.length"> <!-- v-ifディレクティブでも分岐を表現できる -->
+      <li v-for="(todo, index) in todos">
+        <input type="checkbox" v-model="todo.isDone">
+        <span :class="{done: todo.isDone}">{{ todo.title }}</span>
+        <span @click="deleteItem(index)" class="command">[x]</span>
+      </li>
+    </ul>
+    <ul v-else>
+      <li>Nothing to do, yay!</li>
+    </ul>
+    <form @submit.prevent="addItem">
+      <input type="text" v-model="newItem">
+      <input type="submit" value="Add">
+    </form>
+  </div>
+  <hr>
+
+  <!--
+  ==========================
+           app05
+  ==========================
+  -->
+  <div id="app05" class="container myapp">
+    <h1>
+      <button @click="purge">Purge</button>
+      My Todos：app05
+      <span class="info">({{ remaining.length }}/{{ todos.length }})</span>
+    </h1>
+    <ul>
+      <li v-for="(todo, index) in todos">
+        <input type="checkbox" v-model="todo.isDone">
+        <span :class="{done: todo.isDone}">{{ todo.title }}</span>
+        <span @click="deleteItem(index)" class="command">[x]</span>
+      </li>
+      <li v-show="!todos.length">Nothing to do, yay!</li>
+    </ul>
+    <form @submit.prevent="addItem">
+      <input type="text" v-model="newItem">
+      <input type="submit" value="Add">
+    </form>
+  </div>
+  <hr>
+
+  <!--
+  ==========================
+           app06
+  ==========================
+  -->
+  <div id="app06" class="container myapp">
+    <h1>
+      <button @click="purge">Purge</button>
+      My Todos：app06
+      <span class="info">({{ remaining.length }}/{{ todos.length }})</span>
+    </h1>
+    <ul>
+      <li v-for="(todo, index) in todos">
+        <input type="checkbox" v-model="todo.isDone">
+        <span :class="{done: todo.isDone}">{{ todo.title }}</span>
+        <span @click="deleteItem(index)" class="command">[x]</span>
+      </li>
+      <li v-show="!todos.length">Nothing to do, yay!</li>
+    </ul>
+    <form @submit.prevent="addItem">
+      <input type="text" v-model="newItem">
+      <input type="submit" value="Add">
+    </form>
+  </div>
+  <hr>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <!-- <script src="js/practice-vuejs2-2.js"></script>   -->
+  <script>
 (function() {
   'use strict';
 
@@ -241,4 +383,8 @@
     }
   });
 
-})();
+})();  
+  
+  </script>
+</body>
+</html>

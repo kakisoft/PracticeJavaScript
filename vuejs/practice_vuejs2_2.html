@@ -1,3 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>My Vue App</title>
+</head>
+<body>
+  
+  <div id="app01">
+    <hr>    
+      <my-component1></my-component1> 
+      <my-component1></my-component1>
+    <hr>
+      <my-component2></my-component2>
+    <hr>    
+  </div>
+
+  <div id="app02">
+    <like-component2></like-component2>
+    <like-component2></like-component2>
+    <like-component2></like-component2>
+    <hr>    
+  </div>
+
+  <div id="app03">
+    <p>Total Likes: {{ total }}</p>    
+    <like-component3 message="Like"    v-on:increment="incrementTotal"></like-component3>  <!-- message・・・カスタム属性 -->
+    <like-component3 message="Awesome" @increment="incrementTotal"></like-component3>  <!--　発火するイベントと、ファンクションを記述　-->
+    <like-component3 message="Great"   @increment="incrementTotal"></like-component3>
+    <like-component3                   @increment="incrementTotal"></like-component3>
+    <hr>    
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script>
 (function() {
   'use strict';
 
@@ -92,4 +127,8 @@
     }
   });
 
-})();
+})();  
+  
+  </script>
+</body>
+</html>
