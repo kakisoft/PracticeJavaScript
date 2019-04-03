@@ -1,0 +1,45 @@
+<!DOCTYPE>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+    <div id="app">
+
+      <button v-on:click="current^=1">コンポーネントを切り替え</button>
+      <div v-bind:is="component"></div>
+
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+<script>
+// コンポーネントA
+Vue.component('my-component-a', {
+  template: '<div class="my-component-a">component A</div>'
+})
+// コンポーネントB
+Vue.component('my-component-b', {
+  template: '<div class="my-component-b">component B</div>'
+})
+
+new Vue({
+  el: '#app',
+  data: {
+    // コンポーネントのリスト
+    componentTypes: ['my-component-a', 'my-component-b'],
+    // 描画するコンポーネントを選択するためのindex
+    current: 0
+  },
+  computed: {
+    component: function () {
+      console.log(this.current)
+
+      // currentと一致するindexのコンポーネントを使用
+      return this.componentTypes[this.current]
+      // 別に `return current ? 'my-component-b' : 'my-component-a'` とかでもよい
+    }
+  }
+})
+
+</script>
+</body>
+</html>
