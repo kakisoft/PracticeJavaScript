@@ -1,25 +1,40 @@
+___________________________________________________________
+# _
 components  -> button
 
 ## src/router/index.js
-```
+```js
     }, {
       path: '/components/button',
       name: 'ButtonPage',
       component: ButtonPage
     }, {
 ```
-
-
+___________________________________________________________
+# __
 components/panel
-## _
-```
-```
 
+## src/router/index.js
+```js
+    }, {
+      path: '/components/panel',
+      name: 'PanelPage',
+      component: PanelPage
+    }, {
+```
+___________________________________________________________
+# ___
 components/card
-## _
-```
-```
 
+## src/router/index.js
+```js
+    }, {
+      path: '/components/card',
+      name: 'CardPage',
+      component: CardPage
+    }, {
+```
+___________________________________________________________
 
 
 ＜あとで＞  
