@@ -5,9 +5,10 @@
     <title>jQuery misc01</title>
 </head>
 <body>
-    <button type="button" id="id_my_button_01" name="name_my_button_01">my-button-01</button>
-    <button type="button" id="id_my_button_02" name="name_my_button_02">my-button-02</button>
-    <button type="button" id="id_my_button_03" name="name_my_button_03">my-button-03</button>
+    <button type="button" id="id_my_button_01" name="name_my_button_01">チェックボックスの値を取得</button>
+    <button type="button" id="id_my_button_02" name="name_my_button_02">チェックボックス・ラジオボタンの値を変更</button>
+    <button type="button" id="id_my_button_03" name="name_my_button_03">コンボボックスの値を変更</button>
+    <button type="button" id="id_my_button_04" name="name_my_button_04">id から class を取得</button>
     <br><br>
 
     <div>
@@ -49,7 +50,11 @@
         </select>
     </div>
 
-
+    <div>
+        <div class="success" id="chk_result_status_01">【id:chk_result_status_01】</div>
+        <div class="error"   id="chk_result_status_02">【id:chk_result_status_02】</div>
+    </div>
+    
     <!--<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>--><!-- こっちでもOK -->
     <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
     <!-- スクリプトはjQueryを読み込んだ後に記述する -->
@@ -163,7 +168,8 @@ $('#id_my_button_02').on('click', changeToggleButtonValue);
 
 function changeToggleButtonValue(){
     $('input[name="name-my-checkbox01"]').prop("checked",true);
-    $('#is_edit_password').prop("checked",true);
+    // $('#is_edit_password').prop("checked",true);
+    $('#is_edit_password').prop("checked",false);
 
 
     $('#admin').prop("checked",true);
@@ -206,6 +212,21 @@ function changeSelectBoxValue(){
 //================================================
 //jQuery(document).ready(function($) {
 
+
+//================================================
+//            id から class を取得
+//================================================
+$('#id_my_button_04').on('click', getClassFromId);
+
+function getClassFromId(){
+    var a1 = $('#chk_result_status_01').attr('class');  //=> 複数取れる
+    var a2 = $('#chk_result_status_01').hasClass("success")
+    var a3 = $('#chk_result_status_01').hasClass("error")
+
+    console.table({a1})
+    console.table({a2})
+    console.table({a3})
+}
 
     </script>
 </body>
