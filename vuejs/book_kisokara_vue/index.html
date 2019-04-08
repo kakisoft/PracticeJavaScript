@@ -38,7 +38,7 @@
           v-bind:class="{done:item.state}">
           <th>{{ item.id }}</th>
           <td>{{ item.comment }}</td>
-          <td class="state">w
+          <td class="state">
             <!-- ★STEP10 状態変更ボタン -->
             <button v-on:click="doChangeState(item)">
               {{ labels[item.state] }}
