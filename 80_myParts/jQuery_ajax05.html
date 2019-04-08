@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>My Boiler Plate</title>
+</head>
+<body>
+
+<form name="my_form_01">
+<input type="text" id="id_app01" name="name_app01" value="app01">
+
+<button type="button" id="my-button-01">format-syntax</button>
+</form>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+document.getElementById("my-button-01").addEventListener("click", myButton01Clicked)
+
+
+const processB = async function() {
+  await $.ajax({
+    url: 'https://qiita.com/api/v2/items?page=2&per_page=10',
+    type: 'GET',
+    success: function (res) {
+      console.log("processB")
+      console.log(res)
+      $('#id_app01').val('OK')
+    }
+  }).fail(function(XMLHttpRequest, textStatus, errorThrown){
+    $('#id_app01').val('NG')
+    alert(errorThrown);
+  })
+}
+
+const processAll = async function() {
+  $('#id_app01').val('')
+
+
+  for(i=0; i<3; i++){
+    await processB()
+
+    if($('#id_app01').val() === 'OK'){
+      break;
+    }
+  }
+
+}
+
+function myButton01Clicked(){
+
+  processAll()
+}
+</script>  
+</body>
+</html>
