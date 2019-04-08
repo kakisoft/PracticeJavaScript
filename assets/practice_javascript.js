@@ -153,6 +153,11 @@ function roop(){
         }
         console.log(j)
     }
+
+    //--- for １つ飛ばし ---
+    for (var i=1; i < 10; i+=2) {
+        console.log(i)
+    }    
 }
 roop();
 

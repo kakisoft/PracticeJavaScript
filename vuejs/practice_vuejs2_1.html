@@ -16,6 +16,17 @@
     <p>Hello {{ name }}!</p>
     <p>Hello {{ name.toUpperCase() }}!</p>
     <p><input type="text" v-model="name"></p>
+
+    <!-- X回ループ -->
+    <div v-for="(index) in 5">
+      <span>{{index}}</span>
+    </div>
+
+    <!-- 偶数だけ -->
+    <div v-for="(index) in [1,2,3,4,5].filter( (x) => { return x % 2 == 0})">
+      <span>{{index}}</span>
+    </div>
+
   </div>
   <hr>
 
