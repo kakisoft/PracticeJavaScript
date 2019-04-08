@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<body>
+    <p>URL</p>
+    <input type="text" id="url" style="width:80%;" value="https://qiita.com/api/v2/items?page=2&per_page=20"></input>
+    <button id="getbtn">GET</button>
+    <p>Result</p>
+    <textarea id="restxt" style="width:100%;height:300px;"></textarea>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#getbtn").click(function(){
+        var targetUrl = $("#url").val();
+
+        $("#restxt").val("Now conecting...");
+        $.ajax({
+            url : targetUrl,
+            type : "GET",
+            async : false,
+            // dataType : "text",
+            // dataType : 'html',
+            dataType : "json",
+            scriptCharset : 'utf-8',
+            success: function(response){
+                $('#restxt').val(response);
+                console.table({data:response})
+            }
+        }).fail(function(XMLHttpRequest, textStatus, errorThrown){
+            $('#restxt').val(textStatus);
+        }).always(function(){
+            console.log("do always");
+        });        
+    });
+});
+</script>
+</head>
+
+</body>
+</html>
