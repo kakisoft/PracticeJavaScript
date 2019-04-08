@@ -7,7 +7,7 @@ https://kakisoft.github.io/PracticeJavaScript/practice_javascript.html
 
 ### jQuery
 https://kakisoft.github.io/PracticeJavaScript/practice_jquery.html  
-https://kakisoft.github.io/80_myParts/jQuery_ajax_canuse.html  
+https://kakisoft.github.io/PracticeJavaScript/80_myParts/jQuery_ajax_canuse.html  
 
 
 ### vue.js
