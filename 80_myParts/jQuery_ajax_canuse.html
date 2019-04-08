@@ -19,9 +19,9 @@ $(document).ready(function(){
             url : targetUrl,
             type : "GET",
             async : false,
-            // dataType : "text",
+            dataType : "text",
             // dataType : 'html',
-            dataType : "json",
+            // dataType : "json",
             scriptCharset : 'utf-8',
             success: function(response){
                 $('#restxt').val(response);
