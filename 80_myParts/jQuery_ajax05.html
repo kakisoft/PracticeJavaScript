@@ -18,6 +18,7 @@ document.getElementById("my-button-01").addEventListener("click", myButton01Clic
 
 
 const processB = async function() {
+  //「await $.ajax」が、超重要！（忘れがち）
   await $.ajax({
     url: 'https://qiita.com/api/v2/items?page=2&per_page=10',
     type: 'GET',
