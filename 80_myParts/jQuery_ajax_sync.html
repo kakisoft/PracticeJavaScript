@@ -7,7 +7,7 @@
 <body>
 
 <form name="my_form_01">
-<input type="text" id="id_app01" name="name_app01" value="app01">
+<input type="text" id="get-account-status" name="name_app01" value="app01">
 
 <button type="button" id="my-button-01">format-syntax</button>
 </form>
@@ -17,30 +17,31 @@
 document.getElementById("my-button-01").addEventListener("click", myButton01Clicked)
 
 
-const processB = async function() {
-  //「await $.ajax」が、超重要！（忘れがち）
-  await $.ajax({
+function processB() {
+  $.ajax({
     url: 'https://qiita.com/api/v2/items?page=2&per_page=10',
     type: 'GET',
+    async : false,
     success: function (res) {
       console.log("processB")
       console.log(res)
-      $('#id_app01').val('OK')
+      $('#get-account-status').val('OK')
     }
   }).fail(function(XMLHttpRequest, textStatus, errorThrown){
-    $('#id_app01').val('NG')
+    $('#get-account-status').val('NG')
     alert(errorThrown);
   })
 }
 
-const processAll = async function() {
-  $('#id_app01').val('')
+function processAll(){
+  $('#get-account-status').val('')
 
 
   for(i=0; i<3; i++){
-    await processB()
+    console.log(i)
+    processB()
 
-    if($('#id_app01').val() === 'OK'){
+    if($('#get-account-status').val() === 'OK'){
       break;
     }
   }
@@ -48,8 +49,6 @@ const processAll = async function() {
 }
 
 function myButton01Clicked(){
-  var targetUrl = location.protocol + '//' + document.domain + "/mysite/ajax/";
-  console.log(targetUrl);
 
   processAll()
 }
