@@ -52,6 +52,20 @@ function myButton01Clicked(){
   // document.write(jsonStr2);
   console.log(jsonStr2);    //=>  {"name":"山田太郎","age":10,"gender":"M"}
 
+
+  //==============================
+  //  
+  //==============================
+  const json1 = '{"color1":"赤","color2":"青"}';
+  const a = JSON.parse(json1,(key,value)=>{
+    if (key=="color1") {
+      return "red" ;
+    }
+    return value ;
+
+  } ) ;
+
+  console.log(a); //{color1: "red", color2: "青"}
 }
 
 </script>  
