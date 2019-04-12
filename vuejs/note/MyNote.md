@@ -11,4 +11,6 @@ Getting Started
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 ```
 
+## Vue.js スタイルガイド早見
+https://qiita.com/_upto_me_/items/58642612b0106b193c82
 
