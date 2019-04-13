@@ -1,0 +1,80 @@
+<!--
+＜参考＞
+## 【Vue.js】axiosでJSONファイルを読み込む
+https://www.i-ryo.com/entry/2018/11/06/215103
+-->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>My Vue App</title>
+  <!-- <link rel="stylesheet" href="css/styles-practice-vuejs2-2.css"> -->
+</head>
+<body>
+  
+  <div id="app">
+    {{ info }}
+  </div>
+  
+  <h1 id="title">{{ title }}</h1>
+  <ul id="sake">
+      <li v-for="(value,index) in sake">
+      {{ index +1 }}月は{{ value }}酒が飲めるぞ
+    </li>
+  </ul>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script>
+//===========================================
+
+//jsonファイルURL
+var dmain = 'dl.dropboxusercontent.com';
+var directory = 's/kuviirbaq4yl11p';
+var file = 'sake';
+var url = 'https://' + dmain + '/' + directory + '/' + file + '.json';
+
+new Vue({
+  el: '#app',
+  data () {
+    return {
+      info: null
+    }
+  },
+  mounted () {
+    axios
+      .get(url)
+      .then(response => (this.info = response))
+  }
+})
+
+var title = new Vue({
+  el: '#title',
+  data: {
+    title: '日本全国酒飲み音頭'
+  }
+})
+
+var sake = new Vue({
+  el: '#sake',
+  data: {
+    sake: [
+      "正月で",
+      "豆まきで",
+      "ひな祭りで",
+      "花見で",
+      "子供の日で",
+      "田植えで",
+      "七夕で",
+      "暑いから",
+      "台風で",
+      "運動会で",
+      "何でもないけど",
+      "ドサクサで",
+    ]
+  }
+})
+
+//===========================================
+  </script>
+</body>
+</html>
