@@ -20,6 +20,22 @@ const memberList = [
 ];
 
 Math.max(...memberList.map(m => m.age)); // 25
+Math.max(...memberList.map((key,value) => key.age)); // 25
+
+//-------------------------------
+let target = [
+  {name:"Aさん", age:10},
+  {name:"Bさん", age:20},
+  {name:"Cさん", age:30},
+  {name:"Dさん", age:40},
+  {name:"Eさん", age:50}
+]
+
+//最高年齢の人を表示
+console.log(target.reduce((a,b)=>a.age>b.age?a:b));    //=>  {name: "Eさん", age: 50}
+
+//名前だけ表示したい場合
+console.log(target.reduce((a,b)=>a.age>b.age?a:b).name);    //=> さん
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 
