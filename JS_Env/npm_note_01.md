@@ -55,8 +55,8 @@ https://github.com/mysticatea/npm-run-all
 _____________________________________________________________________
 
 ## npm install option
---save は package.json の dependencies に追記される。    
---save-dev は package.json の devDependencies に追記される。    
+--save          は package.json の dependencies    に追記される。    
+--save-dev      は package.json の devDependencies に追記される。    
 --save-optional は package.json の optionalDependencies に追記される。    
     
 それぞれの違いだが、package.jsonがモジュールとして外部に公開し、他の人がnpm installした時に影響する。    
