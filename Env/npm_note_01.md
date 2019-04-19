@@ -113,6 +113,11 @@ gitのリポジトリ管理に含めない。
 npm run startで起動されたWebサーバー。  
 コマンドラインでwebpack-dev-serverと入力するだけでも起動できる。
 
+
+## SRI（Subresource Integrity）
+スクリプトのハッシュ値を計算することによって改ざんされていないかどうか検証することができる。  
+https://tosi-tech.net/2017/01/verify-cdn-script-by-sri/
+
 _____________________________________________________________________
 ## 新人にドヤ顔で説明できるか、今風フロントエンド開発ハンズオン(Git/Node.js/ES6/webpack4/Babel7)
 https://qiita.com/riversun/items/29d5264480dd06c7b9fb
