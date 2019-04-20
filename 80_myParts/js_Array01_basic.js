@@ -1,14 +1,20 @@
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// 【 サイズ 】
+
+var array01 = [1, 2, 3, 4, 5];
+var n1 = array01.length
+
+//━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 // 【 最大値・最小値 】
 
-var array01 = [3, 1, 4, 1, 5, 9, 2, 6];
-Math.max.apply(null, array01);    // → 9
-Math.min.apply(null, array01);    // → 1
+var array02 = [3, 1, 4, 1, 5, 9, 2, 6];
+Math.max.apply(null, array02);    // → 9
+Math.min.apply(null, array02);    // → 1
 
 //-------------------------------
-const array02 = [3, 8, 7, 2, 5];
-Math.max(...array02);    // 8
-Math.min(...array02);    // 2
+const array03 = [3, 8, 7, 2, 5];
+Math.max(...array03);    // 8
+Math.min(...array03);    // 2
 
 
 //-------------------------------
