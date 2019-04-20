@@ -206,7 +206,7 @@ const tranObj02 =
 ]
 
 
-const noun = tranObj01[95];
+const noun = tranObj01[0];
 
 var wordList = [];
 tranObj02.forEach(el => {
@@ -218,7 +218,6 @@ tranObj02.forEach(el => {
 const fs = require("fs");
 const eol = require('os').EOL;
 const TARGET_FILE_NAME = "translate_01.csv";
-
 
 
 // console.log(wordList)
