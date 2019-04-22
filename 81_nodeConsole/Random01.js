@@ -52,16 +52,16 @@ const PHRASE_LIST =
     {"name_en":"art calm","name_jp": "落ち着いた"}
 ]
 
-var selected_phase_list = [];
+var selectedPhaseList = [];
 indexList.forEach(el => {
-    selected_phase_list.push(PHRASE_LIST[el]);
+    selectedPhaseList.push(PHRASE_LIST[el]);
 });
 
 
-console.log(selected_phase_list);
+console.log(selectedPhaseList);
 
 
-selected_phase_list.forEach(el => {
+selectedPhaseList.forEach(el => {
     var name_en = el["name_en"];
     var name_jp = el["name_jp"];
 
