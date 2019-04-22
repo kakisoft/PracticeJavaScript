@@ -13,5 +13,7 @@ let csvToJson = require('convert-csv-to-json');
 let fileInputName = 'translate_01.csv'; 
 let fileOutputName = 'translate_11.json';
  
+// csvToJson.fieldDelimiter(',').getJsonFromCsv(fileInputName);
+csvToJson.fieldDelimiter(',');
 csvToJson.generateJsonFileFromCsv(fileInputName,fileOutputName);
 
