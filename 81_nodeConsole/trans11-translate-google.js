@@ -8,8 +8,8 @@
 const translate = require('translate-google')
 //---------------------------------------------------------------
 
-
-const tranObj01 = 
+//adjectives
+const tranObj02 = 
 [
     'art'
     ,'band'
@@ -110,7 +110,9 @@ const tranObj01 =
 ]
 
 //==============================================================================
-const tranObj02 = 
+
+//nouns
+const tranObj01 = 
 [
     'aged'
     ,'ancient'
@@ -206,7 +208,7 @@ const tranObj02 =
 ]
 
 
-const noun = tranObj01[0];
+const noun = tranObj01[96];
 
 var wordList = [];
 tranObj02.forEach(el => {

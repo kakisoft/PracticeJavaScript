@@ -18,6 +18,7 @@ var a1 = hkn.haikunate();
 var n1 = hkn.nouns.length
 var n2 = hkn.adjectives.length
 
+console.log(a1)
 console.log(n1)  //=> 96
 console.log(n2)  //=> 91
 
