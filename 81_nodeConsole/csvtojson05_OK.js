@@ -9,15 +9,12 @@ csvStr = `1,2,3
 4,5,6
 7,8,9`;
 
-const csv = require('csvtojson')
-csv({
-    noheader:true,
-    output: "csv"
-})
+const csv=require('csvtojson')
+csv({output:"line"})
 .fromString(csvStr)
-.then((csvRow)=>{ 
-    console.log(csvRow) // => [["1","2","3"], ["4","5","6"], ["7","8","9"]]
-    // console.log(csvStr)
+.subscribe((csvLine)=>{ 
+    // csvLine =>  "1,2,3" and "4,5,6"
+    console.log(csvLine);
 })
 
 
