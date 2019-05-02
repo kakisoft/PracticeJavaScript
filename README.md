@@ -15,7 +15,7 @@ https://kakisoft.github.io/PracticeJavaScript/vuejs/practice_vuejs2_1.html
 https://kakisoft.github.io/PracticeJavaScript/vuejs/practice_vuejs2_2.html    
 https://kakisoft.github.io/PracticeJavaScript/vuejs/v-bind_v-model.html    
 https://kakisoft.github.io/PracticeJavaScript/vuejs/is.html    
-https://kakisoft.github.io/PracticeJavaScript/vuejs/book/cr-vue/tutorial-todo/index.html  
+https://kakisoft.github.io/PracticeJavaScript/vuejs/book_kisokara_vue/index.html  
 
 ### React
 https://kakisoft.github.io/PracticeJavaScript/React/sample01.html  

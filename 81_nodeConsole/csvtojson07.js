@@ -5,11 +5,14 @@
 // npm i csvtojson
 ///////////////////////////////////////////////////////////
 
+// const targetURL = "http://mywebsite.com/mycsvfile.csv";
+const targetURL = "https://holidays-jp.github.io/api/v1/date.csv";
+
 const request=require('request')
 const csv=require('csvtojson')
- 
+
 csv()
-.fromStream(request.get('http://mywebsite.com/mycsvfile.csv'))
+.fromStream(request.get(targetURL))
 .subscribe((csvLine)=>{ console.log(csvLine) } )
 
 
