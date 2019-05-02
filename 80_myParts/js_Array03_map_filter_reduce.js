@@ -66,3 +66,30 @@ console.log(array1.reduce(reducer, 5));
 // expected output: 15
 
 
+
+//━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// 【 every 】
+// 条件を全ての値が満たすかどうか。戻り値は boolean
+
+var passed = [12, 54, 18, 130, 44].every(function(element, index, array) {
+  return (element >= 10);
+});
+
+console.log(passed); // true
+
+//━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// 【 some 】
+// 条件を満たすものがあるか。戻り値は boolean
+
+passed = [2, 5, 8, 1, 4].some(function(element, index, array) {
+  return (element >= 10);
+});
+
+console.log(passed); // false
+
+
+//━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+
+
