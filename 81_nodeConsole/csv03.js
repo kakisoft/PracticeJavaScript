@@ -23,7 +23,7 @@ https://csv.js.org/parse/
 const parse = require('csv-parse')
 const assert = require('assert')
 
-parse(`
+var a1 = parse(`
 "key_1","key_2"
 "value 1","value 2"
 `.trim(), {
@@ -35,7 +35,9 @@ parse(`
       key_2: 'value 2'
     }]
   )
+
+  console.log(records)
 })
 
-
+// console.log(a1)
 // 正直、このサンプルプログラムではさっぱり分からん。
