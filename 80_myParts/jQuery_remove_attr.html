@@ -1,0 +1,57 @@
+    
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>jQuery TIPS</title>
+</head>
+<!--
+
+## jQueryにおけるattrとpropの違いと使いドコロまとめ
+https://qiita.com/kbyay_/items/7a7ce9547f29b34a63b1
+ * attrは純粋に 属性における値 を取得する
+ * propは、checkedという プロパティの真偽 を取得する
+
+-->
+<body>
+<select id="my-select-01" disabled>
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+</select>
+<hr>
+<select id="my-select-02" disabled>
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+</select>
+<hr>
+
+<button type="button" id="my-button-01">my-button-01</button>
+<button type="button" id="my-button-02">my-button-02</button>
+
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script>
+//----------------------
+document.getElementById("my-button-01").addEventListener("click", myButton01Clicked)
+document.getElementById("my-button-02").addEventListener("click", myButton02Clicked)
+
+function myButton01Clicked(){
+    console.log('myButton01Clicked')
+    // $('#my-select-01').attr('disabled', "disabled");
+    // $('#my-select-01').attr('disabled', "false");
+
+
+
+    // $('#my-select-01').prop('disabled', true);
+    $('#my-select-01').prop('disabled', false);
+}
+
+function myButton02Clicked(){
+    console.log('myButton02Clicked')
+    $('#my-select-01').removeAttr('disabled');
+}
+//----------------------
+</script>
+</body>
+</html>
