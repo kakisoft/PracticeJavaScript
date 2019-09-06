@@ -1,193 +1,217 @@
 <!DOCTYPE html>
 <html lang="jp">
 <head>
-    <meta charset="utf-8">
-    <title>jQuery misc01</title>
+    <meta charset="utf-8">
+    <title>jQuery misc01</title>
 </head>
 <body>
-    <button type="button" id="id_my_button_01" name="name_my_button_01">チェックボックスの値を取得</button>
-    <button type="button" id="id_my_button_02" name="name_my_button_02">チェックボックス・ラジオボタンの値を変更</button>
-    <button type="button" id="id_my_button_03" name="name_my_button_03">コンボボックスの値を変更</button>
-    <button type="button" id="id_my_button_04" name="name_my_button_04">id から class を取得</button>
-    <br><br>
+    <button type="button" id="id_my_button_01" name="name_my_button_01">チェックボックス・ラジオボタンの値を取得</button>
+    <button type="button" id="id_my_button_02" name="name_my_button_02">チェックボックス・ラジオボタンの値を変更</button>
+    <br><br>
+    <button type="button" id="id_my_button_03" name="name_my_button_03">コンボボックスの値を取得</button>
+    <button type="button" id="id_my_button_04" name="name_my_button_04">コンボボックスの値を変更</button>
+    <br><br>
+    <button type="button" id="id_my_button_05" name="name_my_button_05">id から class を取得</button>
+    <br><br>
 
-    <div>
-        <input type="checkbox" name="name-my-checkbox01" id="id-my-checkbox01" value="1">チェックボックス
-        <input type="text" name="name-my-textbox01" id="id-my-textbox01" value="text">
-        <span id="my-span01">n</span>
-    </div>
+    <div>
+        <input type="checkbox" name="name_my_checkbox01" id="id_my_checkbox01" value="1">チェックボックス
+        <input type="text" name="name_my_textbox01" id="id_my_textbox01" value="text">
+        <span id="my-span01">n</span>
+    </div>
 
-    <div>
-        <input type="checkbox" name="name-my-checkbox02" id="is_edit_password" value="1">パスワードを変更する
-        <input type="password" name="name-my-password01" id="password" value="password">
-    </div>
+    <div>
+        <input type="checkbox" name="name-my-checkbox02" id="is_edit_password" value="1">パスワードを変更する
+        <input type="password" name="name-my-password01" id="password" value="password">
+    </div>
 
-    <div>
-        <ul>
-            <li>
-                <label><input type="radio" value="1" name="admin" id="admin_1" checked><span>管理者</span></label>
-            </li>
-            <li>
-                <label><input type="radio" value="0" name="admin" id="admin_0" ><span>一般ユーザー</span></label>
-            </li>
-            <li>
-                <label><input type="radio" value="" name="admin" id="admin" ><span>指定なし</span></label>
-            </li>
-        </ul>
+    <div>
+        <ul>
+            <li>
+                <label><input type="radio" value="1" name="admin" id="admin_1" checked><span>管理者</span></label>
+            </li>
+            <li>
+                <label><input type="radio" value="0" name="admin" id="admin_0" ><span>一般ユーザー</span></label>
+            </li>
+            <li>
+                <label><input type="radio" value="" name="admin" id="admin" ><span>指定なし</span></label>
+            </li>
+        </ul>
 
 
-        <label><input type="radio" id="rd0" name="radio_test" value="０番" />ラジオテスト0</label>
-        <label><input type="radio" id="rd1" name="radio_test" value="１番" />ラジオテスト1</label>
-        <label><input type="radio" id="rd2" name="radio_test" value="２番" checked/>ラジオテスト2</label>
-    </div>
+        <label><input type="radio" id="rd0" name="radio_test" value="０番" />ラジオテスト0</label>
+        <label><input type="radio" id="rd1" name="radio_test" value="１番" />ラジオテスト1</label>
+        <label><input type="radio" id="rd2" name="radio_test" value="２番" checked/>ラジオテスト2</label>
+    </div>
 
-    <div>
-        <select name="name_blood_type" id="id_blood_type">
-            <option value="A"  id="blood_type_A" >A型</option>
-            <option value="B"  id="blood_type_B" >B型</option>
-            <option value="O"  id="blood_type_O" >O型</option>
-            <option value="AB" id="blood_type_AB">AB型</option>
-        </select>
-    </div>
+    <div>
+        <select name="name_blood_type" id="id_blood_type">
+            <option value="A"  id="blood_type_A" >A型</option>
+            <option value="B"  id="blood_type_B" >B型</option>
+            <option value="O"  id="blood_type_O" >O型</option>
+            <option value="AB" id="blood_type_AB">AB型</option>
+        </select>
+    </div>
 
-    <div>
-        <div class="success" id="chk_result_status_01">【id:chk_result_status_01】</div>
-        <div class="error"   id="chk_result_status_02">【id:chk_result_status_02】</div>
-    </div>
-    
-    <!--<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>--><!-- こっちでもOK -->
-    <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <!-- スクリプトはjQueryを読み込んだ後に記述する -->
-    <!-- <script src="assets/practice_jquery.js"></script>     -->
-    <script>
+    <div>
+        <div class="success" id="chk_result_status_01">【id:chk_result_status_01】</div>
+        <div class="error"   id="chk_result_status_02">【id:chk_result_status_02】</div>
+    </div>
+    
+    <!--<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>--><!-- こっちでもOK -->
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <!-- スクリプトはjQueryを読み込んだ後に記述する -->
+    <!-- <script src="assets/practice_jquery.js"></script>     -->
+    <script>
 
 $(window).on('load', function(){
-    // initialFunction01();
-    // initialFunction03();
+    // initialFunction01();
+    // initialFunction03();
 });
 
 initialFunction01();
 initialFunction03();
 
 function initialFunction01(){
-    console.log("init01");
+    console.log("init01");
 }
 
 $(function initialFunction02() {
-    console.log("init02");
+    console.log("init02");
 });
 
 function initialFunction03(){
-    var a1 = $("#id-my-textbox01").val();
-    console.log(a1);
+    var a1 = $("#id_my_textbox01").val();
+    console.log(a1);
 }
 
 
 //================================================
-//   name をキーにチェックボックスの状態を取得
+//   name をキーにチェックボックスの状態を取得
 //================================================
 $(function() {
-    $('input[name="name-my-checkbox01"]').change(function() {
-        var prop = $('input[name="name-my-checkbox01"]').prop('checked');
+    $('input[name="name_my_checkbox01"]').change(function() {
+        var prop = $('input[name="name_my_checkbox01"]').prop('checked');
 
-        if (prop) {
-            $('#my-span01').text('ON');
-        } else {
-            $('#my-span01').text('OFF');
-        }
-    });
+        if (prop) {
+            $('#my-span01').text('ON');
+        } else {
+            $('#my-span01').text('OFF');
+        }
+    });
 });
 
 //================================================
-//     id をキーにチェックボックスの状態を取得
+//     id をキーにチェックボックスの状態を取得
 //================================================
-$('#id-my-checkbox01').change(function() {
-    var prop = $('#id-my-checkbox01').prop('checked');
+$('#id_my_checkbox01').change(function() {
+    var prop = $('#id_my_checkbox01').prop('checked');
 
-    if (prop) {
-        $("#id-my-textbox01").prop("disabled", true);
-    } else {
-        $("#id-my-textbox01").prop("disabled", false);
-    }
+    if (prop) {
+        $("#id_my_textbox01").prop("disabled", true);
+    } else {
+        $("#id_my_textbox01").prop("disabled", false);
+    }
 });
 
 //================================================
-//  チェックボックスの値の変更を検知してごにょごにょ
+//  チェックボックスの値の変更を検知してごにょごにょ
 //================================================
 changePasswordInputStatus();
 $('#is_edit_password').change(function() {
-    changePasswordInputStatus();
+    changePasswordInputStatus();
 });
 function changePasswordInputStatus(){
-    var isEditPassword = $('#is_edit_password').prop('checked');
+    var isEditPassword = $('#is_edit_password').prop('checked');
 
-    if (isEditPassword) {
-        $("#password").prop("disabled", false);
-        $("#password").val("");
-    } else {
-        $("#password").prop("disabled", true);
-    }
+    if (isEditPassword) {
+        $("#password").prop("disabled", false);
+        $("#password").val("");
+    } else {
+        $("#password").prop("disabled", true);
+    }
 }
 
 //================================================
-//           チェックボックスの値を取得
+//           チェックボックスの値を取得
 //================================================
 $('#id_my_button_01').on('click', function() {
-    // var a1 = $('input[name="admin"]').val();
-    // var a1 = $('input[name="admin"]:eq(0)').prop('checked');
-    // var a1 = $('input[name="admin"]:checked').val();
-    var a1 = $("input[name='admin']:checked").val();
+    var checkbox01 = $('input[name="name_my_checkbox01"]').prop('checked');
+    console.log("------------------")
+    console.log(checkbox01);
+    console.log("------------------")
 
-    console.log(a1);
+    // var a1 = $('input[name="admin"]').val();
+    // var a1 = $('input[name="admin"]:eq(0)').prop('checked');
+    // var a1 = $('input[name="admin"]:checked').val();
+    var a1 = $("input[name='admin']:checked").val();
 
-
-
-    var radioVal = $("input[name='radio_test']:checked").val();
-    // alert(radioVal);
-    console.log(radioVal);
-
-
-    //この方法だと上手く行かぬ・・・。
-    var b1 = $("#admin").val();
+    console.log(a1);
 
 
-    //特定の要素のチェックを見るなら、この方法も。
-    if($("#admin_1").prop('checked')) {
 
-    }else{
+    var radioVal = $("input[name='radio_test']:checked").val();
+    // alert(radioVal);
+    console.log(radioVal);
 
-    }
+
+    //この方法だと上手く行かぬ・・・。
+    var b1 = $("#admin").val();
+
+
+    //特定の要素のチェックを見るなら、この方法も。
+    if($("#admin_1").prop('checked')) {
+
+    }else{
+
+    }
 
 });
 
 
 //================================================
-//     チェックボックス・ラジオボタンの値を変更
+//     チェックボックス・ラジオボタンの値を変更
 //================================================
 $('#id_my_button_02').on('click', changeToggleButtonValue);
 
 function changeToggleButtonValue(){
-    $('input[name="name-my-checkbox01"]').prop("checked",true);
-    // $('#is_edit_password').prop("checked",true);
-    $('#is_edit_password').prop("checked",false);
+    $('input[name="name_my_checkbox01"]').prop("checked",true);
+    // $('#is_edit_password').prop("checked",true);
+    $('#is_edit_password').prop("checked",false);
 
 
-    $('#admin').prop("checked",true);
+    $('#admin').prop("checked",true);
 }
 
 
 //================================================
-//           コンボボックスの値を変更
+//           コンボボックスの値を取得
 //================================================
-$('#id_my_button_03').on('click', changeSelectBoxValue);
+$('#id_my_button_03').on('click', getSelectBoxValue);
+
+function getSelectBoxValue(){
+    var selectedParam01 = $('#id_blood_type').val();
+    var selectedParam02 = $('[name="name_blood_type"] option:selected').val();
+    var selectedParam03 = $("select[name='name_blood_type'] option:selected").val();
+
+    console.log(selectedParam01);
+    console.log(selectedParam02);
+    console.log(selectedParam03);
+}
+
+
+//================================================
+//           コンボボックスの値を変更
+//================================================
+$('#id_my_button_04').on('click', changeSelectBoxValue);
 
 function changeSelectBoxValue(){
-    $('#id_blood_type').val("AB");
+    $('#id_blood_type').val("AB");
 }
 
 
 //================================================
-//                クラスの着脱 
+//                クラスの着脱 
 //================================================
 // var div = $("#specify_period").removeClass("inactive");
 // var div = $("#specify_period").addClass("inactive");
@@ -196,44 +220,44 @@ function changeSelectBoxValue(){
 
 
 //================================================
-//              
+//              
 //================================================
 // http://js.studio-kingdom.com/jquery/attributes/prop
 // <input id="check1" type="checkbox" checked="checked" />
 
 // //jQuery1.6.1以上の場合
-// var is_checked   = $('#check1').prop('checked');  //trueが返る
-// var attr_checked = $('#check1').attr('checked');  //'checked'が返る
+// var is_checked   = $('#check1').prop('checked');  //trueが返る
+// var attr_checked = $('#check1').attr('checked');  //'checked'が返る
 
 
 
 //================================================
-//              
+//              
 //================================================
 //jQuery(document).ready(function($) {
 
 
 //================================================
-//            id から class を取得
+//            id から class を取得
 //================================================
-$('#id_my_button_04').on('click', getClassFromId);
+$('#id_my_button_05').on('click', getClassFromId);
 
 function getClassFromId(){
-    var a1 = $('#chk_result_status_01').attr('class');  //=> 複数取れる
-    var a2 = $('#chk_result_status_01').hasClass("success")
-    var a3 = $('#chk_result_status_01').hasClass("error")
+    var a1 = $('#chk_result_status_01').attr('class');  //=> 複数取れる
+    var a2 = $('#chk_result_status_01').hasClass("success")
+    var a3 = $('#chk_result_status_01').hasClass("error")
 
-    console.table({a1})
-    console.table({a2})
-    console.table({a3})
+    console.table({a1})
+    console.table({a2})
+    console.table({a3})
 }
 
 
 //================================================
-//              
+//              
 //================================================
 
-//     ## disabledになっている値をサーバにPOSTする
+//     ## disabledになっている値をサーバにPOSTする
 // https://lightgauge.net/html/2525/
 
 
@@ -242,16 +266,26 @@ function getClassFromId(){
 // $("#hoge").prop('disabled', false);
 
 
-//     // 送信時に domain を有効化する
-//     $("#btn-submit").on('click', function() {
-//         $("#domain-id").prop("disabled", false);
-//     });
+//     // 送信時に domain を有効化する
+//     $("#btn-submit").on('click', function() {
+//         $("#domain-id").prop("disabled", false);
+//     });
 
 
+//====================================
+//      コンボボックス変更イベント（＆コンボボックスの値を取得）
+//====================================
+$('#id_blood_type').change(function() {
+ 
+    console.log( $(this).val() );
+
+    // var text = $('option:selected').text(); // これだと、全部とれちゃうよ。
+    var text = $('#id_blood_type option:selected').text();
+    
+    console.log( text );
+});
 
 
-
-    </script>
+    </script>
 </body>
 </html>
-
