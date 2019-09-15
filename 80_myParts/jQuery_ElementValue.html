@@ -57,18 +57,33 @@
         <div class="success" id="chk_result_status_01">【id:chk_result_status_01】</div>
         <div class="error"   id="chk_result_status_02">【id:chk_result_status_02】</div>
     </div>
+    
+    <hr>
 
-    <hr>
-    <div>
-        <a href="https://www.google.co.jp">リンク</a>
-        <br><br>
-        <a href="https://www.google.co.jp" target=”_blank”>別ウィンドウで開く</a>
-        <br><br>
-        <a href="javascript:void(0)" onClick="window.location.href = 'https://www.google.co.jp'"">JavaScriptでのリンク</a>
-        <br><br>
-        <a href="javascript:void(0)" onClick="window.open('https://www.google.co.jp', '_blank')"">JavaScript別ウィンドウで</a>
-        <br><br>
-    </div>
+    <!--
+    //====================================
+    //   B101  ボタンの値（Value）を取得
+    //====================================
+    -->
+    <br>
+    <div>
+        <button id="get_button_param_01" value="a"  name="my_buttons[]">ボタンの値を取得１</button>
+        <button id="get_button_param_02" value="bb" name="my_buttons[]">ボタンの値を取得２</button>
+    </div>
+    <br>
+    <hr>
+
+    <!--
+    //====================================
+    //   B102  ボタンの値（Value）をJsonで取得
+    //====================================
+    -->
+    <br>
+    <div>
+        <button id="get_button_param_from_json_01" value='{"result":2, "count":42}'>ボタンの値をJOSN形式で取得１</button>
+        <!-- ↓こっちだとエラー（ value を "" で囲む ） -->
+        <button id="get_button_param_from_json_02" value="{'result':3, 'count':42}" >ボタンの値をJOSN形式で取得２</button>
+    </div>
 
 
     <!--<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>--><!-- こっちでもOK -->
@@ -231,7 +246,6 @@ function changeSelectBoxValue(){
 
 
 
-
 //================================================
 //              
 //================================================
@@ -265,26 +279,6 @@ function getClassFromId(){
     console.table({a3})
 }
 
-
-//================================================
-//              
-//================================================
-
-//     ## disabledになっている値をサーバにPOSTする
-// https://lightgauge.net/html/2525/
-
-
-
-// $("#hoge").prop('disabled', true);
-// $("#hoge").prop('disabled', false);
-
-
-//     // 送信時に domain を有効化する
-//     $("#btn-submit").on('click', function() {
-//         $("#domain-id").prop("disabled", false);
-//     });
-
-
 //====================================
 //      コンボボックス変更イベント（＆コンボボックスの値を取得）
 //====================================
@@ -299,6 +293,45 @@ $('#id_blood_type').change(function() {
 });
 
 
+//====================================
+//   B101  ボタンの値（Value）を取得
+//====================================
+$('#get_button_param_01').on('click', function (){
+    console.log(this)
+    console.log(this.value)
+});
+
+$('[name="my_buttons[]"]').on('click', function (){
+    console.log(this)
+    console.log(this.value)
+});
+
+
+//====================================
+//   B102  ボタンの値（Value）をJsonで取得
+//====================================
+$('#get_button_param_from_json_01').on('click', function (){
+    obj = JSON.parse( this.value);
+
+    console.log(obj.count);
+    console.log(obj.result);
+});
+
+//こっちだとエラー。
+$('#get_button_param_from_json_02').on('click', function (){
+    var myVal = this.value
+    // obj = JSON.parse(this.value.json);
+    obj = JSON.parse( this.value);
+
+    console.log(obj.count);
+    console.log(obj.result);
+});
+
+
     </script>
 </body>
 </html>
+
+
+
+
