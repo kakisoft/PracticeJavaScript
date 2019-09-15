@@ -367,6 +367,8 @@ $('#ajax_general_style_01').on('click', function (){
 });
 
 
+
+
 $('#ajax_general_style_02').on('click', function (){
     var value = this.value
     // var target_url = "http://challenge-your-limits.herokuapp.com/call/me";
@@ -386,7 +388,7 @@ $('#ajax_general_style_02').on('click', function (){
                     , type     : "GET"
                     , dataType : "json"
                 });
-    };
+    }
 
     GetMyData().done( function( data ) {
 
@@ -397,21 +399,17 @@ $('#ajax_general_style_02').on('click', function (){
         // 取得した情報に沿ってごにょごにょ処理
         $.each( data, function() {
 //             var myBody = this.body.replace( /(\r\n|\\r|\\n)/g, "<br>" );
-
+            console.log(data);
         } );
 
-        return false;
+        return true;
 
-    } ).fail( function( data ) {
+    }).fail( function( data ) {
 
     } );
-
+    
 });
-
     </script>
 </body>
 </html>
-
-
-
 
