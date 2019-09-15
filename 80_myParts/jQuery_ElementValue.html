@@ -85,6 +85,18 @@
         <button id="get_button_param_from_json_02" value="{'result':3, 'count':42}" >ボタンの値をJOSN形式で取得２</button>
     </div>
 
+    <!--
+    //====================================
+    //  C101  ajax 汎用スタイル
+    //====================================
+    -->
+    <br>
+    <div>
+        <button id="ajax_general_style_01">ajax 汎用スタイル１</button>
+        <!-- ↓こっちだとエラー（ value を "" で囲む ） -->
+        <button id="ajax_general_style_02">ajax 汎用スタイル２</button>
+    </div>
+
 
     <!--<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>--><!-- こっちでもOK -->
     <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
@@ -327,6 +339,74 @@ $('#get_button_param_from_json_02').on('click', function (){
     console.log(obj.result);
 });
 
+//====================================
+//  C101  ajax 汎用スタイル
+//====================================
+$('#ajax_general_style_01').on('click', function (){
+    var value = this.value
+    // var target_url = "http://challenge-your-limits.herokuapp.com/call/me";
+    var target_url = "https://api.github.com/users/jeresig";
+
+    $.ajax({
+            url      : target_url
+          , data     : {
+                              unique_id : value
+                            , param1 : 111
+                            , text : "abcde"
+            }
+          , type     : "GET"
+          , dataType : "json"
+        }).done( function( data ) {
+            console.log(data)
+        }).fail( function( data ) {
+            console.log(data)
+        }).always(function(){
+
+        });
+
+});
+
+
+$('#ajax_general_style_02').on('click', function (){
+    var value = this.value
+    // var target_url = "http://challenge-your-limits.herokuapp.com/call/me";
+    var target_url = "https://api.github.com/users/jeresig";
+
+    var GetMyData = function() {
+
+        return $.ajax({
+
+                        url      : target_url
+                      , data     : {
+                                          news_id : value
+                                        , unique_id : 123
+                                        , param1 : 456
+                                        , text : "abcde"
+                        }
+                    , type     : "GET"
+                    , dataType : "json"
+                });
+    };
+
+    GetMyData().done( function( data ) {
+
+        if(data.length <= 0 ){
+            return false;
+        }
+
+        // 取得した情報に沿ってごにょごにょ処理
+        $.each( data, function() {
+//             var myBody = this.body.replace( /(\r\n|\\r|\\n)/g, "<br>" );
+
+        } );
+
+        return false;
+
+    } ).fail( function( data ) {
+
+    } );
+
+});
 
     </script>
 </body>
