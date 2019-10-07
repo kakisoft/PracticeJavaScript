@@ -17,7 +17,7 @@
     <div>
         <input type="checkbox" name="name_my_checkbox01" id="id_my_checkbox01" value="1">チェックボックス
         <input type="text" name="name_my_textbox01" id="id_my_textbox01" value="text">
-        <span id="my-span01">n</span>
+        <span id="my-span01">---no---</span>
     </div>
 
     <div>
@@ -251,6 +251,14 @@ function changeSelectBoxValue(){
 
 
 //================================================
+//           ラジオボタン変更イベント
+//================================================
+$('input[name="radio_test"]').change(function() {
+     console.log( $(this).val() );
+});
+
+
+//================================================
 //                クラスの着脱 
 //================================================
 // var div = $("#specify_period").removeClass("inactive");
@@ -294,14 +302,19 @@ function getClassFromId(){
 //====================================
 //      コンボボックス変更イベント（＆コンボボックスの値を取得）
 //====================================
+// idで取得
 $('#id_blood_type').change(function() {
  
     console.log( $(this).val() );
-
     // var text = $('option:selected').text(); // これだと、全部とれちゃうよ。
     var text = $('#id_blood_type option:selected').text();
     
     console.log( text );
+});
+
+// nameで取得
+$('select[name="name_blood_type"]').change(function() {
+    console.log("DataGetFrom NAME:" + $(this).val() );
 });
 
 

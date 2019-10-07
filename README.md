@@ -6,7 +6,9 @@ https://kakisoft.github.io/PracticeJavaScript/practice_javascript.html
 
 
 ### jQuery
+https://kakisoft.github.io/PracticeJavaScript/80_myParts/jQuery_MyPartsSet01.html  
 https://kakisoft.github.io/PracticeJavaScript/practice_jquery.html  
+
 
 #### リクエスト投げて遊ぶ
 https://kakisoft.github.io/PracticeJavaScript/80_myParts/jQuery_ajax_canuse.html  
