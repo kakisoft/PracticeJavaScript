@@ -14,6 +14,10 @@ https://kakisoft.github.io/PracticeJavaScript/practice_jquery.html
 https://kakisoft.github.io/PracticeJavaScript/80_myParts/Async_method/jQuery_ajax_canuse.html  
 
 
+#### pushState よく分かんなかったから実験
+https://kakisoft.github.io/PracticeJavaScript/80_myParts/js/js_pushstate.html    
+
+
 ### vue.js
 https://kakisoft.github.io/PracticeJavaScript/vuejs/practice_vuejs2_1.html    
 https://kakisoft.github.io/PracticeJavaScript/vuejs/practice_vuejs2_2.html    
@@ -94,6 +98,4 @@ https://kakisoft.github.io/PracticeJavaScript/TrivialTools/InteractiveArt/index.
 
 
 __________________________________________________________________
-## push stateとかよくわかんないから実験
-https://kakisoft.github.io/PracticeJavaScript/80_myParts/js_push_state.html    
 
