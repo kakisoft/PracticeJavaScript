@@ -1,5 +1,5 @@
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-//push  配列の末尾に 1 つ以上の要素を追加（戻り値として新しい配列の要素数を返す）
+// 【 push  配列の末尾に 1 つ以上の要素を追加（戻り値として新しい配列の要素数を返す） 】
 
 var animals = ['pigs', 'goats', 'sheep'];
 
@@ -10,8 +10,8 @@ console.log(animals);
 // expected output: Array ["pigs", "goats", "sheep", "cows"]
 
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-//pop  配列から最後の要素を取り除き、その要素を返します
-//【破壊的】
+// 【 pop  配列から最後の要素を取り除き、その要素を返します 】
+//（破壊的）
 
 var plants = ['broccoli', 'cauliflower', 'cabbage', 'kale', 'tomato'];
 
@@ -23,7 +23,7 @@ console.log(plants);
 
 
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-//unshift -配列の先頭に値を追加します。
+// 【 unshift -配列の先頭に値を追加します。 】
 
 var array = ['b', 'c'];
 
@@ -31,8 +31,8 @@ array.unshift('a');
 console.log(array); // ['a', 'b', 'c']
 
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-//shift  配列から最初の要素を取り除き、その要素を返す。
-//【破壊的】
+// 【 shift  配列から最初の要素を取り除き、その要素を返す。 】
+//（破壊的）
 
 var array1 = [1, 2, 3];
 
@@ -45,7 +45,7 @@ console.log(firstElement);
 // expected output: 1
 
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-//reverse  反転
+// 【 reverse  反転 】
 
 var array1 = ['one', 'two', 'three'];
 console.log('array1: ', array1);
@@ -56,7 +56,7 @@ console.log('reversed: ', reversed);
 // expected output: Array ['three', 'two', 'one']
 
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-// 特定の要素を削除
+// 【 特定の要素を削除 】
 
 var startWord = "SELECT";
 var endWord = ["FROM","WHERE","GROUP BY","SELECT","ORDER BY"]

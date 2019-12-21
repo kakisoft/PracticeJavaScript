@@ -426,3 +426,35 @@ $('#ajax_general_style_02').on('click', function (){
 </body>
 </html>
 
+
+
+<!--
+
+//================================================
+//           ラジオボタンの値を取得
+//================================================
+$("#get_button").click( function() {
+    var radioVal = $("input[name='radio_test']:checked").val();
+    alert(radioVal);
+});
+
+//================================================
+//           ラジオボタンの値を設定
+//================================================
+// 要素が特定出来ず、value値で判断する場合
+$("#get_button").click( function() {
+    $("input[name='radio_test']").val(["１番"]);
+});
+ 
+// 要素が特定出来て、その要素にチェックを入れる場合
+$("#set_button").click( function() {
+    $("#rd2").attr("checked", true);
+});
+ 
+// チェックを外す場合
+$("#set_button").click( function() {
+    $("input[name='radio_test']").attr("checked", false);
+});
+
+-->
+
