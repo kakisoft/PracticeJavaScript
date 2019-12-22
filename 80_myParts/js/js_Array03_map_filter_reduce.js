@@ -42,6 +42,10 @@ var arr04 = [
   {
     name: '三郎',
     age: 18
+  },
+  {
+    name: 'Roi',
+    age: 7
   }
 ];
 
@@ -49,6 +53,14 @@ console.log(arr04.filter(function (element) {
   return element.age >= 20;
 })); // [ {name: "一郎", age: 25}, {name: "二郎", age: 21} ]
 
+
+let filterdParams04_1 = arr04.filter( el => el.age < 20 );         //=> [ { name: '三郎', age: 18 }, { name: 'Roi', age: 7 } ]
+let filterdParams04_2 = arr04.filter((el, p) => el.age*2 < 20 );   //=> [ { name: 'Roi', age: 7 } ]
+
+console.log(filterdParams04_1);
+console.log('----d-')
+console.log(filterdParams04_2);
+console.log('---d--')
 
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 //【 reduce 】
