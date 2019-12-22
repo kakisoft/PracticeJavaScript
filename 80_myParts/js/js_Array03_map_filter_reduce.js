@@ -58,9 +58,7 @@ let filterdParams04_1 = arr04.filter( el => el.age < 20 );         //=> [ { name
 let filterdParams04_2 = arr04.filter((el, p) => el.age*2 < 20 );   //=> [ { name: 'Roi', age: 7 } ]
 
 console.log(filterdParams04_1);
-console.log('----d-')
 console.log(filterdParams04_2);
-console.log('---d--')
 
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 //【 reduce 】
