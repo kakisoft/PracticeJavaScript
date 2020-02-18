@@ -75,12 +75,12 @@ str.match(regexp)
 var a1 = targetSyntaxContent.match(/select/);
 //出力結果： select　　※マッチした内容が返る
 
-==================================
+//==================================
 var str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 var regexp = /[A-E]/gi;
 var matches_array = str.match(regexp);
 
-matches_array は、['A', 'B', 'C', 'D', 'E', 'a', 'b', 'c', 'd', 'e'] になっています
+// matches_array は、['A', 'B', 'C', 'D', 'E', 'a', 'b', 'c', 'd', 'e'] になっています
 
 
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -88,12 +88,12 @@ matches_array は、['A', 'B', 'C', 'D', 'E', 'a', 'b', 'c', 'd', 'e'] になっ
 
 var str = 任意の文字列
 
-str.search(検索したい「文字」 or 「正規表現」);
+// str.search(検索したい「文字」 or 「正規表現」);
 
 
 var str = 'user-12, user-Mike, user-Jane, user-325';
 var result = str.search( 'Jane' );
- 
+
 console.log( result );
 
 
@@ -105,4 +105,30 @@ str.search(regexp)
 
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
+/**
+ * 改行コードを<br>に変換
+ * 
+ * @param {String} str 変換したい文字列
+ */
+var nl2br = function (str) {
+    return str.replace(/\r?\n/g, '<br>');
+};
+
+
+
+let param_1 = "a\nb"        // Windows
+let param_2 = "a\r\nb"      // Linux、Mac OSX
+// let param_3 = "a\rb"  // MacのOS9以前では改行コードに \rが使われてたが、Mac OS9は2001年に開発が終了。
+
+
+// 改行コード→<br>変換
+let content_1 = nl2br(param_1);
+let content_2 = nl2br(param_2);
+// let content_3 = nl2br(param_3);
+
+console.log(content_1)
+console.log(content_2)
+// console.log(content_3)
+
+//━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
