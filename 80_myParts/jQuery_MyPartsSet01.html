@@ -439,6 +439,8 @@ $('#ajax_general_style_02').on('click', function (){
 //====================================
 //  D101  フォーカスアウト時にチェック
 //====================================
+//// onblurからのalertで再focusしたらバグる問題
+// http://doshirouto.wp.xdomain.jp/web/javascript-web/2644
 $(function() {
     const REMARK_INPUT_MAX_LENGTH = 10;
 
