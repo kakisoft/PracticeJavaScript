@@ -98,6 +98,19 @@
     </div>
 
 
+    <!--
+    //====================================
+    //  D101  フォーカスアウト時にチェック
+    //====================================
+    -->
+    <br>
+    <div>
+        <textarea name="remarks_01" class="check6" style="border:2px black dotted; margin: 0; padding: 0; width: 20%; height:4.5em;">remarks_01</textarea>
+        <textarea name="remarks_02" class="check6" style="border:2px black dotted; margin: 0; padding: 0; width: 20%; height:4.5em;">remarks_02</textarea>
+        <textarea name="remarks_03" class="check6" style="border:2px black dotted; margin: 0; padding: 0; width: 20%; height:4.5em;">remarks_03</textarea>
+    </div>
+
+
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script><!-- こっちでもOK -->
 <!--     <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script> -->
     <!-- スクリプトはjQueryを読み込んだ後に記述する -->
@@ -422,6 +435,31 @@ $('#ajax_general_style_02').on('click', function (){
     } );
     
 });
+
+//====================================
+//  D101  フォーカスアウト時にチェック
+//====================================
+$(function() {
+    const REMARK_INPUT_MAX_LENGTH = 10;
+
+    // ロストフォーカス時に入力制限チェック
+    $(".check6").blur
+    (
+        function()
+        {
+            var value = $(this).val();
+            if(value.length > REMARK_INPUT_MAX_LENGTH){
+                alert("全角" + REMARK_INPUT_MAX_LENGTH + "文字以内で入力してください。");
+                var el_name = $(this).attr("name")
+                setTimeout(function(){
+                    $('textarea[name="' + el_name + '"]').focus();
+                }, 0);
+            }
+        }
+    );
+
+});
+
     </script>
 </body>
 </html>
