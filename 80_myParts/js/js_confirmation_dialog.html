@@ -1,0 +1,16 @@
+
+<input type="button" value="登録" onclick="registUser()" />
+
+
+<script type="text/javascript">
+    /**
+    * 登録確認ダイアログ
+    */
+    function registUser() {
+        if (!window.confirm('登録します。よろしいですか？')) {
+            return;
+        }
+        document.getElementById('nankano_form_ueeeei').submit();
+    }
+</script>
+
