@@ -5,14 +5,14 @@
     <!-- 整数のみ(oninput でいいと思う。あと、patternでも問題ないか・・・。一応書いた) -->
     <input
         type="text"
-        oninput="value=formatValidValueForDegradationInputTextIntOnly(value)"
+        oninput="value=formatValidValueForFuncaaaInputTextIntOnly(value)"
         pattern="^[0-9]+$"
         maxlength="3"
         min="0"
         max="999"
         style="text-align:right; width:5em; height:1.4em"
         value="{{$detail.item_quantity}}"
-        name="item_quantity_{{$detail.degradation_check_item_id}}"
+        name="item_quantity_{{$detail.funcaaa_check_item_id}}"
         class="my-someclass"
         >
 
@@ -20,7 +20,7 @@
     <!-- 小数第一位まで許可（途中の入力段階を考慮するため、onchange で。） -->
     <input
         type="text"
-        onchange="value=formatValidValueForDegradationInputText(value)"
+        onchange="value=formatValidValueForFuncaaaInputText(value)"
         pattern="^[0-9]+$"
         maxlength="3"
         min="0"
@@ -29,7 +29,7 @@
         max="999"
         style="text-align:right; width:5em; height:1.4em"
         value="{{$detail.item_quantity}}"
-        name="item_quantity_{{$detail.degradation_check_item_id}}"
+        name="item_quantity_{{$detail.funcaaa_check_item_id}}"
         class="my-someclass"
         >
 
@@ -37,31 +37,50 @@
 <script>
 'use strict';
 
-// テキスト入力項目の不正入力チェック
-// （小数点第一位までの整数のみを許可）
-function formatValidValueForFuncAInputText(value){
 
-    // 整数 + 小数第一位まで
-    if( value.match(/^[0-9]+\.?[0-9]?$/) ){
-        if( parseFloat(value) < 0 ){
-            // 負数入力時
-            return 0;
-        }else if( parseFloat(value) > 999 ){
-            // 入力オーバー時（末尾に入力した分を受け付けない）
-            return value.slice(0,3)
-        }else{
-            // 正常値
-            return parseFloat(value)
-        }
-    }else if( value.match(/^[0-9]+\.[0-9]{2,}$/) ){
-        // 整数 + 小数第二位以上
-        return Math.floor(parseFloat(value) * 10) / 10
-    }else{
-    // その他不正な入力（数値以外など）
-        return ""
-    }
+// テキスト入力項目の不正入力チェック（小数第一位まで許可）
+function formatValidValueForFuncaaaInputText(value){
 
+    // 整数 + 小数第一位まで
+    if( value.match(/^[0-9]+\.?[0-9]?$/) ){
+        if( parseFloat(value) > 999 ){
+            // 入力オーバー時（末尾に入力した分を受け付けない）
+            return value.slice(0,3)
+        }else{
+            // 正常値
+            return parseFloat(value)
+        }
+    }else if( value.match(/^[0-9]+\.[0-9]{2,}$/) ){
+        // 整数 + 小数第二位以上
+        return Math.floor(parseFloat(value) * 10) / 10
+    }else{
+    // その他不正な入力（数値以外など）
+        return ""
+    }
 }
+
+
+// テキスト入力項目の不正入力チェック（整数のみ許可）
+function formatValidValueForFuncaaaInputTextIntOnly(value){
+	// 小数点があった場合、除去する
+	value = value.replace(".","")
+
+    // 整数
+    if( value.match(/^[0-9]+$/) ){
+        if( parseFloat(value) > 999 ){
+            // 入力オーバー時（末尾に入力した分を受け付けない）
+            return value.slice(0,3)
+        }else{
+            // 正常値
+            return parseInt(value)
+        }
+    }else{
+    // その他不正な入力（数値以外など）
+        return ""
+    }
+}
+
+
 </script>
 </body>
 </html>
