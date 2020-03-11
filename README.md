@@ -4,13 +4,8 @@ JavaScript練習用
 メモだったり、よく使うコードを置いてたり。  
 gistに書くよりも、リポジトリに置いといた方が整頓しやすかったので、こうしてる。  
 
-### JavaScript
-https://kakisoft.github.io/PracticeJavaScript/practice_javascript.html
-
-
 ### jQuery
-https://kakisoft.github.io/PracticeJavaScript/80_myParts/jQuery_MyPartsSet01.html  
-https://kakisoft.github.io/PracticeJavaScript/practice_jquery.html  
+https://kakisoft.github.io/PracticeJavaScript/jQuery_MyPartsSet01.html  
 
 
 #### リクエスト投げて遊ぶ
