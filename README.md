@@ -9,11 +9,11 @@ https://kakisoft.github.io/PracticeJavaScript/jQuery_MyPartsSet01.html
 
 
 #### リクエスト投げて遊ぶ
-https://kakisoft.github.io/PracticeJavaScript/80_myParts/Async_method/jQuery_ajax_canuse.html  
+https://kakisoft.github.io/PracticeJavaScript/81_myParts_Async_method/jQuery_ajax_canuse.html  
 
 
 #### pushState よく分かんなかったから実験
-https://kakisoft.github.io/PracticeJavaScript/80_myParts/js/js_pushstate.html    
+https://kakisoft.github.io/PracticeJavaScript/80_myParts_js/js_pushstate.html    
 
 
 ### vue.js
