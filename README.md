@@ -6,8 +6,7 @@ gistに書くよりも、リポジトリに置いといた方が整頓しやす�
 
 ### jQuery
 https://kakisoft.github.io/PracticeJavaScript/jQuery_MyPartsSet01.html  
-https://kakisoft.github.io/PracticeJavaScript/README.md  
-https://kakisoft.github.io/PracticeJavaScript/my-boilerplate.html  
+
 
 #### リクエスト投げて遊ぶ
 https://kakisoft.github.io/PracticeJavaScript/81_myParts_Async_method/jQuery_ajax_canuse.html  
@@ -24,9 +23,11 @@ https://kakisoft.github.io/PracticeJavaScript/vuejs/v-bind_v-model.html
 https://kakisoft.github.io/PracticeJavaScript/vuejs/is.html    
 https://kakisoft.github.io/PracticeJavaScript/vuejs/book_kisokara_vue/index.html  
 
+
 ### React
 https://kakisoft.github.io/PracticeJavaScript/React/sample01.html  
 https://kakisoft.github.io/PracticeJavaScript/React/sample02.html  
+
 
 ## chart.js
 https://kakisoft.github.io/PracticeJavaScript/Chartjs/MyCharts01.html    
@@ -35,8 +36,10 @@ https://kakisoft.github.io/PracticeJavaScript/Chartjs/MyCharts03.html
 https://kakisoft.github.io/PracticeJavaScript/Chartjs/MyCharts04.html    
 https://kakisoft.github.io/PracticeJavaScript/Chartjs/MyCharts05.html    
 
+
 ## QRコード生成
 https://kakisoft.github.io/PracticeJavaScript/BarCode/QRCodeGenerator.html    
+
 
 __________________________________________________________________
 ちょっとしたツール
