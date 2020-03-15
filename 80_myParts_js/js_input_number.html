@@ -2,7 +2,7 @@
 <html lang="ja"><head><meta charset="UTF-8"><title>My Boiler Plate</title></head>
 <body>
 
-    <!-- 整数のみ(oninput でいいと思う。あと、patternでも問題ないか・・・。一応書いた) -->
+    <p>整数のみ(oninput でいいと思う。あと、patternでも問題ないか・・・。一応書いた)</p>
     <input
         type="text"
         oninput="value=formatValidValueForFuncaaaInputTextIntOnly(value)"
@@ -11,13 +11,13 @@
         min="0"
         max="999"
         style="text-align:right; width:5em; height:1.4em"
-        value="{{$detail.item_quantity}}"
+        value="でも、こうやってセットすることは"
         name="item_quantity_{{$detail.funcaaa_check_item_id}}"
         class="my-someclass"
         >
 
 
-    <!-- 小数第一位まで許可（途中の入力段階を考慮するため、onchange で。） -->
+    <p>小数第一位まで許可（途中の入力段階を考慮するため、onchange で。）</p>
     <input
         type="text"
         onchange="value=formatValidValueForFuncaaaInputText(value)"
@@ -28,10 +28,13 @@
         min="0"
         max="999"
         style="text-align:right; width:5em; height:1.4em"
-        value="{{$detail.item_quantity}}"
+        value="できるんだね。"
         name="item_quantity_{{$detail.funcaaa_check_item_id}}"
         class="my-someclass"
         >
+
+    <p>こういう書き方があるらしいが、全然上手く動かないぞ。</p>
+    <input type="text" inputmode="numeric" pattern="\d*">
 
 </form>
 <script>
