@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>Modal Window</title>
+  <!-- <link rel="stylesheet" href="css/styles.css"> -->
+  <style>
+body {
+    font-size: 14px;
+  }
+  
+  #open, #close {
+    cursor: pointer;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+    padding: 12px 0;
+    margin: 16px auto 0;
+  }
+  
+  #mask {
+    background: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+  }
+  
+  #modal {
+    background: #fff;
+    width: 300px;
+    padding: 20px;
+    border-radius: 4px;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    transition: 0.4s;
+    z-index: 2;
+  }
+  
+  #modal p {
+    margin: 0 0 20px;
+  }
+  
+  #mask.hidden {
+    display: none;
+  }
+  
+  #modal.hidden {
+    transform: translate(0, -500px);
+  }
+    </style>
+</head>
+<body>
+  <section id="modal" class="hidden">
+    <p>こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。</p>
+    <div id="close">
+      閉じる
+    </div>
+  </section>
+
+  <div id="open">
+    詳細を見る
+  </div>
+
+  <div id="mask" class="hidden"></div>
+
+  <!-- <script src="js/main.js"></script> -->
+  <!--
+  ====================================================
+                       Script
+  ====================================================
+  -->
+  <script>
+    'use strict';
+
+    {
+    const open = document.getElementById('open');
+    const close = document.getElementById('close');
+    const modal = document.getElementById('modal');
+    const mask = document.getElementById('mask');
+
+    open.addEventListener('click', () => {
+        modal.classList.remove('hidden');
+        mask.classList.remove('hidden');
+    });
+
+    close.addEventListener('click', () => {
+        modal.classList.add('hidden');
+        mask.classList.add('hidden');
+    });
+
+    mask.addEventListener('click', () => {
+        // modal.classList.add('hidden');
+        // mask.classList.add('hidden');
+        close.click();
+    });
+    }
+    </script>
+</body>
+</html>
