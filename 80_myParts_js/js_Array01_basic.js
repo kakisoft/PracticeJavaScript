@@ -8,13 +8,13 @@ var n1 = array01.length
 // 【 最大値・最小値 】
 
 var array02 = [3, 1, 4, 1, 5, 9, 2, 6];
-Math.max.apply(null, array02);    // → 9
-Math.min.apply(null, array02);    // → 1
+Math.max.apply(null, array02);    //=> 9
+Math.min.apply(null, array02);    //=> 1
 
 //-------------------------------
 const array03 = [3, 8, 7, 2, 5];
-Math.max(...array03);    // 8
-Math.min(...array03);    // 2
+Math.max(...array03);    //=> 8
+Math.min(...array03);    //=> 2
 
 
 //-------------------------------
@@ -25,8 +25,8 @@ const memberList = [
   { name: 'John', age: 18 },
 ];
 
-Math.max(...memberList.map(m => m.age)); // 25
-Math.max(...memberList.map((key,value) => key.age)); // 25
+Math.max(...memberList.map(m => m.age)); //=> 25
+Math.max(...memberList.map((key,value) => key.age)); //=> 25
 
 //-------------------------------
 let target = [
