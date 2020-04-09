@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>js だけで仮想的にフォーム作って submit</title>
+</head>
+<body>
+
+<form name="form1" id="form1" action="" method="post"></form>
+  <button type="button" id="my-button-01">submit</button>
+</form>
+
+<script>
+document.getElementById("my-button-01").addEventListener("click", myButton01Clicked)
+
+function myButton01Clicked(){
+    const target_url = './target/url';
+
+    document.form1.action = target_url;
+    document.form1.category_id = 1
+    document.form1.special_id  = 1
+    document.form1.submit();
+}
+
+</script>
+</body>
+</html>
