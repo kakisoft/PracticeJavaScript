@@ -31,8 +31,6 @@ if (score >= 50 && name === 'kaki') {
 score >= 80 ? console.log('Great!') : console.log('OK...!');
 
 
-
-
 //==============================
 //          switch
 //==============================
