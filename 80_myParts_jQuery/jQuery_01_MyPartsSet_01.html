@@ -57,7 +57,7 @@
         <div class="success" id="chk_result_status_01">【id:chk_result_status_01】</div>
         <div class="error"   id="chk_result_status_02">【id:chk_result_status_02】</div>
     </div>
-    
+
     <hr>
 
     <!--
@@ -312,9 +312,9 @@ function getClassFromId(){
     console.table({a3})
 }
 
-//====================================
+//========================================================
 //      コンボボックス変更イベント（＆コンボボックスの値を取得）
-//====================================
+//========================================================
 // idで取得
 $('#id_blood_type').change(function() {
  
@@ -345,9 +345,9 @@ $('[name="my_buttons[]"]').on('click', function (){
 });
 
 
-//====================================
+//======================================
 //   B102  ボタンの値（Value）をJsonで取得
-//====================================
+//======================================
 $('#get_button_param_from_json_01').on('click', function (){
     obj = JSON.parse( this.value);
 
@@ -376,9 +376,9 @@ $('#ajax_general_style_01').on('click', function (){
     $.ajax({
             url      : target_url
           , data     : {
-                              unique_id : value
-                            , param1 : 111
-                            , text : "abcde"
+                            unique_id : value
+                          , param1    : 111
+                          , text      : "abcde"
             }
           , type     : "GET"
           , dataType : "json"
@@ -406,10 +406,10 @@ $('#ajax_general_style_02').on('click', function (){
 
                         url      : target_url
                       , data     : {
-                                          news_id : value
-                                        , unique_id : 123
-                                        , param1 : 456
-                                        , text : "abcde"
+                                       news_id   : value
+                                     , unique_id : 123
+                                     , param1    : 456
+                                     , text      : "abcde"
                         }
                     , type     : "GET"
                     , dataType : "json"

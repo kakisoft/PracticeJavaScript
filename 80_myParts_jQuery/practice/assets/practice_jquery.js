@@ -44,10 +44,10 @@ $('body').on('click', '.vanish', function() {
 $('#ctg07-box01 ').click(function() {
     alert("hi!");
 });
-$('#ctg07-box01')   
+$('#ctg07-box01')
     .mouseover(function() {
         $(this).css('background', 'green');
-    })            
+    })
     .mouseout(function() {
         $(this).css('background', 'red');
     })
@@ -62,7 +62,6 @@ $('#ctg07-box01')
 //======================
 // イベント(フォーム部品)
 //======================
-
 $('#ctg08-name')
     .focus(function() {
         $(this).css('background', 'red');
