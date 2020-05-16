@@ -23,3 +23,10 @@ console.log( parseInt("2e1") );       // => 2
 console.log( Number("20px") );        // => NaN
 console.log( Number("2e1") );         // => 2 x 10^1 なので、 20
 
+console.log(Boolean(0));        //=> false
+console.log(Boolean('0'));      //=> true（PHPと異なる部分）
+console.log(Boolean(1));        //=> true
+console.log(Boolean('0'));      //=> true
+console.log(Boolean('hello'));  //=> true
+
+
