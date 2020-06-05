@@ -13,7 +13,9 @@ nvm install v13.7.0
 nvm use 13.7.0
 
 
+nvm
 nvm list
+nvm list available
 ```
 上手く行かない場合、公式サイトのインストーラを使用する。  
 https://github.com/coreybutler/nvm-windows/releases/  
