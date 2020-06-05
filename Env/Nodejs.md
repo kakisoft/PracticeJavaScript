@@ -5,7 +5,7 @@ choco install nodejs
 choco upgrade nodejs
 ```
 
-## nvm によるバージョン切り替え
+## NVM for Windows によるバージョン切り替え
 ```
 choco install nvm
 
