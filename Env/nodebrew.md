@@ -1,5 +1,12 @@
 ## nodebrew
-https://github.com/hokaccha/nodebrew
+Node.js がインストール済みの場合、アンインストールしないと上手くいかないかも。
+```
+npm uninstall -g npm
+brew uninstall node
+```
+
+https://github.com/hokaccha/nodebrew  
+以下のコマンドが現在も正しいかは、公式サイトを参照。
 ```
 curl -L git.io/nodebrew | perl - setup
 export PATH=$HOME/.nodebrew/current/bin:$PATH
@@ -18,3 +25,14 @@ which node
 ls -la /Users/kaki/.nodebrew/current/bin/node
 /Users/kaki/.nodebrew/current/bin/node -v
 ```
+
+
+
+pckaki301:PracticeJavaScript kaki$ echo "export PATH=$HOME/.nodebrew/current/bin:$PATH"
+
+export PATH=/Users/kaki/.nodebrew/current/bin:/Users/kaki/.nodebrew/current/bin:/Users/kaki/.nodebrew/current/bin:/Users/kaki/.nodebrew/current/bin:/Users/kaki/.rbenv/shims:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/kaki/.rbenv/shims
+
+
+pckaki301:PracticeJavaScript kaki$ echo $HOME
+/Users/kaki
+
