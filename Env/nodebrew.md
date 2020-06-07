@@ -9,7 +9,12 @@ https://github.com/hokaccha/nodebrew
 以下のコマンドが現在も正しいかは、公式サイトを参照。
 ```
 curl -L git.io/nodebrew | perl - setup
+
+# コンフィグに追記
+vi source ~/.bashrc        # ↓の内容を書く。(.bashrc または .zshrc)
 export PATH=$HOME/.nodebrew/current/bin:$PATH
+
+# リロード
 source ~/.bashrc
 
 
@@ -26,13 +31,8 @@ ls -la /Users/kaki/.nodebrew/current/bin/node
 /Users/kaki/.nodebrew/current/bin/node -v
 ```
 
+```
+nodebrew ls-remote
 
-
-pckaki301:PracticeJavaScript kaki$ echo "export PATH=$HOME/.nodebrew/current/bin:$PATH"
-
-export PATH=/Users/kaki/.nodebrew/current/bin:/Users/kaki/.nodebrew/current/bin:/Users/kaki/.nodebrew/current/bin:/Users/kaki/.nodebrew/current/bin:/Users/kaki/.rbenv/shims:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/kaki/.rbenv/shims
-
-
-pckaki301:PracticeJavaScript kaki$ echo $HOME
-/Users/kaki
-
+nodebrew uninstall <version>
+```
