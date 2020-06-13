@@ -1,23 +1,32 @@
 # yarn
 https://yarnpkg.com/en/
     
-### インストール（Windows）
+### yarn のインストール（Windows）
 ```
 choco install yarn
 ```
 
-### インストール（Mac）
+### yarn のインストール（Mac）
 ```
 brew install yarn
 yarn
 yarn global add gulp
 ```
 
-### バージョン確認
+### yarn のバージョン確認
 ```
 yarn --version
 ```
 _______________________________________
+## yarnを使って各種パッケージをインストール
+```
+yarn install
+```
+
+## yarnを使って各種パッケージをアップデート
+```
+yarn upgrade
+```
 
 ## ビルドから開始まで
 ```
