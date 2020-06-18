@@ -5,6 +5,15 @@ choco install nodejs
 choco upgrade nodejs
 ```
 
+## ubuntu にインストール
+```
+curl -sL https://deb.nodesource.com/setup_13.x | sudo bash -
+
+sudo apt-get install -y nodejs
+```
+14 をインストールするなら、「14.x」
+
+
 ## NVM for Windows によるバージョン切り替え
 ```
 choco install nvm
