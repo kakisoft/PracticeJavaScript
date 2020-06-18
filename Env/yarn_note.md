@@ -13,6 +13,13 @@ yarn
 yarn global add gulp
 ```
 
+#### yarn のインストール（ubuntu）
+バージョン指定
+```
+curl -sL https://yarnpkg.com/install.sh | bash -s -- --version [version]
+curl -sL https://yarnpkg.com/install.sh | bash -s -- --version 1.22.4
+```
+
 ### yarn のバージョン確認
 ```
 yarn --version
