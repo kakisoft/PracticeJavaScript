@@ -1,3 +1,5 @@
+# 雑記ブログリニューアル候補
+
 ## gatsby-simple-blog
 移管先最有力候補。  
 https://www.gatsbyjs.org/starters/thundermiracle/gatsby-simple-blog/
@@ -6,33 +8,50 @@ https://www.gatsbyjs.org/starters/thundermiracle/gatsby-simple-blog/
 ↑の姉妹品。  
 https://www.gatsbyjs.org/starters/hituzi-no-sippo/gatsby-simple-blog-with-asciidoctor/
 
-
-## rolwinreevan_gatsby_blog
-候補 part2。ポートフォリオにも使えそう。  
-https://www.gatsbyjs.org/starters/rolwin100/rolwinreevan_gatsby_blog/
+____________________________________________________________________________
+# 英語日記リニューアル
 
 ## flexible-gatsby
-良さげ。  
+良さげ。英語日記リニューアル候補１。サムネ写真付けられそうなのがGOOD!  
+ページ送りがないのが難点か。  
 https://www.gatsbyjs.org/starters/wangonya/flexible-gatsby/
 
-## gatsby-starter-i18n-bulma
-メニューが豊富。英語テキスト用に。  
-https://www.gatsbyjs.org/starters/kalwalt/gatsby-starter-i18n-bulma/
-
-____________________________________________________________________________
 ## gatsby-starter-blog-grommet
 英語日記の候補に。  
-でも、タグが無いのがちょっと・・・  
+でも、タグが無いのが難点。自作するか？  
 https://www.gatsbyjs.org/starters/Ganevru/gatsby-starter-blog-grommet/
 
 ____________________________________________________________________________
+# 英語テキスト
+
+## gatsby-starter-i18n-bulma
+メニューが豊富。KALDIっぽい。  
+https://www.gatsbyjs.org/starters/kalwalt/gatsby-starter-i18n-bulma/
+
+
 ## gatsby-gitbook-starter
 左メニューが豊富。何やら凄さげ。  
+黒を基調としたコズミックなデザイン。  
 https://www.gatsbyjs.org/starters/hasura/gatsby-gitbook-starter/
+
+____________________________________________________________________________
+# ポートフォリオ寄りかも
+
+## rolwinreevan_gatsby_blog
+候補 part2。ポートフォリオにも使えそう。  
+ページ送りが無いのが難点か。  
+あと、Blog記事増えた時に整頓が大変かも。  
+サムネ画像が必須？  
+https://www.gatsbyjs.org/starters/rolwin100/rolwinreevan_gatsby_blog/
+
 
 ## gatsby-starter-paperbase
 左メニューがいい感じ。ポートフォリオに使えそう。  
+が、使っていくうちに罠がありそう。黒と青が基調色。  
 https://www.gatsbyjs.org/starters/willcode4food/gatsby-starter-paperbase/
+
+____________________________________________________________________________
+# 方向性は違うけど・・・
 
 ## gatsby-blog-mdx
 方向性は違うが、アリかもしれない。  
