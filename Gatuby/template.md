@@ -1,0 +1,58 @@
+## gatsby-simple-blog
+移管先最有力候補。  
+https://www.gatsbyjs.org/starters/thundermiracle/gatsby-simple-blog/
+
+## gatsby-simple-blog-with-asciidoctor
+↑の姉妹品。  
+https://www.gatsbyjs.org/starters/hituzi-no-sippo/gatsby-simple-blog-with-asciidoctor/
+
+
+## rolwinreevan_gatsby_blog
+候補 part2。ポートフォリオにも使えそう。  
+https://www.gatsbyjs.org/starters/rolwin100/rolwinreevan_gatsby_blog/
+
+## flexible-gatsby
+良さげ。  
+https://www.gatsbyjs.org/starters/wangonya/flexible-gatsby/
+
+## gatsby-starter-i18n-bulma
+メニューが豊富。英語テキスト用に。  
+https://www.gatsbyjs.org/starters/kalwalt/gatsby-starter-i18n-bulma/
+
+____________________________________________________________________________
+## gatsby-starter-blog-grommet
+英語日記の候補に。  
+でも、タグが無いのがちょっと・・・  
+https://www.gatsbyjs.org/starters/Ganevru/gatsby-starter-blog-grommet/
+
+____________________________________________________________________________
+## gatsby-gitbook-starter
+左メニューが豊富。何やら凄さげ。  
+https://www.gatsbyjs.org/starters/hasura/gatsby-gitbook-starter/
+
+## gatsby-starter-paperbase
+左メニューがいい感じ。ポートフォリオに使えそう。  
+https://www.gatsbyjs.org/starters/willcode4food/gatsby-starter-paperbase/
+
+## gatsby-blog-mdx
+方向性は違うが、アリかもしれない。  
+https://www.gatsbyjs.org/starters/EllisMin/gatsby-blog-mdx/
+
+____________________________________________________________________________
+# EC
+
+## gatsby-starter-products
+https://www.gatsbyjs.org/starters/flotiq/gatsby-starter-products/
+
+____________________________________________________________________________
+# 不採用
+
+##　gatsby-starter-calpa-blog
+中華製。clone したら、全然別のものが入ったぞ？ 何だこれ。  
+https://www.gatsbyjs.org/starters/calpa/gatsby-starter-calpa-blog/
+
+## the404blog
+本番まで使ってみたものの、安定しねぇ・・・。あと、エラー直すの大変だ。  
+https://www.gatsbyjs.org/starters/algokun/the404blog/
+
+
