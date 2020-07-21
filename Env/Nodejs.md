@@ -22,6 +22,10 @@ nvm install v13.7.0
 nvm use 13.7.0
 
 
+nvm install v10.12.0
+nvm install v11.15.0
+
+
 nvm
 nvm list
 nvm list available
