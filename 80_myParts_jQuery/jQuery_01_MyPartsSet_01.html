@@ -58,39 +58,36 @@
         <div class="error"   id="chk_result_status_02">【id:chk_result_status_02】</div>
     </div>
 
+    <!-- ============================================ -->
     <hr>
-
-    <!--
-    //====================================
-    //   B101  ボタンの値（Value）を取得
-    //====================================
-    -->
-    <br>
+    <h1>
+        B101  ボタンの値（Value）を取得
+    </h1>
+    <!-- ============================================ -->
     <div>
         <button id="get_button_param_01" value="a"  name="my_buttons[]">ボタンの値を取得１</button>
         <button id="get_button_param_02" value="bb" name="my_buttons[]">ボタンの値を取得２</button>
     </div>
     <br>
-    <hr>
 
-    <!--
-    //====================================
-    //  B102  ボタンの値（Value）をJsonで取得
-    //====================================
-    -->
-    <br>
+    <!-- ============================================ -->
+    <hr>
+    <h1>
+        B102  ボタンの値（Value）をJsonで取得
+    </h1>
+    <!-- ============================================ -->
     <div>
         <button id="get_button_param_from_json_01" value='{"result":2, "count":42}'>ボタンの値をJOSN形式で取得１</button>
         <!-- ↓こっちだとエラー（ value を "" で囲む ） -->
         <button id="get_button_param_from_json_02" value="{'result':3, 'count':42}" >ボタンの値をJOSN形式で取得２</button>
     </div>
 
-    <!--
-    //====================================
-    //  C101  ajax 汎用スタイル
-    //====================================
-    -->
-    <br>
+    <!-- ============================================ -->
+    <hr>
+    <h1>
+        C101  ajax 汎用スタイル
+    </h1>
+    <!-- ============================================ -->
     <div>
         <button id="ajax_general_style_01">ajax 汎用スタイル１</button>
         <!-- ↓こっちだとエラー（ value を "" で囲む ） -->
@@ -98,17 +95,54 @@
     </div>
 
 
-    <!--
-    //====================================
-    //  D101  フォーカスアウト時にチェック
-    //====================================
-    -->
-    <br>
+    <!-- ============================================ -->
+    <hr>
+    <h1>
+        D101  フォーカスアウト時にチェック
+    </h1>
+    <!-- ============================================ -->
     <div>
         <textarea name="remarks_01" class="check6" style="border:2px black dotted; margin: 0; padding: 0; width: 20%; height:4.5em;">remarks_01</textarea>
         <textarea name="remarks_02" class="check6" style="border:2px black dotted; margin: 0; padding: 0; width: 20%; height:4.5em;">remarks_02</textarea>
         <textarea name="remarks_03" class="check6" style="border:2px black dotted; margin: 0; padding: 0; width: 20%; height:4.5em;">remarks_03</textarea>
     </div>
+
+
+    <!-- ============================================ -->
+    <hr>
+    <h1>
+        D102  特定条件の時のみ、ボタンを表示
+    </h1>
+    <!-- ============================================ -->
+    <div>
+        <span class="d102-001">
+            <label><input type="radio" name="report_type" value="1" checked="checked">タイプ１</label>
+            <label><input type="radio" name="report_type" value="2" >タイプ２</label>
+        </span>
+        <span>
+            <input
+                type="button"
+                id="d102_button_1"
+                class="visible_control_for_print_button"
+                value="何かのボタン１"
+                />
+            &nbsp;
+            <input
+                type="button"
+                id="d102_button_group_2_1"
+                class="visible_control_for_print_button"
+                value="何かのボタン２－１"
+                />
+            <input
+                type="button"
+                id="d102_button_group_2_2"
+                class="visible_control_for_print_button"
+                value="何かのボタン２－２"
+                />
+            &nbsp;
+        </span>
+    </div>
+
 
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script><!-- こっちでもOK -->
