@@ -496,6 +496,40 @@ $(function() {
 
 });
 
+
+//====================================
+//  D102  特定条件の時のみ、ボタンを表示
+//====================================
+// プラン印刷ボタンの表示制御（初回ロード時）
+visibleControlOtherPrintButton();
+
+// プラン印刷ボタンの表示制御（ラジオボタン変更イベント）
+$('input[name="report_type"]').change(function() {
+    visibleControlOtherPrintButton();
+});
+
+
+/*
+*
+*
+*/
+function visibleControlOtherPrintButton(){
+
+    var report_type = $("input[name='report_type']:checked").val();
+    if( report_type == 1 ){
+        // 何かのボタンを表示する
+        $('.visible_control_for_print_button').css('visibility','visible');
+        // $(".visible_control_for_print_button").show(); // OK... だけど、レイアウトが崩れる事も。
+    }else{
+        // 何かのボタンを表示しない
+        $('.visible_control_for_print_button').css('visibility','hidden');
+        // $('.visible_control_for_print_button').hide();  // エレメントが消える。レイアウトが崩れる事もある。
+    }
+
+}
+
+
+
     </script>
 </body>
 </html>
