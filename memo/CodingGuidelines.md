@@ -44,4 +44,44 @@ https://eslint.org/docs/rules/
 
 
 
+## Stylelint
+ESLint の CSS版  
+https://stylelint.io/  
+https://stylelint.io/user-guide/rules/list  
+
+________________________________________________
+________________________________________________
+________________________________________________
+# その他（js）
+
+## Google JavaScript Style Guide
+https://google.github.io/styleguide/javascriptguide.xml
+
+## Airbnb JavaScript Style Guide
+https://github.com/airbnb/javascript
+
+## Node.js Style Guide
+https://github.com/felixge/node-style-guide
+
+## jQuery JavaScript Style Guide
+https://contribute.jquery.org/style-guide/js/
+
+
+# その他（css）
+
+## Google
+https://google.github.io/styleguide/htmlcssguide.html
+
+#### Google のコーディングスタイル：日本語での紹介記事
+https://note.com/tsux2000/n/nc25cd90d008d
+
+## GitHub
+https://styleguide.github.com/
+
+________________________________________________
+________________________________________________
+________________________________________________
+
+
+
 
