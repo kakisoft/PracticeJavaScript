@@ -53,7 +53,7 @@ var str = 任意の文字列
 str.indexOf( 検索したい文字, 検索開始位置 );
 // str.lastIndexOf( 検索したい文字, 検索開始位置 );
 
-?https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf
+https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf
 str.indexOf(searchValue[, fromIndex])
 
 
@@ -131,4 +131,18 @@ console.log(content_2)
 // console.log(content_3)
 
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// 【 テンプレート文字列 】
+
+const first_name = "kaki";
+const last_name  = "soft";
+
+const message1 = "===[ " + first_name + " : " + last_name + " ]===";
+const message2 = `===[ ${first_name} : ${last_name} ]===`;
+
+console.log(message1);
+console.log(message2);
+
+
+//━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
 
