@@ -44,11 +44,45 @@ ____________________________________________________________________________
 サムネ画像が必須？  
 https://www.gatsbyjs.org/starters/rolwin100/rolwinreevan_gatsby_blog/
 
+## Stackbit Fresh Theme 
+https://github.com/stackbit-themes/fresh-nextjs  
+
+##### demo
+https://themes.stackbit.com/demos/fresh/
+
 
 ## gatsby-starter-paperbase
 左メニューがいい感じ。ポートフォリオに使えそう。  
 が、使っていくうちに罠がありそう。黒と青が基調色。  
 https://www.gatsbyjs.org/starters/willcode4food/gatsby-starter-paperbase/
+
+___________________________________________________________________
+# EC
+
+## gatsby-starter-products
+https://www.gatsbyjs.org/starters/flotiq/gatsby-starter-products/
+
+____________________________________________________________________________
+# サービス紹介サイトに使えそう
+
+##  Libris Nextjs Theme
+https://github.com/stackbit-themes/libris-nextjs
+
+##### demo
+https://themes.stackbit.com/demos/libris/
+
+## vHealth
+https://github.com/shantanu-deshmukh/vhealth-gatsby
+
+##### demo
+https://vhealth.openthemes.dev/
+
+
+## Gatsby Lander
+
+##### demo
+https://gatsby-lander.surge.sh/
+
 
 ____________________________________________________________________________
 # 方向性は違うけど・・・
@@ -57,13 +91,16 @@ ____________________________________________________________________________
 方向性は違うが、アリかもしれない。  
 https://www.gatsbyjs.org/starters/EllisMin/gatsby-blog-mdx/
 
-____________________________________________________________________________
-# EC
 
-## gatsby-starter-products
-https://www.gatsbyjs.org/starters/flotiq/gatsby-starter-products/
+## Airtable listing theme for Gatsby
+https://github.com/wkocjan/gatsby-airtable-listing 
 
-____________________________________________________________________________
+Paris, London, Bancelna...
+
+##### demo
+https://gatsby-airtable-listing.netlify.app/
+
+_____________________________________________________________________________________
 # 不採用
 
 ##　gatsby-starter-calpa-blog
