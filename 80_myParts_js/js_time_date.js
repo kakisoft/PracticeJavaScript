@@ -12,11 +12,21 @@ let batchStartTime = new Date('2020/1/1 00:00:00');
 let batchEndTime   = new Date('2020/1/1 23:59:59');
 
 i = batchStartTime;
+// while (i < batchEndTime) {
+//     console.log(
+//                     String( i.getHours()   ).padStart(2, '0')
+//                   + ':'
+//                   + String( i.getMinutes() ).padStart(2, '0')
+//                )
+
+
+//     i.setMinutes(i.getMinutes() + TIME_INTERVAL);
+// }
+
+
+i = batchStartTime;
 while (i < batchEndTime) {
-    console.log(
-                    i.getHours().toString().padStart(2, '0')
-                  + ':'
-                  + i.getMinutes().toString().padStart(2, '0')
-             )
+    console.log( String( i.getHours() ).padStart(2, '0') + ':' + String( i.getMinutes() ).padStart(2, '0') )
     i.setMinutes(i.getMinutes() + TIME_INTERVAL);
 }
+
