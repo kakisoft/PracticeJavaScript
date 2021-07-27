@@ -41,6 +41,13 @@ https://kakisoft.github.io/PracticeJavaScript/Chartjs/MyCharts05.html
 https://kakisoft.github.io/PracticeJavaScript/BarCode/QRCodeGenerator.html    
 
 
+## Parts_Async_method
+https://kakisoft.github.io/PracticeJavaScript/81_myParts_Async_method/Async_01_callback.html  
+https://kakisoft.github.io/PracticeJavaScript/81_myParts_Async_method/Async_02_promise.html  
+https://kakisoft.github.io/PracticeJavaScript/81_myParts_Async_method/Async_03_asynawait.html  
+https://kakisoft.github.io/PracticeJavaScript/81_myParts_Async_method/axios.html    
+
+
 __________________________________________________________________
 ちょっとしたツール
 ### ストップウォッチ
