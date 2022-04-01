@@ -40,6 +40,22 @@ package.json に書かれたスクリプトを実行する。
 npm run build  
 と実行すると、「"build"」の内容が実行される。
 
+## npm ci
+（公式）  
+https://docs.npmjs.com/cli/v8/commands/npm-ci  
+This command is similar to npm install, except it's meant to be used in automated environments such as test platforms, continuous integration, and deployment -- or any situation where you want to make sure you're doing a clean install of your dependencies.  
+
+
+https://qiita.com/mstssk/items/8759c71f328cab802670  
+npm ci を実行すると常に package-lock.json から依存関係をインストールします。  
+既に node_modules フォルダの中身があっても一旦削除します。  
+
+従来の npm install コマンドを実行すると、 package.json と package-lock.json の両方を見て依存関係の解決と依存パッケージの node_modules へのインストールを行います。  
+package.json を解決して必要に応じてロックファイルである package-lock.json の更新もします。  
+
+一方で npm ci は package.json の依存関係の解決を行わず、常に package-lock.json を見て依存パッケージをダウンロードし node_modules の洗い替えを行います。  
+
+
 ## npm-run-all build:*  （「build:js」「build:css」）
 https://github.com/mysticatea/npm-run-all
 
