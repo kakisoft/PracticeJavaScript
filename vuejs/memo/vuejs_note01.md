@@ -25,4 +25,3 @@ https://jp.vuejs.org/
 
 ```
 
-a
