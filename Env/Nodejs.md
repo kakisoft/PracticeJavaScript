@@ -49,6 +49,11 @@ https://github.com/coreybutler/nvm-windows/releases/
 nvm-setup.exe  
 
 
+## Mac にインストール
+```
+brew install node
+```
+
 ___________________________________________________________________
 
 NVM for Windows でバージョン切り替えをしたけど Node.js のバージョンが切り替わらない！　そんな時は、環境変数を見てみよう。
