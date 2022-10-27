@@ -134,6 +134,32 @@ npm run startで起動されたWebサーバー。
 スクリプトのハッシュ値を計算することによって改ざんされていないかどうか検証することができる。  
 https://tosi-tech.net/2017/01/verify-cdn-script-by-sri/
 
+
+_____________________________________________________________________
+
+## npm installとnpm ciの違い
+https://new-lamp.hatenablog.com/entry/2021/10/23/102630
+
+
+### npm install
+npmi iはpackage.jsonを見てライブラリをインストールする。  
+pacakge.jsonのバージョン指定には幅があるため、npm iする時期によってはpackage.json.lockを書き換えてしまう。   
+つまり完全に同じ開発環境を再現できない(可能性がある)。これはnpm iの大きな問題点と言える。
+
+
+### npm ci
+一方でnpm ciはpacage.json.lockからライブラリをインストールする。(これがnpm iとの最大の違い)
+
+具体的には↓の3つをやっている。
+
+ * node_modules ディレクトリの削除
+ * package-lock.json と package.json の整合性のチェック。違ったらエラーを吐く。
+ * package-lock.json から node_modules を再現
+
+npm iではなくnpm ciを使うことで完全に同じバージョンのライブラリをインストールすることができる。  
+git clone 直後などはnpm ciの方が良さそうだ
+
+
 _____________________________________________________________________
 ## 新人にドヤ顔で説明できるか、今風フロントエンド開発ハンズオン(Git/Node.js/ES6/webpack4/Babel7)
 https://qiita.com/riversun/items/29d5264480dd06c7b9fb
@@ -142,3 +168,7 @@ https://qiita.com/riversun/items/29d5264480dd06c7b9fb
 
 ## プロジェクトを実行！npm startの使い方【初心者向け】
 https://techacademy.jp/magazine/16393
+
+
+
+_____________________________________________________________________
