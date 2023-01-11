@@ -47,9 +47,9 @@
 
       console.log('text: ' + text);
 
-      // let modifiedText = text;
-      // let modifiedText = Number(text);
-      let modifiedText = Number(text).toLocaleString();
+      // let modifiedText = text;  // OK
+      // let modifiedText = Number(text);  // OK（桁数が増えると怪しくなる）
+      let modifiedText = Number(text).toLocaleString();  // NG（カンマが入る位置からおかしくなる）
 
       console.log('modifiedText: ' + modifiedText);
 
@@ -63,6 +63,8 @@
 </body>
 </html>
 
+<br><br>
+https://reviews.f-tools.net/Site-Making/Chrome-IME-ON-OFF.html
 <br><br>
 https://scrapbox.io/takker/javascript%E3%81%8B%E3%82%89IME%E3%82%92cancel%E3%81%99%E3%82%8B
 
