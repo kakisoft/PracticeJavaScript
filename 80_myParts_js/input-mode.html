@@ -7,7 +7,8 @@
 <body>
   <h1>ime-mode</h1>
 
-  <div id="app01">
+  <div>
+    text
       <input
         id="name"
         type="text"
@@ -18,9 +19,25 @@
         oninput="inputChange(this)"
         >
   </div>
+  <br>
+
+  <div>
+    tel
+    <input
+      id="name"
+      type="tel"
+      name="items[0][price]"
+      required="required"
+      class="input has-text-right"
+      size="80"
+      oninput="inputChange(this)"
+      >
+  </div>
 
   <script>
     function inputChange(obj){
+      console.log("-----inputChange-----")
+
       var text = obj.value;
       if(typeof text === 'string') {
           //To convert full width text to Half width
@@ -28,13 +45,16 @@
           text = text.replace(this.regex, '');
       }
 
+      console.log('text: ' + text);
+
       // let modifiedText = text;
+      // let modifiedText = Number(text);
       let modifiedText = Number(text).toLocaleString();
 
-      console.log(modifiedText)
+      console.log('modifiedText: ' + modifiedText);
 
       if(isNaN(modifiedText)){
-        // modifiedText = '';
+        console.log('NaN')
       }
 
       obj.value = modifiedText;
