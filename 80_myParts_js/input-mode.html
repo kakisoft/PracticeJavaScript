@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- <meta charset="UTF-8"> -->
+  <title>input mode</title>
+</head>
+<body>
+  <h1>ime-mode</h1>
+
+  <div id="app01">
+      <input
+        id="name"
+        type="text"
+        name="items[0][price]"
+        required="required"
+        class="input has-text-right"
+        size="80"
+        oninput="inputChange(this)"
+        >
+  </div>
+
+  <script>
+    function inputChange(obj){
+      var text = obj.value;
+      if(typeof text === 'string') {
+          //To convert full width text to Half width
+          text = text.normalize('NFKC');
+          text = text.replace(this.regex, '');
+      }
+
+      let modifiedText = Number(text).toLocaleString();
+
+      console.log(modifiedText)
+
+      if(isNaN(modifiedText)){
+        // modifiedText = '';
+      }
+
+      obj.value = modifiedText;
+    }
+  </script>
+</body>
+</html>
+
+<br><br>
+https://scrapbox.io/takker/javascript%E3%81%8B%E3%82%89IME%E3%82%92cancel%E3%81%99%E3%82%8B
+
+
+
+<!-- keyup
+keydown
+change
+
+methods: {
+  errorText,
+  convertHalfWidth(event) {
+      var text = event.target.value;
+      if(typeof text === 'string') {
+          //To convert full width text to Half width
+          text = text.normalize('NFKC');
+          text = text.replace(this.regex, '');
+      }
+      event.target.value = text;
+      return Number(text).toLocaleString();
+  },
+
+
+
+  <input type="text" :name="`items[${index}][quantity]`" @input="item.quantity = convertHalfWidth($event)" :value="item.quantity" :class="['input', {'is-danger': errors.hasOwnProperty(`items.${index}.quantity`)}]" required :pattern="isInvoiceTable ? '[0-9]+([.][0-9]+)?' : '[0-9]+'">
+  <input id="name" type="text" @input="item.price = convertHalfWidth($event)" :name="`items[${index}][price]`" :value="item.price" :class="['input', 'has-text-right', {'is-danger': errors.hasOwnProperty(`items.${index}.price`)}]" required>
+
+
+
+onchange="inputChange()"
+oninput="inputChange()"
+ -->
