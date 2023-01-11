@@ -42,7 +42,7 @@ https://kakisoft.github.io/PracticeJavaScript/BarCode/QRCodeGenerator.html
 
 
 ## Parts
-https://kakisoft.github.io/PracticeJavaScript/80_myParts_js\input-mode.html  
+https://kakisoft.github.io/PracticeJavaScript/80_myParts_js/input-mode.html  
 
 
 ## Parts_Async_method
