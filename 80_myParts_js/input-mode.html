@@ -36,7 +36,7 @@
   <br>
 
   <div>
-    text : oninput & onChange - (NG)<br>
+    text : oninput & onChange - (NG) 入力：全角で １２３４５<br>
       <input
         id="name"
         type="text"
@@ -51,6 +51,10 @@
   <br>
 
   <script>
+      // regex() {
+      //     return this.isInvoiceTable ? /[^0-9.]/g : /\D+/g;
+      // }
+
     function inputChange(obj){
       console.log("-----inputChange-----")
 
@@ -58,14 +62,15 @@
       if(typeof text === 'string') {
           //To convert full width text to Half width
           text = text.normalize('NFKC');
-          text = text.replace(this.regex, '');
+          // text = text.replace(this.regex, '');
+          text = text.replace(/[^0-9.]/g, '');
       }
 
       console.log('text: ' + text);
 
       // let modifiedText = text;  // OK
-      // let modifiedText = Number(text);  // OK（桁数が増えると怪しくなる）
-      let modifiedText = Number(text).toLocaleString();  // NG（カンマが入る位置からおかしくなる）
+      // let modifiedText = Number(text);  // OK（桁数が増えると怪しくなる。Numberの限界値？）
+      let modifiedText = Number(text).toLocaleString();  // NG（カンマが入る位置からおかしくなる？）
 
       console.log('modifiedText: ' + modifiedText);
 
