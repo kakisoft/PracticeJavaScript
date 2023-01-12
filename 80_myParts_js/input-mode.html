@@ -8,7 +8,7 @@
   <h1>ime-mode</h1>
 
   <div>
-    text
+    text <br>
       <input
         id="name"
         type="text"
@@ -22,7 +22,7 @@
   <br>
 
   <div>
-    tel
+    input-type=tel - (NG) <br>
     <input
       id="name"
       type="tel"
@@ -33,6 +33,22 @@
       oninput="inputChange(this)"
       >
   </div>
+  <br>
+
+  <div>
+    text : oninput & onChange - (NG)<br>
+      <input
+        id="name"
+        type="text"
+        name="items[0][price]"
+        required="required"
+        class="input has-text-right"
+        size="80"
+        oninput="inputChange(this)"
+        onChange="change()"
+        >
+  </div>
+  <br>
 
   <script>
     function inputChange(obj){
@@ -58,6 +74,10 @@
       }
 
       obj.value = modifiedText;
+    }
+
+    function change(){
+      console.log("changed")
     }
   </script>
 </body>
