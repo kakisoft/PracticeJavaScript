@@ -23,3 +23,19 @@ const max = A.reduce( (a,b) => a>b ? a:b);  // find biggest number
 const min = A.reduce( (a,b) => a>b ? b:a);  // find smallest number
 
 
+//_____________________________________________________________________________
+// 【 配列の重複を削除 】
+
+const array2 = new Set(array1);             // 型が「set」
+const array3 = Array.from(new Set(array1))  // 型を Array に変換
+
+//_____________________________________________________________________________
+// 【 for ループ 】
+
+for(i = 0; i < A.length; i++){
+    if( A.includes(sequenceNumber) === false){
+        return 0;
+    }
+    sequenceNumber++;
+}
+
