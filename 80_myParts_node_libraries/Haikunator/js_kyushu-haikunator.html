@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>KyushuHaikunator play01</title>
+</head>
+<body>
+  <button type="button" id="my-button-01">my-button-01</button>
+  <script src="https://cdn.jsdelivr.net/npm/kyushu-haikunator@0.1.0"></script>
+  <script>
+document.getElementById("my-button-01").addEventListener("click", myButton01Clicked)
+function myButton01Clicked(){
+
+const kh = new KyushuHaikunator()
+const MAX_NOUNS_LENGTH      = 5;
+const MAX_ADJECTIVES_LENGTH = 5;
+const TOKEN_LENGTH          = 4;
+const DELIMITER_CHAR        = '-';
+
+
+kh.nouns = kh.nouns.filter(function (x) { return x.length <= MAX_NOUNS_LENGTH  })
+kh.adjectives = kh.adjectives.filter(function (x) { return x.length <= MAX_ADJECTIVES_LENGTH  })
+
+a1 = kh.haikunate()
+a2 = kh.haikunate({delimiter: DELIMITER_CHAR, tokenLength: TOKEN_LENGTH})
+
+var accountName = kh.haikunate({delimiter: DELIMITER_CHAR, tokenLength: TOKEN_LENGTH});
+
+console.log(accountName)
+console.log(accountName.length)
+
+
+// ## haikunator
+// https://www.jsdelivr.com/package/npm/haikunator
+// https://github.com/Atrox/haikunatorjs/
+
+
+// ## kyushu-haikunator
+// https://www.jsdelivr.com/package/npm/kyushu-haikunator
+// https://github.com/dojineko/kyushu-haikunator/
+}
+  </script>
+</body>
+</html>
