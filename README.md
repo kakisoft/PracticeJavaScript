@@ -52,6 +52,12 @@ https://kakisoft.github.io/PracticeJavaScript/81_myParts_Async_method/Async_03_a
 https://kakisoft.github.io/PracticeJavaScript/81_myParts_Async_method/axios.html    
 
 
+## ExcellikeUI
+
+### Handsontable
+https://kakisoft.github.io/PracticeJavaScript/ExcellikeUI/Handsontable/example01.html  
+
+
 __________________________________________________________________
 ちょっとしたツール
 ### ストップウォッチ
