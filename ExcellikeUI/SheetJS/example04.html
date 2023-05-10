@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title>xlsx-populate Sample Code</title>
+  </head>
+  <body>
+
+    <script src="https://cdn.jsdelivr.net/npm/xlsx-populate@1.21.0/lib/XlsxPopulate.min.js"></script>
+    <script>
+      // Create a new workbook file.
+      xlsxPopulate.fromBlankAsync()
+        .then(workbook => {
+          // Modify the workbook.
+          const sheet = workbook.sheet("Sheet1");
+          sheet.cell("A1").value("Hello, World!");
+
+          // Output the workbook.
+          return workbook.outputAsync();
+        })
+        .then(data => {
+          console.log(data);
+        });
+    </script>
+  </body>
+</html>

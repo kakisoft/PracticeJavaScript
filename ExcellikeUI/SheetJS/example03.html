@@ -1,0 +1,122 @@
+<!--
+[SheetJS] WebアプリでExcelをデータベースとして使う
+https://qiita.com/okoppe8/items/995b57d4e3d6d512b916
+
+-->
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>sheet.js サンプル</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <style>
+        /* ファイル選択 */
+
+        /* http://cccabinet.jpn.org/bootstrap4/javascript/forms/file-browser */
+
+        .custom-file-input:lang(ja)~.custom-file-label::after {
+            content: "参照";
+        }
+
+        .custom-file {
+            overflow: hidden;
+        }
+
+        .custom-file-label {
+            white-space: nowrap;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <h2>sheet-js サンプル</h2>
+        <div class="custom-file">
+            <input type="file" class="custom-file-input" id="customFile">
+            <label class="custom-file-label" for="customFile">Excelファイルを選択...</label>
+        </div>
+        <div>
+            <h3>結果</h3>
+            <pre id="result">ここにJSONを出力します</pre>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.11.19/xlsx.full.min.js"></script>
+    <script>
+        var X = XLSX;
+
+        // ファイル選択時のメイン処理
+        function handleFile(e) {
+
+            var files = e.target.files;
+            var f = files[0];
+
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                var data = e.target.result;
+                var wb;
+                var arr = fixdata(data);
+                wb = X.read(btoa(arr), {
+                    type: 'base64',
+                    cellDates: true,
+                });
+
+                var output = "";
+                output = to_json(wb);
+                console.log(output);
+
+                $("pre#result").html(JSON.stringify(output, null, 2));
+
+            };
+
+            reader.readAsArrayBuffer(f);
+        }
+
+        // ファイルの読み込み
+        function fixdata(data) {
+            var o = "",
+                l = 0,
+                w = 10240;
+            for (; l < data.byteLength / w; ++l) o += String.fromCharCode.apply(null, new Uint8Array(data.slice(l * w,
+                l * w + w)));
+            o += String.fromCharCode.apply(null, new Uint8Array(data.slice(l * w)));
+            return o;
+        }
+
+        // ワークブックのデータをjsonに変換
+        function to_json(workbook) {
+            var result = {};
+            workbook.SheetNames.forEach(function (sheetName) {
+                var roa = X.utils.sheet_to_json(
+                    workbook.Sheets[sheetName],
+                    {
+                        raw: true,
+                    });
+                if (roa.length > 0) {
+                    result[sheetName] = roa;
+                }
+            });
+            return result;
+        }
+
+        // 画面初期化
+        $(document).ready(function () {
+
+            // ファイル選択欄 選択イベント
+            // http://cccabinet.jpn.org/bootstrap4/javascript/forms/file-browser
+            $('.custom-file-input').on('change', function (e) {
+                handleFile(e);
+                $(this).next('.custom-file-label').html($(this)[0].files[0].name);
+            })
+        });
+
+    </script>
+</body>
+
+</html>
