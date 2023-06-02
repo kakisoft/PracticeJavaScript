@@ -34,10 +34,11 @@ choco install nvm
 
 nvm install v13.7.0
 nvm use 13.7.0
-
+nvm use v18.11.0
 
 nvm install v10.12.0
 nvm install v11.15.0
+nvm install v18.11.0
 
 
 nvm

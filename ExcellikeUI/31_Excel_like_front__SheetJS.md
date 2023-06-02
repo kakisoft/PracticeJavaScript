@@ -45,7 +45,7 @@ html も用意して。
 ```
 
 
-
+NG - heavy
 ```
 xlsx-populate のサンプルコードを書いて
 html も用意して。
