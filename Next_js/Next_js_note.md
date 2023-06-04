@@ -34,7 +34,7 @@ pagesディレクトリにルーティングさせたいファイルを置く
 ```
 pagess
  ┣ index.js
- ┗ index.js
+ ┗ sub.js
 ```
 
 
