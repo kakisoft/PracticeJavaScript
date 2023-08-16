@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>My Boiler Plate</title>
+</head>
+<body>
+
+<form name="my_form_01">
+  <p>
+    <label>
+      targetUrl<br>
+      <input type="text" id="targetUrl" style="width:75%;" value="https://www.googleapis.com/books/v1/volumes?q=猫">
+    </label>
+  </p>
+  <button type="button" id="getDataFromTargetUrl">getDataFromTargetUrl</button>
+  <p>
+    整形して結果を表示するのが面倒だったので、戻り値の内容はConsoleから見てね
+    <textarea id="resultContentElement" style="width:85%; height:50em"></textarea>
+  </p>
+
+
+</form>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+targetUrlElement = document.getElementById("targetUrl");
+resultContentElement = document.getElementById("resultContentElement");
+
+
+document.getElementById("getDataFromTargetUrl").addEventListener("click", myButton01Clicked)
+function myButton01Clicked(){
+  let = targetUrl = targetUrlElement.value;
+  axios.get(targetUrl)
+  .then(function (response) {
+    // handle success
+    resultContentElement.textContent = response;
+    console.log(response);
+  })
+  .catch(function (error) {
+    // handle error
+    console.log(error);
+  })
+  .then(function () {
+    // always executed
+  });
+}
+</script>  
+</body>
+</html>
