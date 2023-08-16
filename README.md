@@ -49,7 +49,8 @@ https://kakisoft.github.io/PracticeJavaScript/80_myParts_js/input-mode.html
 https://kakisoft.github.io/PracticeJavaScript/81_myParts_Async_method/Async_01_callback.html  
 https://kakisoft.github.io/PracticeJavaScript/81_myParts_Async_method/Async_02_promise.html  
 https://kakisoft.github.io/PracticeJavaScript/81_myParts_Async_method/Async_03_asynawait.html  
-https://kakisoft.github.io/PracticeJavaScript/81_myParts_Async_method/axios.html    
+https://kakisoft.github.io/PracticeJavaScript/81_myParts_Async_method/axios_sample01.html  
+https://kakisoft.github.io/PracticeJavaScript/81_myParts_Async_method/axios_sample02.html  
 
 
 ## ExcellikeUI
