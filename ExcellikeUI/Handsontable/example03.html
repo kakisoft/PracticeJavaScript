@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Handsontable Rowspan</title>
+    <link href="https://cdn.jsdelivr.net/npm/handsontable@9.0.0/dist/handsontable.full.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/handsontable@9.0.0/dist/handsontable.full.min.js"></script>
+</head>
+<body>
+    <div id="hot"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var container = document.getElementById('hot');
+            var data = [
+                ["A", "A", "B", "B", "C", "C"],
+                ["Header 1", "Header 2", "Header 1", "Header 2", "Header 1", "Header 2"],
+                ["Subheader 1", "Subheader 2", "Subheader 3", "Subheader 4", "Subheader 5", "Subheader 6"],
+                ["Data 1", "Data 2", "Data 3", "Data 4", "Data 5", "Data 6"]
+            ];
+
+            var hot = new Handsontable(container, {
+                data: data,
+                rowHeaders: false,
+                colHeaders: false,
+                mergeCells: [
+                    { row: 0, col: 0, rowspan: 3, colspan: 1 },
+                    { row: 0, col: 2, rowspan: 3, colspan: 1 },
+                    { row: 0, col: 4, rowspan: 3, colspan: 1 },
+                ],
+            });
+        });
+    </script>
+</body>
+</html>
