@@ -15,6 +15,8 @@
     <br>http://localhost:8000/api/Document/index
   </p>
   <button type="button" id="getDataFromTargetUrl">getDataFromTargetUrl</button>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <button type="button" id="postDataFromTargetUrl">postDataFromTargetUrl</button>
   <p>
     レスポンス内容が正常に表示されていなかったら、Consoleを見てね。
     <textarea id="resultContentElement" style="width:85%; height:50em"></textarea>
@@ -29,8 +31,8 @@ targetUrlElement = document.getElementById("targetUrl");
 resultContentElement = document.getElementById("resultContentElement");
 
 
-document.getElementById("getDataFromTargetUrl").addEventListener("click", myButton01Clicked)
-function myButton01Clicked(){
+document.getElementById("getDataFromTargetUrl").addEventListener("click", getDataFromTargetUrlButtonClicked)
+function getDataFromTargetUrlButtonClicked(){
   let = targetUrl = targetUrlElement.value;
 
   axios.get(targetUrl)
@@ -44,6 +46,27 @@ function myButton01Clicked(){
         console.error('Error fetching data:', error);
       });
 }
+
+document.getElementById("postDataFromTargetUrl").addEventListener("click", postDataFromTargetUrlButtonClicked);
+function postDataFromTargetUrlButtonClicked() {
+  let targetUrl = targetUrlElement.value;
+
+  axios.post(targetUrl, null, {
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+  .then(response => {
+    const data = JSON.stringify(response.data, null, 2);
+    resultContentElement.textContent = data;
+    console.log(response);
+  })
+  .catch(error => {
+    resultContentElement.textContent = error;
+    console.error('Error fetching data:', error);
+  });
+}
+
 </script>
 </body>
 </html>
