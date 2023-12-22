@@ -14,6 +14,27 @@
     </label>
     <br>http://localhost:8000/api/Document/index
   </p>
+  <p>
+    <label>
+      param<br>
+      <!-- <input type="text" id="param" style="width:75%;" value='{
+        "HouseOrBuilding": "Building",
+        "Region": 5,
+        "Direction": 5,
+        "SideFin": "Yes",
+        "x1": 2,
+        "x2": 2,
+        "x3": 1,
+        "y1": 1,
+        "y2": 2,
+        "zxPlus": 0,
+        "zxMinus": 0,
+        "zyPlus": 0.5
+    }'> -->
+    <textarea id="param" style="width:95%; height:2em">{"HouseOrBuilding": "Building","Region": 5,"Direction": 5,"SideFin": "Yes","x1": 2,"x2": 2,"x3": 1,"y1": 1,"y2": 2,"zxPlus": 0,"zxMinus": 0,"zyPlus": 0.5}</textarea>
+    </label>
+  </p>
+
   <button type="button" id="getDataFromTargetUrl">getDataFromTargetUrl</button>
   &nbsp;&nbsp;&nbsp;&nbsp;
   <button type="button" id="postDataFromTargetUrl">postDataFromTargetUrl</button>
@@ -29,7 +50,7 @@
 <script>
 targetUrlElement = document.getElementById("targetUrl");
 resultContentElement = document.getElementById("resultContentElement");
-
+param = document.getElementById("param");
 
 document.getElementById("getDataFromTargetUrl").addEventListener("click", getDataFromTargetUrlButtonClicked)
 function getDataFromTargetUrlButtonClicked(){
@@ -51,7 +72,7 @@ document.getElementById("postDataFromTargetUrl").addEventListener("click", postD
 function postDataFromTargetUrlButtonClicked() {
   let targetUrl = targetUrlElement.value;
 
-  axios.post(targetUrl, null, {
+  axios.post(targetUrl, param, {
     headers: {
       'Content-Type': 'application/json',
     },
