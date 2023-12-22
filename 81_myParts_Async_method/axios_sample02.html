@@ -50,7 +50,7 @@
 <script>
 targetUrlElement = document.getElementById("targetUrl");
 resultContentElement = document.getElementById("resultContentElement");
-param = document.getElementById("param");
+paramElement = document.getElementById("param");
 
 document.getElementById("getDataFromTargetUrl").addEventListener("click", getDataFromTargetUrlButtonClicked)
 function getDataFromTargetUrlButtonClicked(){
@@ -71,6 +71,7 @@ function getDataFromTargetUrlButtonClicked(){
 document.getElementById("postDataFromTargetUrl").addEventListener("click", postDataFromTargetUrlButtonClicked);
 function postDataFromTargetUrlButtonClicked() {
   let targetUrl = targetUrlElement.value;
+  let param = paramElement.value;
 
   axios.post(targetUrl, param, {
     headers: {
