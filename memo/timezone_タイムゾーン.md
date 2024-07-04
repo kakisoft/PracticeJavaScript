@@ -30,3 +30,14 @@ toISOString は、UTC で返るらしい。
 
 
 
+## toLocaleString
+https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Number/toLocaleString
+
+正確には時間を扱うものではない？
+```js
+let d4 = new Date().toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo' });
+```
+
+引数が面倒。OSの環境変数から取得するのが結構億劫。
+
+
