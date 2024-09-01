@@ -4,42 +4,13 @@
 OS全体 のNode.jsのバージョンを変更するのではなく、現在のシェルセッション（ターミナルウィンドウやタブ）に対してのみ適用される。  
 他のシェルセッションには影響を与えない。  
 
-## Chocolatey によるインストール
-```
-choco install nodejs
 
-choco upgrade nodejs
+## Ubuntu
 ```
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
 
-## ubuntu にインストール
-```
-curl -sL https://deb.nodesource.com/setup_13.x | sudo bash -
-
-sudo apt-get install -y nodejs
-```
-14 をインストールするなら、「14.x」
-
-## CentOS にインストール
-```
-https://yuji-ueda.hatenadiary.jp/entry/2017/03/14/104727
-
-yum install nodejs-6.9.4
-この方法で本当に上手く行くの？
-```
-
-## Amazon Linux にインストール
-```
-curl -fsSL https://rpm.nodesource.com/setup_16.x | sudo bash -
-sudo yum install -y nodejs
-```
-
-## Mac にインストール
-```
-brew install node
-```
-
-
-# バージョン切り替え
+source ~/.bashrc
+``
 
 ## 一覧を表示
 ```
