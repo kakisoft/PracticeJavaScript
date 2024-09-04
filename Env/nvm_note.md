@@ -9,12 +9,21 @@ nvm (Node Version Manager) はユーザーレベルで動作する。
 デフォルトでは root ユーザーは nvm インストールにアクセスできないため、sudo でコマンドを実行する場合は使用できない。  
 
 
+## NVM for Windows
+```
+choco install nvm
+```
+上手く行かない場合、公式サイトのインストーラを使用する。  
+https://github.com/coreybutler/nvm-windows/releases/  
+nvm-setup.exe  
+
+
 ## Ubuntu
 ```
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
 
 source ~/.bashrc
-``
+```
 
 ## 一覧を表示
 ```
@@ -24,25 +33,26 @@ nvm ls-remote --lts
 
 ## NVM for Windows によるバージョン切り替え
 ```
-choco install nvm
-
-nvm install v13.7.0
-nvm use 13.7.0
-nvm use v18.11.0
+nvm
+nvm list
+nvm list available
 
 nvm install v10.12.0
 nvm install v11.15.0
 nvm install v18.11.0
 
-
-nvm
-nvm list
-nvm list available
+nvm use v18.11.0
 ```
-上手く行かない場合、公式サイトのインストーラを使用する。  
-https://github.com/coreybutler/nvm-windows/releases/  
-nvm-setup.exe  
 
+## .nvmrc に使用するバージョンを指定
+```
+echo "v18.20.4" > .nvmrc
+echo "v20.17.0" > .nvmrc
+```
+設定後、該当ディレクトリにて以下を実行。
+```
+nvm use
+```
 
 # デフォルトのバージョンを設定
 
@@ -56,12 +66,16 @@ nvm ls
 nvm alias default
 ```
 
+## デフォルトのバージョンを指定
 ```
 nvm alias default v18.20.4
 nvm alias default v20.17.0
 ```
 
 ___________________________________________________________________
+___________________________________________________________________
+___________________________________________________________________
+# 自前のブログの内容
 
 NVM for Windows でバージョン切り替えをしたけど Node.js のバージョンが切り替わらない！　そんな時は、環境変数を見てみよう。
 
