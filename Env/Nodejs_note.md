@@ -1,10 +1,11 @@
 # インストール
 
 ## ubuntu にインストール
+sudo で実行する必要があるかも。
 ```
-curl -sL https://deb.nodesource.com/setup_13.x | sudo bash -
-
-sudo apt-get install -y nodejs
+curl -sL https://deb.nodesource.com/setup_18.x -o nodesource_setup.sh
+bash nodesource_setup.sh
+apt install -y nodejs
 ```
 14 をインストールするなら、「14.x」
 
