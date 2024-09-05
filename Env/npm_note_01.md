@@ -1,3 +1,8 @@
+## グローバルインストールされたアプリ一覧
+```
+npm list -g
+```
+
 ### install dependencies
 $ npm install # Or yarn install
 

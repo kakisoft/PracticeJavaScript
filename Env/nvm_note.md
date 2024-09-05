@@ -1,6 +1,8 @@
 # Node.js バージョン切り替え : nvm
 https://github.com/nvm-sh/nvm
 
+※Node.js がインストールされていなくても使用可
+
 ## 注意点
 OS全体 のNode.jsのバージョンを変更するのではなく、現在のシェルセッション（ターミナルウィンドウやタブ）に対してのみ適用される。  
 他のシェルセッションには影響を与えない。  
@@ -31,17 +33,22 @@ nvm ls-remote
 nvm ls-remote --lts
 ```
 
-## NVM for Windows によるバージョン切り替え
+## インストール済みの一覧を表示
 ```
-nvm
 nvm list
 nvm list available
+```
 
-nvm install v10.12.0
-nvm install v11.15.0
-nvm install v18.11.0
+## 各バージョンをインストール
+```
+nvm install v18.20.4
+nvm install v20.17.0
+```
 
-nvm use v18.11.0
+## バージョンを適用
+```
+nvm use v18.20.4
+nvm use v20.17.0
 ```
 
 ## .nvmrc に使用するバージョンを指定
