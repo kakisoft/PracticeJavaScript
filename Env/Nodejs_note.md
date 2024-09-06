@@ -28,4 +28,20 @@ sudo yum install -y nodejs
 brew install node
 ```
 
+______________________________________________________
+# アンインストール
+https://www.digitalocean.com/community/tutorials/install-uninstall-nodejs-ubuntu#uninstall-nodejs-from-ubuntu
+
+## Ubuntu
+＜ パッケージを残してアンインストール ＞
+```
+sudo apt remove nodejs npm
+```
+
+＜ 完全削除 ＞
+```
+sudo apt purge nodejs npm
+sudo apt autoremove
+```
+
 
