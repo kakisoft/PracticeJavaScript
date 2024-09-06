@@ -31,11 +31,8 @@ sudo rm -rf /usr/local/lib/node_modules
 sudo rm -rf /usr/local/include/node
 sudo rm -rf /usr/local/share/man/man1/node.1
 sudo rm -rf /usr/local/share/systemtap/tapset/node.stp
-
 ```
 
-これだけでいいかも。
-/usr/local/lib/node_modules
 
 
 ## バージョン切り替え
