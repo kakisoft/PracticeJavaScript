@@ -1,31 +1,54 @@
+## ログ出力先を指定して実行
+```
+npm run start 1> ~/log/dashboard.log 2> ~/log/dashboard.err
+```
+
+1 - 標準出力
+2 - 標準エラー出力
+
+※この番号は、OSやシェルの基本的な仕様。
+
+
 ## グローバルインストールされたアプリ一覧
 ```
 npm list -g
 ```
 
-### install dependencies
-$ npm install # Or yarn install
+## install dependencies
+```
+npm install
+```
 
-### serve with hot reload at localhost:3000
-$ npm run dev
+## serve with hot reload at localhost:3000
+```
+npm run dev
+```
 
-### build for production and launch server
-$ npm run build
-$ npm start
+## build for production and launch server
+```
+npm run build
+npm start
+```
 
-### generate static project
-$ npm run generate
-
-_____________________________________________________________________
-## npx
- * npm パッケージのダウンロードと実行を同時に行う。  
- * ローカルにインストールしたnpmパッケージを、npxコマンドで実行できる。
+## generate static project
+```
+npm run generate
+```
 
 
-## ローカルの npm パッケージを使用
- * 方法1: ./node_modules/.bin/(パッケージ名)で実行する
- * 方法2: $(npm bin)/(パッケージ名)で実行する
- * 方法3: package.jsonにnpm-scriptsを記述して実行する
+## npmの--save, --save-dev, --save-optionalの違いAdd Star
+```
+1. --save は package.json の dependencies に追記される。
+アプリケーションの実行に必要なパッケージ	
+
+2. --save-dev は package.json の devDependencies に追記される。
+開発時に利用するパッケージ
+
+
+http://d.hatena.ne.jp/seinzumtode/20160226/1456450867
+https://the2g.com/2280
+```
+
 
 ## npm run
 タスク一覧を表示
@@ -45,21 +68,6 @@ package.json に書かれたスクリプトを実行する。
 npm run build  
 と実行すると、「"build"」の内容が実行される。
 
-## npm ci
-（公式）  
-https://docs.npmjs.com/cli/v8/commands/npm-ci  
-This command is similar to npm install, except it's meant to be used in automated environments such as test platforms, continuous integration, and deployment -- or any situation where you want to make sure you're doing a clean install of your dependencies.  
-
-
-https://qiita.com/mstssk/items/8759c71f328cab802670  
-npm ci を実行すると常に package-lock.json から依存関係をインストールします。  
-既に node_modules フォルダの中身があっても一旦削除します。  
-
-従来の npm install コマンドを実行すると、 package.json と package-lock.json の両方を見て依存関係の解決と依存パッケージの node_modules へのインストールを行います。  
-package.json を解決して必要に応じてロックファイルである package-lock.json の更新もします。  
-
-一方で npm ci は package.json の依存関係の解決を行わず、常に package-lock.json を見て依存パッケージをダウンロードし node_modules の洗い替えを行います。  
-
 
 ## npm-run-all build:*  （「build:js」「build:css」）
 https://github.com/mysticatea/npm-run-all
@@ -73,8 +81,6 @@ https://github.com/mysticatea/npm-run-all
 特定の環境のWebpackでは、ファイル変更時に更新されないことがあるらしい。  
 その場合、こっちを使う。
 
-_____________________________________________________________________
-
 ## npm install option
 --save          は package.json の dependencies    に追記される。    
 --save-dev      は package.json の devDependencies に追記される。    
@@ -87,20 +93,18 @@ https://qiita.com/msakamoto_sf/items/a1ae46979a42d6948ebd
 
 オプションを指定しない場合、「 --save 」と同じ動きをする。
 
-_____________________________________________________________________
+## --unsafe-perm
+--unsafe-perm フラグは、npm install コマンドのオプションであり、
+npm に root レベルのアクセス許可でスクリプトを実行するように指示します。
+デフォルトでは、npm はスクリプトの実行時に特権を削除します。
+つまり、ルート レベルのアクセス許可が必要な場合、一部の操作が失敗する可能性があります。
 
-## npmの--save, --save-dev, --save-optionalの違いAdd Star
-```
-1. --save は package.json の dependencies に追記される。
-アプリケーションの実行に必要なパッケージ	
+--unsafe-perm フラグを使用すると、このセキュリティ対策をバイパスできますが、セキュリティの脆弱性が生じる可能性があるため、
+このオプションは注意して使用することが重要です。 --unsafe-perm フラグの使用はできるだけ避け、代わりに適切な権限を持つユーザー アカウントを使用することをお勧めします。
 
-2. --save-dev は package.json の devDependencies に追記される。
-開発時に利用するパッケージ
+--unsafe-perm フラグを使用する必要がある場合は、必要な場合にのみ使用し、使用範囲をできる限り制限することをお勧めします。
+たとえば、グローバルに使用するのではなく、特定のインストールまたはコマンドに使用できます。
 
-
-http://d.hatena.ne.jp/seinzumtode/20160226/1456450867
-https://the2g.com/2280
-```
 
 _____________________________________________________________________
 ## npm start
@@ -108,6 +112,30 @@ package.json の scripts.start に指定された文字列を実行。
 ( “node server.js” とか)
 
 ## npm --help start
+-
+
+_____________________________________________________________________
+# npx
+
+ * npm パッケージのダウンロードと実行を同時に行う。  
+ * ローカルにインストールしたnpmパッケージを、npxコマンドで実行できる。
+
+
+
+# npm ci
+（公式）  
+https://docs.npmjs.com/cli/v8/commands/npm-ci  
+This command is similar to npm install, except it's meant to be used in automated environments such as test platforms, continuous integration, and deployment -- or any situation where you want to make sure you're doing a clean install of your dependencies.  
+
+
+https://qiita.com/mstssk/items/8759c71f328cab802670  
+npm ci を実行すると常に package-lock.json から依存関係をインストールします。  
+既に node_modules フォルダの中身があっても一旦削除します。  
+
+従来の npm install コマンドを実行すると、 package.json と package-lock.json の両方を見て依存関係の解決と依存パッケージの node_modules へのインストールを行います。  
+package.json を解決して必要に応じてロックファイルである package-lock.json の更新もします。  
+
+一方で npm ci は package.json の依存関係の解決を行わず、常に package-lock.json を見て依存パッケージをダウンロードし node_modules の洗い替えを行います。  
 
 
 _____________________________________________________________________
@@ -143,52 +171,96 @@ https://tosi-tech.net/2017/01/verify-cdn-script-by-sri/
 
 
 _____________________________________________________________________
+# package.json / package-lock.json / ci
+
+## npm install と npm ci の違い
+npm install - package.json を見てインストールする
+npm ci      - package-lock.json を見てインストールする
+
+package.json      - パッケージのバージョン範囲を指定する
+package-lock.json - インストールされた正確なバージョンを記録する。
+
 
 ## npm installとnpm ciの違い
 https://new-lamp.hatenablog.com/entry/2021/10/23/102630
 
 
 ### npm install
-npmi iはpackage.jsonを見てライブラリをインストールする。  
-pacakge.jsonのバージョン指定には幅があるため、npm iする時期によってはpackage.json.lockを書き換えてしまう。   
-つまり完全に同じ開発環境を再現できない(可能性がある)。これはnpm iの大きな問題点と言える。
+npmi iはpackage.jsonを見てライブラリをインストールする。
+pacakge.jsonのバージョン指定には幅があるため、npm iする時期によってはpackage.json.lockを書き換える。
+つまり完全に同じ開発環境を再現できない(可能性がある)。
 
 
 ### npm ci
-一方でnpm ciはpacage.json.lockからライブラリをインストールする。(これがnpm iとの最大の違い)
-
-具体的には↓の3つをやっている。
 
  * node_modules ディレクトリの削除
  * package-lock.json と package.json の整合性のチェック。違ったらエラーを吐く。
  * package-lock.json から node_modules を再現
 
 npm iではなくnpm ciを使うことで完全に同じバージョンのライブラリをインストールすることができる。  
-git clone 直後などはnpm ciの方が良さそうだ
-
 
 _____________________________________________________________________
-## 新人にドヤ顔で説明できるか、今風フロントエンド開発ハンズオン(Git/Node.js/ES6/webpack4/Babel7)
-https://qiita.com/riversun/items/29d5264480dd06c7b9fb
+# セキュリティ
 
+## vulnerabilities が出た時のチェック
+```
+npm audit
+```
 
+## ライブラリの依存関係をチェック
+```
+npm ls axios
+```
 
-## プロジェクトを実行！npm startの使い方【初心者向け】
-https://techacademy.jp/magazine/16393
+＜出力例＞
+```
+c433c2130b74:/dashboard2# npm ls axios
+dashboard2@0.0.1 /dashboard2
+`-- openapi-zod-client@1.18.2
+  +-- @zodios/core@10.9.6
+  | `-- axios@1.7.3 deduped
+  `-- axios@1.7.3
+```
 
+## 修正コマンド
+```
+npm audit fix
+```
 
+## 利用可能な新しいバージョンが存在するものを一覧表示
+```
+npm outdated
+```
+
+## 
+```
+npx npm-check-updates -u
+```
+
+## npm install 時のメッセージ例
+```
+added 959 packages, and audited 960 packages in 37s
+
+208 packages are looking for funding
+  run `npm fund` for details
+
+3 vulnerabilities (2 moderate, 1 high)
+
+To address all issues, run:
+  npm audit fix
+
+Run `npm audit` for details.
+```
 
 _____________________________________________________________________
+# npx ( Node Package eXecute )
+パッケージを一時的に実行するためのツール。
+特に、コマンドラインツールを一時的に使いたい場合や、グローバルにインストールせずにツールを実行したい場合に便利。
 
-## --unsafe-perm
---unsafe-perm フラグは、npm install コマンドのオプションであり、
-npm に root レベルのアクセス許可でスクリプトを実行するように指示します。
-デフォルトでは、npm はスクリプトの実行時に特権を削除します。
-つまり、ルート レベルのアクセス許可が必要な場合、一部の操作が失敗する可能性があります。
+＜主な機能＞
+ローカルパッケージの実行。 プロジェクトの node_modules にインストールされているコマンドを直接実行する。
+グローバルにインストールせずにツールを実行。必要なときだけツールを実行するために、一時的にパッケージをインストールして実行する。
 
---unsafe-perm フラグを使用すると、このセキュリティ対策をバイパスできますが、セキュリティの脆弱性が生じる可能性があるため、
-このオプションは注意して使用することが重要です。 --unsafe-perm フラグの使用はできるだけ避け、代わりに適切な権限を持つユーザー アカウントを使用することをお勧めします。
+node_modules/.bin のファイルを直接呼び出せる。
 
---unsafe-perm フラグを使用する必要がある場合は、必要な場合にのみ使用し、使用範囲をできる限り制限することをお勧めします。
-たとえば、グローバルに使用するのではなく、特定のインストールまたはコマンドに使用できます。
 
