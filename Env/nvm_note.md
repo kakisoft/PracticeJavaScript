@@ -33,6 +33,11 @@ nvm ls-remote
 nvm ls-remote --lts
 ```
 
+```
+※Windows の場合、コマンド体系が異なる
+nvm list available
+```
+
 ## インストール済みの一覧を表示
 ```
 nvm list
