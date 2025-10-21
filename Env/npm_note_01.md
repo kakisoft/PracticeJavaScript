@@ -1,3 +1,15 @@
+## package.json と package.lock.json の違い
+## npm install と npm ci の違い
+package.json で言ってる事 ： 必要なライブラリ一覧。（例：axios が必要です。）
+package.lock.json で言ってる事： package.json で示したライブラリを使うために必要なリスト。（例：axios を使うために必要な依存関係を用意しました。結果はこれです。）
+
+npm install を実行すると、package.json を基に package.lock.json を作成 or 更新する。その後、ライブラリをインストールする。
+npm ci を実行すると、package.lock.json を基にライブラリをインストールする。（ci は、clean install の事）
+
+バージョンを完全に合わせたいなら npm ci を実行。
+その場合、リポジトリ管理に package.lock.json を入れておく。
+
+
 ## ログ出力先を指定して実行
 ```
 npm run start 1> ~/log/dashboard.log 2> ~/log/dashboard.err
