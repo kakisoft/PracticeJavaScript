@@ -1,21 +1,16 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const promises_1 = require("node:fs/promises");
-const node_fs_1 = require("node:fs");
-const node_path_1 = __importDefault(require("node:path"));
-const node_url_1 = require("node:url");
+import { access, unlink } from "node:fs/promises";
+import { constants } from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 // このソースファイルからの相対位置で削除対象を指定する。
-const currentDirectory = node_path_1.default.dirname((0, node_url_1.fileURLToPath)(import.meta.url));
-const targetFilePath = node_path_1.default.join(currentDirectory, "target_files", "target_delete_file_01.txt");
+const currentDirectory = path.dirname(fileURLToPath(import.meta.url));
+const targetFilePath = path.join(currentDirectory, "target_files", "target_delete_file_01.txt");
 async function deleteFileIfPermitted(filePath) {
     try {
         // ファイルが存在し、参照可能であることを確認する。
-        await (0, promises_1.access)(filePath, node_fs_1.constants.F_OK);
+        await access(filePath, constants.F_OK);
         // ファイル削除には、通常、親ディレクトリへの書き込み権限が必要になる。
-        await (0, promises_1.access)(node_path_1.default.dirname(filePath), node_fs_1.constants.W_OK);
+        await access(path.dirname(filePath), constants.W_OK);
     }
     catch (error) {
         const code = getErrorCode(error);
@@ -32,7 +27,7 @@ async function deleteFileIfPermitted(filePath) {
     }
     try {
         // 権限は確認後に変わる可能性があるため、unlink の失敗も必ず処理する。
-        await (0, promises_1.unlink)(filePath);
+        await unlink(filePath);
         console.log(`ファイルを削除しました: ${filePath}`);
     }
     catch (error) {
@@ -55,4 +50,3 @@ function getErrorCode(error) {
     return undefined;
 }
 await deleteFileIfPermitted(targetFilePath);
-//# sourceMappingURL=check_delete_permission.js.map
