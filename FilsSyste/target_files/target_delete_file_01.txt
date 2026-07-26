@@ -1,1 +1,0 @@
-target_delete_file_01.txt
